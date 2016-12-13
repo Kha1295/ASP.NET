@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4b0e4d65974045b6bbf50c9c048c503a" Name="Diagram1" ZoomLevel="25">
+        <EntityTypeShape EntityType="PhanMemDLModel.Bank" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="PhanMemDLModel.CardDeal" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PhanMemDLModel.Career" Width="1.5" PointX="4.5" PointY="51.375" />
+        <EntityTypeShape EntityType="PhanMemDLModel.ContracImage" Width="1.5" PointX="11.25" PointY="50" />
+        <EntityTypeShape EntityType="PhanMemDLModel.Contract" Width="1.5" PointX="9" PointY="47.875" />
+        <EntityTypeShape EntityType="PhanMemDLModel.ContractStatu" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PhanMemDLModel.ContractType" Width="1.5" PointX="6.75" PointY="45.75" />
+        <EntityTypeShape EntityType="PhanMemDLModel.Education" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PhanMemDLModel.Folk" Width="1.5" PointX="6.75" PointY="9.25" />
+        <EntityTypeShape EntityType="PhanMemDLModel.GridesCardType" Width="1.5" PointX="6.75" PointY="25.125" />
+        <EntityTypeShape EntityType="PhanMemDLModel.GroupGuest" Width="1.5" PointX="13.75" PointY="15.875" />
+        <EntityTypeShape EntityType="PhanMemDLModel.Guide" Width="1.5" PointX="9" PointY="6.125" />
+        <EntityTypeShape EntityType="PhanMemDLModel.GuidesContract" Width="1.5" PointX="6.75" PointY="12.25" />
+        <EntityTypeShape EntityType="PhanMemDLModel.GuidesGroup" Width="1.5" PointX="2.75" PointY="5.625" />
+        <EntityTypeShape EntityType="PhanMemDLModel.GuidesPrice" Width="1.5" PointX="11.25" PointY="9" />
+        <EntityTypeShape EntityType="PhanMemDLModel.GuidesProperty" Width="1.5" PointX="12" PointY="5.75" />
+        <EntityTypeShape EntityType="PhanMemDLModel.GuidesPropertyDetail" Width="1.5" PointX="14.25" PointY="10.75" />
+        <EntityTypeShape EntityType="PhanMemDLModel.History" Width="1.5" PointX="2.75" PointY="9.75" />
+        <EntityTypeShape EntityType="PhanMemDLModel.Insurance" Width="1.5" PointX="9" PointY="26.75" />
+        <EntityTypeShape EntityType="PhanMemDLModel.InsurancePrice" Width="1.5" PointX="11.25" PointY="26.125" />
+        <EntityTypeShape EntityType="PhanMemDLModel.Land" Width="1.5" PointX="16" PointY="14.125" />
+        <EntityTypeShape EntityType="PhanMemDLModel.LandGroup" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PhanMemDLModel.MoneyDeal" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PhanMemDLModel.ParentProfit" Width="1.5" PointX="3" PointY="42.625" />
+        <EntityTypeShape EntityType="PhanMemDLModel.Partner" Width="1.5" PointX="0.75" PointY="15.625" />
+        <EntityTypeShape EntityType="PhanMemDLModel.PartnerBank" Width="1.5" PointX="3" PointY="15.875" />
+        <EntityTypeShape EntityType="PhanMemDLModel.PartnerBranch" Width="1.5" PointX="3" PointY="28.5" />
+        <EntityTypeShape EntityType="PhanMemDLModel.PartnerContact" Width="1.5" PointX="3" PointY="38.75" />
+        <EntityTypeShape EntityType="PhanMemDLModel.PartnerDeposit" Width="1.5" PointX="3" PointY="25.5" />
+        <EntityTypeShape EntityType="PhanMemDLModel.PartnerImage" Width="1.5" PointX="3" PointY="32.5" />
+        <EntityTypeShape EntityType="PhanMemDLModel.PartnerLeve" Width="1.5" PointX="0.75" PointY="26" />
+        <EntityTypeShape EntityType="PhanMemDLModel.PartnerLeveDetail" Width="1.5" PointX="3" PointY="18.875" />
+        <EntityTypeShape EntityType="PhanMemDLModel.PartnerPropertise" Width="1.5" PointX="3" PointY="35.625" />
+        <EntityTypeShape EntityType="PhanMemDLModel.PartnerStaff" Width="1.5" PointX="6" PointY="15.625" />
+        <EntityTypeShape EntityType="PhanMemDLModel.PartnerStaffBank" Width="1.5" PointX="8.25" PointY="18.875" />
+        <EntityTypeShape EntityType="PhanMemDLModel.Payman" Width="1.5" PointX="9" PointY="2.625" />
+        <EntityTypeShape EntityType="PhanMemDLModel.Plan" Width="1.5" PointX="13.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PhanMemDLModel.Provider" Width="1.5" PointX="6.75" PointY="48.5" />
+        <EntityTypeShape EntityType="PhanMemDLModel.ProviderBank" Width="1.5" PointX="9" PointY="33" />
+        <EntityTypeShape EntityType="PhanMemDLModel.ProviderBranch" Width="1.5" PointX="9" PointY="55.875" />
+        <EntityTypeShape EntityType="PhanMemDLModel.ProviderContact" Width="1.5" PointX="14.75" PointY="4.75" />
+        <EntityTypeShape EntityType="PhanMemDLModel.ProviderImage" Width="1.5" PointX="9" PointY="44.75" />
+        <EntityTypeShape EntityType="PhanMemDLModel.ProviderPropertise" Width="1.5" PointX="9" PointY="59.875" />
+        <EntityTypeShape EntityType="PhanMemDLModel.Regency" Width="1.5" PointX="15.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PhanMemDLModel.Religion" Width="1.5" PointX="6.75" PointY="6.375" />
+        <EntityTypeShape EntityType="PhanMemDLModel.Service" Width="1.5" PointX="16.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PhanMemDLModel.ServiceOther" Width="1.5" PointX="12" PointY="32.375" />
+        <EntityTypeShape EntityType="PhanMemDLModel.ServiceOtherPrice" Width="1.5" PointX="14.25" PointY="30.375" />
+        <EntityTypeShape EntityType="PhanMemDLModel.Star" Width="1.5" PointX="13.75" PointY="19.5" />
+        <EntityTypeShape EntityType="PhanMemDLModel.User" Width="1.5" PointX="6.75" PointY="39.75" />
+        <EntityTypeShape EntityType="PhanMemDLModel.Vocative" Width="1.5" PointX="3.75" PointY="21.875" />
+        <AssociationConnector Association="PhanMemDLModel.FK_PartnerBank_Bank" />
+        <AssociationConnector Association="PhanMemDLModel.FK_PartnerStaffBank_Bank" />
+        <AssociationConnector Association="PhanMemDLModel.FK_ProviderBank_Bank" />
+        <AssociationConnector Association="PhanMemDLModel.FK_Provider_Career" />
+        <AssociationConnector Association="PhanMemDLModel.FK_User_Career" />
+        <AssociationConnector Association="PhanMemDLModel.FK_ContracImage_Contract" />
+        <AssociationConnector Association="PhanMemDLModel.FK_Contract_ContractType" />
+        <AssociationConnector Association="PhanMemDLModel.FK_Contract_Provider" />
+        <AssociationConnector Association="PhanMemDLModel.FK_GuidesPrice_Contract" />
+        <AssociationConnector Association="PhanMemDLModel.FK_InsurancePrice_Contract" />
+        <AssociationConnector Association="PhanMemDLModel.FK_ServiceOtherPrice_Contract" />
+        <AssociationConnector Association="PhanMemDLModel.FK_Guides_Folk" />
+        <AssociationConnector Association="PhanMemDLModel.FK_Guides_GridesCardType" />
+        <AssociationConnector Association="PhanMemDLModel.FK_Land_GroupGuest" />
+        <AssociationConnector Association="PhanMemDLModel.FK_Guides_GuidesContract" />
+        <AssociationConnector Association="PhanMemDLModel.FK_Guides_GuidesGroup" />
+        <AssociationConnector Association="PhanMemDLModel.FK_Guides_Religion" />
+        <AssociationConnector Association="PhanMemDLModel.FK_Guides_Vocative" />
+        <AssociationConnector Association="PhanMemDLModel.FK_GuidesPrice_Guides" />
+        <AssociationConnector Association="PhanMemDLModel.FK_GuidesPropertyDetail_Guides" />
+        <AssociationConnector Association="PhanMemDLModel.FK_GuidesPrice_GuidesGroup" />
+        <AssociationConnector Association="PhanMemDLModel.FK_GuidesPrice_Paymen" />
+        <AssociationConnector Association="PhanMemDLModel.FK_GuidesPropertyDetail_GuidesProperty" />
+        <AssociationConnector Association="PhanMemDLModel.FK_InsurancePrice_Insurance" />
+        <AssociationConnector Association="PhanMemDLModel.FK_InsurancePrice_Paymen" />
+        <AssociationConnector Association="PhanMemDLModel.FK_Land_Stars" />
+        <AssociationConnector Association="PhanMemDLModel.FK_ParentProfit_Partner" />
+        <AssociationConnector Association="PhanMemDLModel.FK_PartnerBank_Partner" />
+        <AssociationConnector Association="PhanMemDLModel.FK_PartnerBranch_Partner" />
+        <AssociationConnector Association="PhanMemDLModel.FK_PartnerContact_Partner" />
+        <AssociationConnector Association="PhanMemDLModel.FK_PartnerDeposit_Partner" />
+        <AssociationConnector Association="PhanMemDLModel.FK_PartnerImage_Partner" />
+        <AssociationConnector Association="PhanMemDLModel.FK_PartnerLeveDetail_Partner" />
+        <AssociationConnector Association="PhanMemDLModel.FK_PartnerPropertise_Partner" />
+        <AssociationConnector Association="PhanMemDLModel.FK_PartnerStaff_Partner" />
+        <AssociationConnector Association="PhanMemDLModel.FK_PartnerLeveDetail_PartnerLeve" />
+        <AssociationConnector Association="PhanMemDLModel.FK_PartnerStaff_Vocative" />
+        <AssociationConnector Association="PhanMemDLModel.FK_PartnerStaffBank_PartnerStaff" />
+        <AssociationConnector Association="PhanMemDLModel.FK_ServiceOtherPrice_Paymen" />
+        <AssociationConnector Association="PhanMemDLModel.FK_ProviderBank_Provider" />
+        <AssociationConnector Association="PhanMemDLModel.FK_ProviderBranch_Provider" />
+        <AssociationConnector Association="PhanMemDLModel.FK_ProviderImage_Provider" />
+        <AssociationConnector Association="PhanMemDLModel.FK_ProviderPropertise_Provider" />
+        <AssociationConnector Association="PhanMemDLModel.FK_ServiceOtherPrice_Provider" />
+        <AssociationConnector Association="PhanMemDLModel.FK_ServiceOtherPrice_ServiceOther" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

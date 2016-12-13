@@ -1,0 +1,1568 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PhanMemDLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bank">
+    <Key>
+      <PropertyRef Name="BankId" />
+    </Key>
+    <Property Name="BankId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="CardDeal">
+    <Key>
+      <PropertyRef Name="CardDealId" />
+    </Key>
+    <Property Name="CardDealId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="20" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Career">
+    <Key>
+      <PropertyRef Name="CareerId" />
+    </Key>
+    <Property Name="CareerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="ContracImage">
+    <Key>
+      <PropertyRef Name="ContracImageId" />
+    </Key>
+    <Property Name="ContracImageId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContractId" Type="bigint" />
+    <Property Name="Name" Type="nvarchar" MaxLength="550" />
+    <Property Name="Note" Type="nvarchar" MaxLength="550" />
+    <Property Name="Files" Type="nvarchar" MaxLength="550" />
+  </EntityType>
+  <EntityType Name="Contract">
+    <Key>
+      <PropertyRef Name="ContractId" />
+    </Key>
+    <Property Name="ContractId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceId" Type="nvarchar" MaxLength="150" />
+    <Property Name="ContractTypeId" Type="int" />
+    <Property Name="ProviderId" Type="bigint" />
+    <Property Name="PartnerId" Type="bigint" />
+    <Property Name="Code" Type="nvarchar" MaxLength="150" />
+    <Property Name="Name" Type="nvarchar" MaxLength="1150" />
+    <Property Name="ContractLocation" Type="nvarchar" MaxLength="1150" />
+    <Property Name="ContractTime" Type="datetime" />
+    <Property Name="FromDay" Type="datetime" />
+    <Property Name="ToDay" Type="datetime" />
+    <Property Name="DebtTerm" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="DebtTermMax" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Files" Type="nvarchar" MaxLength="550" />
+    <Property Name="Files1" Type="nvarchar" MaxLength="550" />
+    <Property Name="Contents" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1550" />
+    <Property Name="Status" Type="int" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdateDay" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreateDay" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ContractStatus">
+    <Key>
+      <PropertyRef Name="ContractStatusId" />
+    </Key>
+    <Property Name="ContractStatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="20" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="ContractType">
+    <Key>
+      <PropertyRef Name="ContractTypeId" />
+    </Key>
+    <Property Name="ContractTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="1550" />
+    <Property Name="Note" Type="nvarchar(max)" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="Education">
+    <Key>
+      <PropertyRef Name="EducationId" />
+    </Key>
+    <Property Name="EducationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="Folk">
+    <Key>
+      <PropertyRef Name="FolkId" />
+    </Key>
+    <Property Name="FolkId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="20" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="GridesCardType">
+    <Key>
+      <PropertyRef Name="GuidesCardTypeId" />
+    </Key>
+    <Property Name="GuidesCardTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="20" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="GroupGuest">
+    <Key>
+      <PropertyRef Name="GroupGuestId" />
+    </Key>
+    <Property Name="GroupGuestId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Guides">
+    <Key>
+      <PropertyRef Name="GuidesId" />
+    </Key>
+    <Property Name="GuidesId" Type="int" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="150" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="VocativeId" Type="int" />
+    <Property Name="NumberIdentity" Type="nvarchar" MaxLength="20" />
+    <Property Name="Birthday" Type="nvarchar" MaxLength="50" />
+    <Property Name="PlaceOfIssue" Type="nvarchar" MaxLength="50" />
+    <Property Name="DayOfIssue" Type="nvarchar" MaxLength="50" />
+    <Property Name="NumberVat" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsMarriage" Type="bit" Nullable="false" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="Image" Type="nvarchar" MaxLength="350" />
+    <Property Name="Passport" Type="nvarchar" MaxLength="50" />
+    <Property Name="FromPassport" Type="datetime" Nullable="false" />
+    <Property Name="ToPassport" Type="datetime" />
+    <Property Name="GuidesGroupId" Type="int" />
+    <Property Name="GuidesContractId" Type="int" />
+    <Property Name="FolkId" Type="int" />
+    <Property Name="ReligionId" Type="int" />
+    <Property Name="Nationatily" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Market" Type="nvarchar" MaxLength="50" />
+    <Property Name="Area" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="150" />
+    <Property Name="Facebook" Type="nvarchar" MaxLength="1050" />
+    <Property Name="NationalId" Type="int" />
+    <Property Name="AreaId" Type="int" />
+    <Property Name="CityId" Type="int" />
+    <Property Name="DistrictId" Type="int" />
+    <Property Name="WardId" Type="int" />
+    <Property Name="Address" Type="nvarchar" MaxLength="550" />
+    <Property Name="AddressShow" Type="nvarchar" MaxLength="550" />
+    <Property Name="EducationId" Type="int" />
+    <Property Name="CareerId" Type="int" />
+    <Property Name="Language" Type="int" />
+    <Property Name="GridesCardTypeId" Type="int" />
+    <Property Name="FromGridesCardDay" Type="datetime" />
+    <Property Name="ToGridesCardDay" Type="datetime" />
+    <Property Name="Experience" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1550" />
+    <Property Name="Contents" Type="nvarchar(max)" />
+    <Property Name="Status" Type="int" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdateDay" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreateDay" Type="datetime" />
+  </EntityType>
+  <EntityType Name="GuidesContract">
+    <Key>
+      <PropertyRef Name="GuidesContractTypeId" />
+    </Key>
+    <Property Name="GuidesContractTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="20" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="GuidesGroup">
+    <Key>
+      <PropertyRef Name="GuidesGroupId" />
+    </Key>
+    <Property Name="GuidesGroupId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="350" />
+    <Property Name="Rank" Type="int" />
+    <Property Name="Market" Type="nvarchar" MaxLength="50" />
+    <Property Name="Area" Type="nvarchar" MaxLength="50" />
+    <Property Name="Language" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="GuidesPrice">
+    <Key>
+      <PropertyRef Name="GuidesPriceId" />
+    </Key>
+    <Property Name="GuidesPriceId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GuidesId" Type="int" Nullable="false" />
+    <Property Name="GuidesGroupId" Type="int" />
+    <Property Name="ContractId" Type="bigint" />
+    <Property Name="ProviderId" Type="bigint" />
+    <Property Name="PaymenId" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="550" />
+    <Property Name="FromDay" Type="datetime" />
+    <Property Name="ToDay" Type="datetime" />
+    <Property Name="Price" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="PriceExtra" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="IsVat" Type="bit" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status" Type="int" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdateDay" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreateDay" Type="datetime" />
+  </EntityType>
+  <EntityType Name="GuidesProperty">
+    <Key>
+      <PropertyRef Name="GuidesPropertyId" />
+    </Key>
+    <Property Name="GuidesPropertyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="350" />
+    <Property Name="Note" Type="nvarchar" MaxLength="1550" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="GuidesPropertyDetail">
+    <Key>
+      <PropertyRef Name="GuidesPropertyId" />
+      <PropertyRef Name="GuidesId" />
+    </Key>
+    <Property Name="GuidesPropertyId" Type="int" Nullable="false" />
+    <Property Name="GuidesId" Type="int" Nullable="false" />
+    <Property Name="Rank" Type="int" />
+    <Property Name="Note" Type="nvarchar" MaxLength="550" />
+  </EntityType>
+  <EntityType Name="History">
+    <Key>
+      <PropertyRef Name="HistoryId" />
+    </Key>
+    <Property Name="HistoryId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="int" />
+    <Property Name="ItemId" Type="bigint" />
+    <Property Name="Contens" Type="nvarchar(max)" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="CreateDay" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Insurance">
+    <Key>
+      <PropertyRef Name="InsuranceId" />
+    </Key>
+    <Property Name="InsuranceId" Type="bigint" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="150" />
+    <Property Name="Name" Type="nvarchar" MaxLength="350" />
+    <Property Name="Files" Type="nvarchar" MaxLength="350" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1550" />
+    <Property Name="Contents" Type="nvarchar(max)" />
+    <Property Name="Term" Type="int" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdateDay" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreateDay" Type="datetime" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="InsurancePrice">
+    <Key>
+      <PropertyRef Name="InsurancePriceId" />
+    </Key>
+    <Property Name="InsurancePriceId" Type="bigint" Nullable="false" />
+    <Property Name="ProviderId" Type="bigint" />
+    <Property Name="ContractId" Type="bigint" />
+    <Property Name="InsuranceId" Type="bigint" />
+    <Property Name="PaymenId" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="1550" />
+    <Property Name="FromDay" Type="datetime" />
+    <Property Name="ToDay" Type="datetime" />
+    <Property Name="Price" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Surcharge" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="IsVat" Type="bit" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1550" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdateDay" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreateDay" Type="datetime" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="Land">
+    <Key>
+      <PropertyRef Name="LandId" />
+    </Key>
+    <Property Name="LandId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="150" />
+    <Property Name="Name" Type="nvarchar" MaxLength="550" />
+    <Property Name="QuantityDay" Type="int" />
+    <Property Name="QuantityNight" Type="int" />
+    <Property Name="NationalId" Type="int" />
+    <Property Name="Destination" Type="nvarchar" MaxLength="1550" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2250" />
+    <Property Name="Contents" Type="nvarchar(max)" />
+    <Property Name="QuantityGuest" Type="int" />
+    <Property Name="StarsId" Type="int" />
+    <Property Name="HotelNight" Type="int" />
+    <Property Name="Meal" Type="int" />
+    <Property Name="Snacks" Type="int" />
+    <Property Name="SortSchedule" Type="nvarchar(max)" />
+    <Property Name="Files" Type="nvarchar" MaxLength="350" />
+    <Property Name="GroupGuestId" Type="int" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdateDay" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreateDay" Type="datetime" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="LandGroup">
+    <Key>
+      <PropertyRef Name="LandGroupId" />
+    </Key>
+    <Property Name="LandGroupId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="550" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Note" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="MoneyDeal">
+    <Key>
+      <PropertyRef Name="MoneyDealId" />
+    </Key>
+    <Property Name="MoneyDealId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="20" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="ParentProfit">
+    <Key>
+      <PropertyRef Name="ParentProfitId" />
+    </Key>
+    <Property Name="ParentProfitId" Type="bigint" Nullable="false" />
+    <Property Name="ParentId" Type="bigint" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Percents" Type="float" />
+    <Property Name="FromDay" Type="datetime" />
+    <Property Name="ToDay" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Partner">
+    <Key>
+      <PropertyRef Name="PartnerId" />
+    </Key>
+    <Property Name="PartnerId" Type="bigint" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="NameOther" Type="nvarchar" MaxLength="250" />
+    <Property Name="NameSearch" Type="nvarchar" MaxLength="450" />
+    <Property Name="NumberSPKD" Type="nvarchar" MaxLength="150" />
+    <Property Name="NumberLHQT" Type="nvarchar" MaxLength="150" />
+    <Property Name="TaxCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="EstablishYear" Type="nvarchar" MaxLength="50" />
+    <Property Name="Paymen" Type="nvarchar" MaxLength="50" />
+    <Property Name="MoneyDealId" Type="nvarchar" MaxLength="50" />
+    <Property Name="CardDealId" Type="nvarchar" MaxLength="50" />
+    <Property Name="Image" Type="nvarchar" MaxLength="350" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="15" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="CareerId" Type="int" />
+    <Property Name="NationalId" Type="int" />
+    <Property Name="AreaId" Type="int" />
+    <Property Name="CityId" Type="int" />
+    <Property Name="DistrictId" Type="int" />
+    <Property Name="WardId" Type="int" />
+    <Property Name="AddressShow" Type="nvarchar" MaxLength="550" />
+    <Property Name="ServiceId" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1550" />
+    <Property Name="Contents" Type="nvarchar(max)" />
+    <Property Name="Type" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdateDay" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreateDay" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PartnerBank">
+    <Key>
+      <PropertyRef Name="PartnerId" />
+      <PropertyRef Name="BankId" />
+    </Key>
+    <Property Name="PartnerId" Type="bigint" Nullable="false" />
+    <Property Name="BankId" Type="int" Nullable="false" />
+    <Property Name="Numbert" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="PartnerBranch">
+    <Key>
+      <PropertyRef Name="PartnerBarchId" />
+    </Key>
+    <Property Name="PartnerBarchId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PartnerId" Type="bigint" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="15" />
+    <Property Name="Hotline" Type="nvarchar" MaxLength="15" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="150" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="15" />
+    <Property Name="Address" Type="nvarchar" MaxLength="350" />
+    <Property Name="CityId" Type="int" />
+    <Property Name="Note" Type="nvarchar" MaxLength="550" />
+  </EntityType>
+  <EntityType Name="PartnerContact">
+    <Key>
+      <PropertyRef Name="PartnerContactId" />
+    </Key>
+    <Property Name="PartnerContactId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RegencyId" Type="int" />
+    <Property Name="PartnerId" Type="bigint" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sex" Type="int" />
+    <Property Name="NickName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="15" />
+    <Property Name="HotLine" Type="nvarchar" MaxLength="15" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="250" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="PartnerDeposit">
+    <Key>
+      <PropertyRef Name="PartnerDepositId" />
+    </Key>
+    <Property Name="PartnerDepositId" Type="bigint" Nullable="false" />
+    <Property Name="PartnerId" Type="bigint" />
+    <Property Name="Money" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Day" Type="datetime" />
+    <Property Name="Note" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PartnerImage">
+    <Key>
+      <PropertyRef Name="ParnertImageId" />
+    </Key>
+    <Property Name="ParnertImageId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ParnertId" Type="bigint" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Image" Type="nvarchar" MaxLength="350" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="PartnerLeve">
+    <Key>
+      <PropertyRef Name="PartnerLeveId" />
+    </Key>
+    <Property Name="PartnerLeveId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Percents" Type="float" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="PartnerLeveDetail">
+    <Key>
+      <PropertyRef Name="PartnerId" />
+      <PropertyRef Name="PartnerLeveId" />
+    </Key>
+    <Property Name="PartnerId" Type="bigint" Nullable="false" />
+    <Property Name="PartnerLeveId" Type="int" Nullable="false" />
+    <Property Name="Percents" Type="float" />
+    <Property Name="Day" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PartnerPropertise">
+    <Key>
+      <PropertyRef Name="PartnerPropertiesId" />
+    </Key>
+    <Property Name="PartnerPropertiesId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PartnerId" Type="bigint" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="550" />
+    <Property Name="Lable" Type="nvarchar" MaxLength="150" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="PartnerStaff">
+    <Key>
+      <PropertyRef Name="PartnerStaffId" />
+    </Key>
+    <Property Name="PartnerStaffId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PartnerId" Type="bigint" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="VocativeId" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="NumberIdentity" Type="nvarchar" MaxLength="20" />
+    <Property Name="Birthday" Type="nvarchar" MaxLength="50" />
+    <Property Name="PlaceOfIssue" Type="nvarchar" MaxLength="50" />
+    <Property Name="DayOfIssue" Type="nvarchar" MaxLength="50" />
+    <Property Name="NumberVat" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsMarriage" Type="bit" Nullable="false" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="Image" Type="nvarchar" MaxLength="350" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="Phone1" Type="nvarchar" MaxLength="20" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="20" />
+    <Property Name="Mail1" Type="nvarchar" MaxLength="20" />
+    <Property Name="ImageIdentity" Type="nvarchar" MaxLength="350" />
+    <Property Name="ImageBirth" Type="nvarchar" MaxLength="350" />
+    <Property Name="Note" Type="nvarchar(max)" />
+    <Property Name="OriginNationalId" Type="int" />
+    <Property Name="OriginCityId" Type="int" />
+    <Property Name="OriginDistrictId" Type="int" />
+    <Property Name="OriginWardId" Type="int" />
+    <Property Name="OriginAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="OriginShow" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactNationalId" Type="int" />
+    <Property Name="ContactCityId" Type="int" />
+    <Property Name="ContactDistrictId" Type="int" />
+    <Property Name="ContactWardId" Type="int" />
+    <Property Name="ContactAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactShow" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="int" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdateDay" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreateDay" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PartnerStaffBank">
+    <Key>
+      <PropertyRef Name="PartnerStaffBankId" />
+    </Key>
+    <Property Name="PartnerStaffBankId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PartnerStaffId" Type="bigint" />
+    <Property Name="NumberBank" Type="nvarchar" MaxLength="50" />
+    <Property Name="BankId" Type="int" />
+  </EntityType>
+  <EntityType Name="Paymen">
+    <Key>
+      <PropertyRef Name="PaymenId" />
+    </Key>
+    <Property Name="PaymenId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="Plan">
+    <Key>
+      <PropertyRef Name="PlanId" />
+    </Key>
+    <Property Name="PlanId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="1500" />
+    <Property Name="Files" Type="nvarchar" MaxLength="1500" />
+    <Property Name="Note" Type="nvarchar(max)" />
+    <Property Name="FromDay" Type="datetime" />
+    <Property Name="ToDay" Type="datetime" />
+    <Property Name="CreateDay" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="Provider">
+    <Key>
+      <PropertyRef Name="ProviderId" />
+    </Key>
+    <Property Name="ProviderId" Type="bigint" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="NameOther" Type="nvarchar" MaxLength="250" />
+    <Property Name="NameSearch" Type="nvarchar" MaxLength="450" />
+    <Property Name="NumberSPKD" Type="nvarchar" MaxLength="150" />
+    <Property Name="NumberLHQT" Type="nvarchar" MaxLength="150" />
+    <Property Name="TaxCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="EstablishYear" Type="nvarchar" MaxLength="50" />
+    <Property Name="Paymen" Type="nvarchar" MaxLength="50" />
+    <Property Name="MoneyDealId" Type="nvarchar" MaxLength="50" />
+    <Property Name="CardDealId" Type="nvarchar" MaxLength="50" />
+    <Property Name="Image" Type="nvarchar" MaxLength="350" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="15" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="CareerId" Type="int" />
+    <Property Name="NationalId" Type="int" />
+    <Property Name="AreaId" Type="int" />
+    <Property Name="CityId" Type="int" />
+    <Property Name="AddressShow" Type="nvarchar" MaxLength="550" />
+    <Property Name="ServiceId" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1550" />
+    <Property Name="Contents" Type="nvarchar(max)" />
+    <Property Name="Type" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdateDay" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreateDay" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ProviderBank">
+    <Key>
+      <PropertyRef Name="ProviderId" />
+      <PropertyRef Name="BankId" />
+    </Key>
+    <Property Name="ProviderId" Type="bigint" Nullable="false" />
+    <Property Name="BankId" Type="int" Nullable="false" />
+    <Property Name="Numbert" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="ProviderBranch">
+    <Key>
+      <PropertyRef Name="ProviderBarchId" />
+    </Key>
+    <Property Name="ProviderBarchId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProviderId" Type="bigint" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="15" />
+    <Property Name="Hotline" Type="nvarchar" MaxLength="15" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="150" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="15" />
+    <Property Name="Address" Type="nvarchar" MaxLength="350" />
+    <Property Name="CityId" Type="int" />
+    <Property Name="Note" Type="nvarchar" MaxLength="550" />
+  </EntityType>
+  <EntityType Name="ProviderContact">
+    <Key>
+      <PropertyRef Name="ProviderContactId" />
+    </Key>
+    <Property Name="ProviderContactId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RegencyId" Type="int" />
+    <Property Name="ProviderId" Type="nchar" MaxLength="10" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sex" Type="int" />
+    <Property Name="NickName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="15" />
+    <Property Name="HotLine" Type="nvarchar" MaxLength="15" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="250" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="ProviderImage">
+    <Key>
+      <PropertyRef Name="ProviderImageId" />
+    </Key>
+    <Property Name="ProviderImageId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProviderId" Type="bigint" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Image" Type="nvarchar" MaxLength="350" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="ProviderPropertise">
+    <Key>
+      <PropertyRef Name="ProviderPropertiesId" />
+    </Key>
+    <Property Name="ProviderPropertiesId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProviderId" Type="bigint" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="550" />
+    <Property Name="Lable" Type="nvarchar" MaxLength="150" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="Regency">
+    <Key>
+      <PropertyRef Name="RegencyId" />
+    </Key>
+    <Property Name="RegencyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="Religion">
+    <Key>
+      <PropertyRef Name="ReligionId" />
+    </Key>
+    <Property Name="ReligionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="20" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="ServiceId" />
+    </Key>
+    <Property Name="ServiceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="ServiceOther">
+    <Key>
+      <PropertyRef Name="ServiceOtherId" />
+    </Key>
+    <Property Name="ServiceOtherId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="550" />
+    <Property Name="NationalId" Type="int" />
+    <Property Name="AreaId" Type="int" />
+    <Property Name="CityId" Type="int" />
+    <Property Name="DistrictId" Type="int" />
+    <Property Name="WardId" Type="int" />
+    <Property Name="Address" Type="nvarchar" MaxLength="550" />
+    <Property Name="AddressShow" Type="nvarchar" MaxLength="550" />
+    <Property Name="LocationId" Type="bigint" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1550" />
+    <Property Name="Contents" Type="nvarchar(max)" />
+    <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdateDay" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreateDay" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ServiceOtherPrice">
+    <Key>
+      <PropertyRef Name="ServiceOtherPriceId" />
+    </Key>
+    <Property Name="ServiceOtherPriceId" Type="bigint" Nullable="false" />
+    <Property Name="ServiceOtherId" Type="bigint" />
+    <Property Name="ProviderId" Type="bigint" />
+    <Property Name="ContractId" Type="bigint" />
+    <Property Name="PaymenId" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="1550" />
+    <Property Name="FromDay" Type="datetime" />
+    <Property Name="ToDay" Type="datetime" />
+    <Property Name="Price" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="PriceAdult" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="PriceChild" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="PriceInfant" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="PriceBaby" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Stars">
+    <Key>
+      <PropertyRef Name="StarsId" />
+    </Key>
+    <Property Name="StarsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+    <Property Name="UpdateBy" Type="bigint" />
+    <Property Name="UpdateDay" Type="datetime" />
+    <Property Name="CreateBy" Type="bigint" />
+    <Property Name="CreateDay" Type="datetime" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="30" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="40" />
+    <Property Name="Image" Type="nvarchar" MaxLength="350" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status" Type="int" />
+    <Property Name="CreateDay" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="BirthDay" Type="datetime" />
+    <Property Name="Sex" Type="bit" Nullable="false" />
+    <Property Name="Account" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Remember" Type="bit" Nullable="false" />
+    <Property Name="LoginDay" Type="datetime" />
+    <Property Name="RePassDay" Type="datetime" />
+    <Property Name="Point" Type="float" />
+    <Property Name="CareerId" Type="int" />
+    <Property Name="Diploma" Type="nvarchar" MaxLength="550" />
+    <Property Name="Type" Type="int" />
+  </EntityType>
+  <EntityType Name="Vocative">
+    <Key>
+      <PropertyRef Name="VocativeId" />
+    </Key>
+    <Property Name="VocativeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <Association Name="FK_ContracImage_Contract">
+    <End Role="Contract" Type="Self.Contract" Multiplicity="0..1" />
+    <End Role="ContracImage" Type="Self.ContracImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contract">
+        <PropertyRef Name="ContractId" />
+      </Principal>
+      <Dependent Role="ContracImage">
+        <PropertyRef Name="ContractId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contract_ContractType">
+    <End Role="ContractType" Type="Self.ContractType" Multiplicity="0..1" />
+    <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ContractType">
+        <PropertyRef Name="ContractTypeId" />
+      </Principal>
+      <Dependent Role="Contract">
+        <PropertyRef Name="ContractTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contract_Provider">
+    <End Role="Provider" Type="Self.Provider" Multiplicity="0..1" />
+    <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provider">
+        <PropertyRef Name="ProviderId" />
+      </Principal>
+      <Dependent Role="Contract">
+        <PropertyRef Name="ProviderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Guides_Folk">
+    <End Role="Folk" Type="Self.Folk" Multiplicity="0..1" />
+    <End Role="Guides" Type="Self.Guides" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Folk">
+        <PropertyRef Name="FolkId" />
+      </Principal>
+      <Dependent Role="Guides">
+        <PropertyRef Name="FolkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Guides_GridesCardType">
+    <End Role="GridesCardType" Type="Self.GridesCardType" Multiplicity="0..1" />
+    <End Role="Guides" Type="Self.Guides" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GridesCardType">
+        <PropertyRef Name="GuidesCardTypeId" />
+      </Principal>
+      <Dependent Role="Guides">
+        <PropertyRef Name="GridesCardTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Guides_GuidesContract">
+    <End Role="GuidesContract" Type="Self.GuidesContract" Multiplicity="0..1" />
+    <End Role="Guides" Type="Self.Guides" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GuidesContract">
+        <PropertyRef Name="GuidesContractTypeId" />
+      </Principal>
+      <Dependent Role="Guides">
+        <PropertyRef Name="GuidesContractId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Guides_GuidesGroup">
+    <End Role="GuidesGroup" Type="Self.GuidesGroup" Multiplicity="0..1" />
+    <End Role="Guides" Type="Self.Guides" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GuidesGroup">
+        <PropertyRef Name="GuidesGroupId" />
+      </Principal>
+      <Dependent Role="Guides">
+        <PropertyRef Name="GuidesGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Guides_Religion">
+    <End Role="Religion" Type="Self.Religion" Multiplicity="0..1" />
+    <End Role="Guides" Type="Self.Guides" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Religion">
+        <PropertyRef Name="ReligionId" />
+      </Principal>
+      <Dependent Role="Guides">
+        <PropertyRef Name="ReligionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Guides_Vocative">
+    <End Role="Vocative" Type="Self.Vocative" Multiplicity="0..1" />
+    <End Role="Guides" Type="Self.Guides" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vocative">
+        <PropertyRef Name="VocativeId" />
+      </Principal>
+      <Dependent Role="Guides">
+        <PropertyRef Name="VocativeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GuidesPrice_Contract">
+    <End Role="Contract" Type="Self.Contract" Multiplicity="0..1" />
+    <End Role="GuidesPrice" Type="Self.GuidesPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contract">
+        <PropertyRef Name="ContractId" />
+      </Principal>
+      <Dependent Role="GuidesPrice">
+        <PropertyRef Name="ContractId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GuidesPrice_Guides">
+    <End Role="Guides" Type="Self.Guides" Multiplicity="1" />
+    <End Role="GuidesPrice" Type="Self.GuidesPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Guides">
+        <PropertyRef Name="GuidesId" />
+      </Principal>
+      <Dependent Role="GuidesPrice">
+        <PropertyRef Name="GuidesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GuidesPrice_GuidesGroup">
+    <End Role="GuidesGroup" Type="Self.GuidesGroup" Multiplicity="0..1" />
+    <End Role="GuidesPrice" Type="Self.GuidesPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GuidesGroup">
+        <PropertyRef Name="GuidesGroupId" />
+      </Principal>
+      <Dependent Role="GuidesPrice">
+        <PropertyRef Name="GuidesGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GuidesPrice_Paymen">
+    <End Role="Paymen" Type="Self.Paymen" Multiplicity="0..1" />
+    <End Role="GuidesPrice" Type="Self.GuidesPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paymen">
+        <PropertyRef Name="PaymenId" />
+      </Principal>
+      <Dependent Role="GuidesPrice">
+        <PropertyRef Name="PaymenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GuidesPropertyDetail_Guides">
+    <End Role="Guides" Type="Self.Guides" Multiplicity="1" />
+    <End Role="GuidesPropertyDetail" Type="Self.GuidesPropertyDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Guides">
+        <PropertyRef Name="GuidesId" />
+      </Principal>
+      <Dependent Role="GuidesPropertyDetail">
+        <PropertyRef Name="GuidesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GuidesPropertyDetail_GuidesProperty">
+    <End Role="GuidesProperty" Type="Self.GuidesProperty" Multiplicity="1" />
+    <End Role="GuidesPropertyDetail" Type="Self.GuidesPropertyDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GuidesProperty">
+        <PropertyRef Name="GuidesPropertyId" />
+      </Principal>
+      <Dependent Role="GuidesPropertyDetail">
+        <PropertyRef Name="GuidesPropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InsurancePrice_Contract">
+    <End Role="Contract" Type="Self.Contract" Multiplicity="0..1" />
+    <End Role="InsurancePrice" Type="Self.InsurancePrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contract">
+        <PropertyRef Name="ContractId" />
+      </Principal>
+      <Dependent Role="InsurancePrice">
+        <PropertyRef Name="ContractId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InsurancePrice_Insurance">
+    <End Role="Insurance" Type="Self.Insurance" Multiplicity="0..1" />
+    <End Role="InsurancePrice" Type="Self.InsurancePrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Insurance">
+        <PropertyRef Name="InsuranceId" />
+      </Principal>
+      <Dependent Role="InsurancePrice">
+        <PropertyRef Name="InsuranceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InsurancePrice_Paymen">
+    <End Role="Paymen" Type="Self.Paymen" Multiplicity="0..1" />
+    <End Role="InsurancePrice" Type="Self.InsurancePrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paymen">
+        <PropertyRef Name="PaymenId" />
+      </Principal>
+      <Dependent Role="InsurancePrice">
+        <PropertyRef Name="PaymenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Land_GroupGuest">
+    <End Role="GroupGuest" Type="Self.GroupGuest" Multiplicity="0..1" />
+    <End Role="Land" Type="Self.Land" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GroupGuest">
+        <PropertyRef Name="GroupGuestId" />
+      </Principal>
+      <Dependent Role="Land">
+        <PropertyRef Name="GroupGuestId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Land_Stars">
+    <End Role="Stars" Type="Self.Stars" Multiplicity="0..1" />
+    <End Role="Land" Type="Self.Land" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stars">
+        <PropertyRef Name="StarsId" />
+      </Principal>
+      <Dependent Role="Land">
+        <PropertyRef Name="StarsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ParentProfit_Partner">
+    <End Role="Partner" Type="Self.Partner" Multiplicity="0..1" />
+    <End Role="ParentProfit" Type="Self.ParentProfit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partner">
+        <PropertyRef Name="PartnerId" />
+      </Principal>
+      <Dependent Role="ParentProfit">
+        <PropertyRef Name="ParentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartnerBank_Bank">
+    <End Role="Bank" Type="Self.Bank" Multiplicity="1" />
+    <End Role="PartnerBank" Type="Self.PartnerBank" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bank">
+        <PropertyRef Name="BankId" />
+      </Principal>
+      <Dependent Role="PartnerBank">
+        <PropertyRef Name="BankId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartnerBank_Partner">
+    <End Role="Partner" Type="Self.Partner" Multiplicity="1" />
+    <End Role="PartnerBank" Type="Self.PartnerBank" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partner">
+        <PropertyRef Name="PartnerId" />
+      </Principal>
+      <Dependent Role="PartnerBank">
+        <PropertyRef Name="PartnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartnerBranch_Partner">
+    <End Role="Partner" Type="Self.Partner" Multiplicity="0..1" />
+    <End Role="PartnerBranch" Type="Self.PartnerBranch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partner">
+        <PropertyRef Name="PartnerId" />
+      </Principal>
+      <Dependent Role="PartnerBranch">
+        <PropertyRef Name="PartnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartnerContact_Partner">
+    <End Role="Partner" Type="Self.Partner" Multiplicity="0..1" />
+    <End Role="PartnerContact" Type="Self.PartnerContact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partner">
+        <PropertyRef Name="PartnerId" />
+      </Principal>
+      <Dependent Role="PartnerContact">
+        <PropertyRef Name="PartnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartnerDeposit_Partner">
+    <End Role="Partner" Type="Self.Partner" Multiplicity="0..1" />
+    <End Role="PartnerDeposit" Type="Self.PartnerDeposit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partner">
+        <PropertyRef Name="PartnerId" />
+      </Principal>
+      <Dependent Role="PartnerDeposit">
+        <PropertyRef Name="PartnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartnerImage_Partner">
+    <End Role="Partner" Type="Self.Partner" Multiplicity="0..1" />
+    <End Role="PartnerImage" Type="Self.PartnerImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partner">
+        <PropertyRef Name="PartnerId" />
+      </Principal>
+      <Dependent Role="PartnerImage">
+        <PropertyRef Name="ParnertId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartnerLeveDetail_Partner">
+    <End Role="Partner" Type="Self.Partner" Multiplicity="1" />
+    <End Role="PartnerLeveDetail" Type="Self.PartnerLeveDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partner">
+        <PropertyRef Name="PartnerId" />
+      </Principal>
+      <Dependent Role="PartnerLeveDetail">
+        <PropertyRef Name="PartnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartnerLeveDetail_PartnerLeve">
+    <End Role="PartnerLeve" Type="Self.PartnerLeve" Multiplicity="1" />
+    <End Role="PartnerLeveDetail" Type="Self.PartnerLeveDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PartnerLeve">
+        <PropertyRef Name="PartnerLeveId" />
+      </Principal>
+      <Dependent Role="PartnerLeveDetail">
+        <PropertyRef Name="PartnerLeveId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartnerPropertise_Partner">
+    <End Role="Partner" Type="Self.Partner" Multiplicity="0..1" />
+    <End Role="PartnerPropertise" Type="Self.PartnerPropertise" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partner">
+        <PropertyRef Name="PartnerId" />
+      </Principal>
+      <Dependent Role="PartnerPropertise">
+        <PropertyRef Name="PartnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartnerStaff_Partner">
+    <End Role="Partner" Type="Self.Partner" Multiplicity="0..1" />
+    <End Role="PartnerStaff" Type="Self.PartnerStaff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partner">
+        <PropertyRef Name="PartnerId" />
+      </Principal>
+      <Dependent Role="PartnerStaff">
+        <PropertyRef Name="PartnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartnerStaff_Vocative">
+    <End Role="Vocative" Type="Self.Vocative" Multiplicity="0..1" />
+    <End Role="PartnerStaff" Type="Self.PartnerStaff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vocative">
+        <PropertyRef Name="VocativeId" />
+      </Principal>
+      <Dependent Role="PartnerStaff">
+        <PropertyRef Name="VocativeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartnerStaffBank_Bank">
+    <End Role="Bank" Type="Self.Bank" Multiplicity="0..1" />
+    <End Role="PartnerStaffBank" Type="Self.PartnerStaffBank" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bank">
+        <PropertyRef Name="BankId" />
+      </Principal>
+      <Dependent Role="PartnerStaffBank">
+        <PropertyRef Name="BankId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartnerStaffBank_PartnerStaff">
+    <End Role="PartnerStaff" Type="Self.PartnerStaff" Multiplicity="0..1" />
+    <End Role="PartnerStaffBank" Type="Self.PartnerStaffBank" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PartnerStaff">
+        <PropertyRef Name="PartnerStaffId" />
+      </Principal>
+      <Dependent Role="PartnerStaffBank">
+        <PropertyRef Name="PartnerStaffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Provider_Career">
+    <End Role="Career" Type="Self.Career" Multiplicity="0..1" />
+    <End Role="Provider" Type="Self.Provider" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Career">
+        <PropertyRef Name="CareerId" />
+      </Principal>
+      <Dependent Role="Provider">
+        <PropertyRef Name="CareerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProviderBank_Bank">
+    <End Role="Bank" Type="Self.Bank" Multiplicity="1" />
+    <End Role="ProviderBank" Type="Self.ProviderBank" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bank">
+        <PropertyRef Name="BankId" />
+      </Principal>
+      <Dependent Role="ProviderBank">
+        <PropertyRef Name="BankId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProviderBank_Provider">
+    <End Role="Provider" Type="Self.Provider" Multiplicity="1" />
+    <End Role="ProviderBank" Type="Self.ProviderBank" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provider">
+        <PropertyRef Name="ProviderId" />
+      </Principal>
+      <Dependent Role="ProviderBank">
+        <PropertyRef Name="ProviderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProviderBranch_Provider">
+    <End Role="Provider" Type="Self.Provider" Multiplicity="0..1" />
+    <End Role="ProviderBranch" Type="Self.ProviderBranch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provider">
+        <PropertyRef Name="ProviderId" />
+      </Principal>
+      <Dependent Role="ProviderBranch">
+        <PropertyRef Name="ProviderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProviderImage_Provider">
+    <End Role="Provider" Type="Self.Provider" Multiplicity="0..1" />
+    <End Role="ProviderImage" Type="Self.ProviderImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provider">
+        <PropertyRef Name="ProviderId" />
+      </Principal>
+      <Dependent Role="ProviderImage">
+        <PropertyRef Name="ProviderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProviderPropertise_Provider">
+    <End Role="Provider" Type="Self.Provider" Multiplicity="0..1" />
+    <End Role="ProviderPropertise" Type="Self.ProviderPropertise" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provider">
+        <PropertyRef Name="ProviderId" />
+      </Principal>
+      <Dependent Role="ProviderPropertise">
+        <PropertyRef Name="ProviderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServiceOtherPrice_Contract">
+    <End Role="Contract" Type="Self.Contract" Multiplicity="0..1" />
+    <End Role="ServiceOtherPrice" Type="Self.ServiceOtherPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contract">
+        <PropertyRef Name="ContractId" />
+      </Principal>
+      <Dependent Role="ServiceOtherPrice">
+        <PropertyRef Name="ContractId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServiceOtherPrice_Paymen">
+    <End Role="Paymen" Type="Self.Paymen" Multiplicity="0..1" />
+    <End Role="ServiceOtherPrice" Type="Self.ServiceOtherPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paymen">
+        <PropertyRef Name="PaymenId" />
+      </Principal>
+      <Dependent Role="ServiceOtherPrice">
+        <PropertyRef Name="PaymenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServiceOtherPrice_Provider">
+    <End Role="Provider" Type="Self.Provider" Multiplicity="0..1" />
+    <End Role="ServiceOtherPrice" Type="Self.ServiceOtherPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provider">
+        <PropertyRef Name="ProviderId" />
+      </Principal>
+      <Dependent Role="ServiceOtherPrice">
+        <PropertyRef Name="ProviderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServiceOtherPrice_ServiceOther">
+    <End Role="ServiceOther" Type="Self.ServiceOther" Multiplicity="0..1" />
+    <End Role="ServiceOtherPrice" Type="Self.ServiceOtherPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServiceOther">
+        <PropertyRef Name="ServiceOtherId" />
+      </Principal>
+      <Dependent Role="ServiceOtherPrice">
+        <PropertyRef Name="ServiceOtherId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Career">
+    <End Role="Career" Type="Self.Career" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Career">
+        <PropertyRef Name="CareerId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="CareerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="PhanMemDLModelStoreContainer">
+    <EntitySet Name="Bank" EntityType="Self.Bank" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CardDeal" EntityType="Self.CardDeal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Career" EntityType="Self.Career" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContracImage" EntityType="Self.ContracImage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contract" EntityType="Self.Contract" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContractStatus" EntityType="Self.ContractStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContractType" EntityType="Self.ContractType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Education" EntityType="Self.Education" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Folk" EntityType="Self.Folk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GridesCardType" EntityType="Self.GridesCardType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupGuest" EntityType="Self.GroupGuest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Guides" EntityType="Self.Guides" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GuidesContract" EntityType="Self.GuidesContract" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GuidesGroup" EntityType="Self.GuidesGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GuidesPrice" EntityType="Self.GuidesPrice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GuidesProperty" EntityType="Self.GuidesProperty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GuidesPropertyDetail" EntityType="Self.GuidesPropertyDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="History" EntityType="Self.History" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Insurance" EntityType="Self.Insurance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InsurancePrice" EntityType="Self.InsurancePrice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Land" EntityType="Self.Land" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LandGroup" EntityType="Self.LandGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MoneyDeal" EntityType="Self.MoneyDeal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ParentProfit" EntityType="Self.ParentProfit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Partner" EntityType="Self.Partner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PartnerBank" EntityType="Self.PartnerBank" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PartnerBranch" EntityType="Self.PartnerBranch" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PartnerContact" EntityType="Self.PartnerContact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PartnerDeposit" EntityType="Self.PartnerDeposit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PartnerImage" EntityType="Self.PartnerImage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PartnerLeve" EntityType="Self.PartnerLeve" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PartnerLeveDetail" EntityType="Self.PartnerLeveDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PartnerPropertise" EntityType="Self.PartnerPropertise" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PartnerStaff" EntityType="Self.PartnerStaff" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PartnerStaffBank" EntityType="Self.PartnerStaffBank" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Paymen" EntityType="Self.Paymen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Plan" EntityType="Self.Plan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Provider" EntityType="Self.Provider" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProviderBank" EntityType="Self.ProviderBank" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProviderBranch" EntityType="Self.ProviderBranch" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProviderContact" EntityType="Self.ProviderContact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProviderImage" EntityType="Self.ProviderImage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProviderPropertise" EntityType="Self.ProviderPropertise" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Regency" EntityType="Self.Regency" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Religion" EntityType="Self.Religion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServiceOther" EntityType="Self.ServiceOther" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServiceOtherPrice" EntityType="Self.ServiceOtherPrice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stars" EntityType="Self.Stars" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vocative" EntityType="Self.Vocative" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ContracImage_Contract" Association="Self.FK_ContracImage_Contract">
+      <End Role="Contract" EntitySet="Contract" />
+      <End Role="ContracImage" EntitySet="ContracImage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contract_ContractType" Association="Self.FK_Contract_ContractType">
+      <End Role="ContractType" EntitySet="ContractType" />
+      <End Role="Contract" EntitySet="Contract" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contract_Provider" Association="Self.FK_Contract_Provider">
+      <End Role="Provider" EntitySet="Provider" />
+      <End Role="Contract" EntitySet="Contract" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Guides_Folk" Association="Self.FK_Guides_Folk">
+      <End Role="Folk" EntitySet="Folk" />
+      <End Role="Guides" EntitySet="Guides" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Guides_GridesCardType" Association="Self.FK_Guides_GridesCardType">
+      <End Role="GridesCardType" EntitySet="GridesCardType" />
+      <End Role="Guides" EntitySet="Guides" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Guides_GuidesContract" Association="Self.FK_Guides_GuidesContract">
+      <End Role="GuidesContract" EntitySet="GuidesContract" />
+      <End Role="Guides" EntitySet="Guides" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Guides_GuidesGroup" Association="Self.FK_Guides_GuidesGroup">
+      <End Role="GuidesGroup" EntitySet="GuidesGroup" />
+      <End Role="Guides" EntitySet="Guides" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Guides_Religion" Association="Self.FK_Guides_Religion">
+      <End Role="Religion" EntitySet="Religion" />
+      <End Role="Guides" EntitySet="Guides" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Guides_Vocative" Association="Self.FK_Guides_Vocative">
+      <End Role="Vocative" EntitySet="Vocative" />
+      <End Role="Guides" EntitySet="Guides" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GuidesPrice_Contract" Association="Self.FK_GuidesPrice_Contract">
+      <End Role="Contract" EntitySet="Contract" />
+      <End Role="GuidesPrice" EntitySet="GuidesPrice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GuidesPrice_Guides" Association="Self.FK_GuidesPrice_Guides">
+      <End Role="Guides" EntitySet="Guides" />
+      <End Role="GuidesPrice" EntitySet="GuidesPrice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GuidesPrice_GuidesGroup" Association="Self.FK_GuidesPrice_GuidesGroup">
+      <End Role="GuidesGroup" EntitySet="GuidesGroup" />
+      <End Role="GuidesPrice" EntitySet="GuidesPrice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GuidesPrice_Paymen" Association="Self.FK_GuidesPrice_Paymen">
+      <End Role="Paymen" EntitySet="Paymen" />
+      <End Role="GuidesPrice" EntitySet="GuidesPrice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GuidesPropertyDetail_Guides" Association="Self.FK_GuidesPropertyDetail_Guides">
+      <End Role="Guides" EntitySet="Guides" />
+      <End Role="GuidesPropertyDetail" EntitySet="GuidesPropertyDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GuidesPropertyDetail_GuidesProperty" Association="Self.FK_GuidesPropertyDetail_GuidesProperty">
+      <End Role="GuidesProperty" EntitySet="GuidesProperty" />
+      <End Role="GuidesPropertyDetail" EntitySet="GuidesPropertyDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InsurancePrice_Contract" Association="Self.FK_InsurancePrice_Contract">
+      <End Role="Contract" EntitySet="Contract" />
+      <End Role="InsurancePrice" EntitySet="InsurancePrice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InsurancePrice_Insurance" Association="Self.FK_InsurancePrice_Insurance">
+      <End Role="Insurance" EntitySet="Insurance" />
+      <End Role="InsurancePrice" EntitySet="InsurancePrice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InsurancePrice_Paymen" Association="Self.FK_InsurancePrice_Paymen">
+      <End Role="Paymen" EntitySet="Paymen" />
+      <End Role="InsurancePrice" EntitySet="InsurancePrice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Land_GroupGuest" Association="Self.FK_Land_GroupGuest">
+      <End Role="GroupGuest" EntitySet="GroupGuest" />
+      <End Role="Land" EntitySet="Land" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Land_Stars" Association="Self.FK_Land_Stars">
+      <End Role="Stars" EntitySet="Stars" />
+      <End Role="Land" EntitySet="Land" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ParentProfit_Partner" Association="Self.FK_ParentProfit_Partner">
+      <End Role="Partner" EntitySet="Partner" />
+      <End Role="ParentProfit" EntitySet="ParentProfit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartnerBank_Bank" Association="Self.FK_PartnerBank_Bank">
+      <End Role="Bank" EntitySet="Bank" />
+      <End Role="PartnerBank" EntitySet="PartnerBank" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartnerBank_Partner" Association="Self.FK_PartnerBank_Partner">
+      <End Role="Partner" EntitySet="Partner" />
+      <End Role="PartnerBank" EntitySet="PartnerBank" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartnerBranch_Partner" Association="Self.FK_PartnerBranch_Partner">
+      <End Role="Partner" EntitySet="Partner" />
+      <End Role="PartnerBranch" EntitySet="PartnerBranch" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartnerContact_Partner" Association="Self.FK_PartnerContact_Partner">
+      <End Role="Partner" EntitySet="Partner" />
+      <End Role="PartnerContact" EntitySet="PartnerContact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartnerDeposit_Partner" Association="Self.FK_PartnerDeposit_Partner">
+      <End Role="Partner" EntitySet="Partner" />
+      <End Role="PartnerDeposit" EntitySet="PartnerDeposit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartnerImage_Partner" Association="Self.FK_PartnerImage_Partner">
+      <End Role="Partner" EntitySet="Partner" />
+      <End Role="PartnerImage" EntitySet="PartnerImage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartnerLeveDetail_Partner" Association="Self.FK_PartnerLeveDetail_Partner">
+      <End Role="Partner" EntitySet="Partner" />
+      <End Role="PartnerLeveDetail" EntitySet="PartnerLeveDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartnerLeveDetail_PartnerLeve" Association="Self.FK_PartnerLeveDetail_PartnerLeve">
+      <End Role="PartnerLeve" EntitySet="PartnerLeve" />
+      <End Role="PartnerLeveDetail" EntitySet="PartnerLeveDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartnerPropertise_Partner" Association="Self.FK_PartnerPropertise_Partner">
+      <End Role="Partner" EntitySet="Partner" />
+      <End Role="PartnerPropertise" EntitySet="PartnerPropertise" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartnerStaff_Partner" Association="Self.FK_PartnerStaff_Partner">
+      <End Role="Partner" EntitySet="Partner" />
+      <End Role="PartnerStaff" EntitySet="PartnerStaff" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartnerStaff_Vocative" Association="Self.FK_PartnerStaff_Vocative">
+      <End Role="Vocative" EntitySet="Vocative" />
+      <End Role="PartnerStaff" EntitySet="PartnerStaff" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartnerStaffBank_Bank" Association="Self.FK_PartnerStaffBank_Bank">
+      <End Role="Bank" EntitySet="Bank" />
+      <End Role="PartnerStaffBank" EntitySet="PartnerStaffBank" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartnerStaffBank_PartnerStaff" Association="Self.FK_PartnerStaffBank_PartnerStaff">
+      <End Role="PartnerStaff" EntitySet="PartnerStaff" />
+      <End Role="PartnerStaffBank" EntitySet="PartnerStaffBank" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Provider_Career" Association="Self.FK_Provider_Career">
+      <End Role="Career" EntitySet="Career" />
+      <End Role="Provider" EntitySet="Provider" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProviderBank_Bank" Association="Self.FK_ProviderBank_Bank">
+      <End Role="Bank" EntitySet="Bank" />
+      <End Role="ProviderBank" EntitySet="ProviderBank" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProviderBank_Provider" Association="Self.FK_ProviderBank_Provider">
+      <End Role="Provider" EntitySet="Provider" />
+      <End Role="ProviderBank" EntitySet="ProviderBank" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProviderBranch_Provider" Association="Self.FK_ProviderBranch_Provider">
+      <End Role="Provider" EntitySet="Provider" />
+      <End Role="ProviderBranch" EntitySet="ProviderBranch" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProviderImage_Provider" Association="Self.FK_ProviderImage_Provider">
+      <End Role="Provider" EntitySet="Provider" />
+      <End Role="ProviderImage" EntitySet="ProviderImage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProviderPropertise_Provider" Association="Self.FK_ProviderPropertise_Provider">
+      <End Role="Provider" EntitySet="Provider" />
+      <End Role="ProviderPropertise" EntitySet="ProviderPropertise" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServiceOtherPrice_Contract" Association="Self.FK_ServiceOtherPrice_Contract">
+      <End Role="Contract" EntitySet="Contract" />
+      <End Role="ServiceOtherPrice" EntitySet="ServiceOtherPrice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServiceOtherPrice_Paymen" Association="Self.FK_ServiceOtherPrice_Paymen">
+      <End Role="Paymen" EntitySet="Paymen" />
+      <End Role="ServiceOtherPrice" EntitySet="ServiceOtherPrice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServiceOtherPrice_Provider" Association="Self.FK_ServiceOtherPrice_Provider">
+      <End Role="Provider" EntitySet="Provider" />
+      <End Role="ServiceOtherPrice" EntitySet="ServiceOtherPrice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServiceOtherPrice_ServiceOther" Association="Self.FK_ServiceOtherPrice_ServiceOther">
+      <End Role="ServiceOther" EntitySet="ServiceOther" />
+      <End Role="ServiceOtherPrice" EntitySet="ServiceOtherPrice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Career" Association="Self.FK_User_Career">
+      <End Role="Career" EntitySet="Career" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

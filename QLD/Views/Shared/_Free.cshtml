@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>@Html.Raw(ViewBag.Title)</title>
+    <meta content="@Html.Raw(ViewBag.Keywords)" name="keywords">
+    <meta content="@Html.Raw(ViewBag.Description)" name="description">
+    @*<meta content="@ViewBag.Robots" name="robots">*@
+    <meta content="noodp, noydir" name="robots">
+    <link rel="canonical" href="@Request.Url.AbsoluteUri" />
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/fonts/awesome/css")  
+    @Styles.Render("~/Content/fonts/ionic/css")  
+</head>
+<body class="login-page">
+    @RenderBody()
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap") 
+    @Scripts.Render("~/bundles/jqueryval")
+    @RenderSection("scripts", required: false)  
+
+</body>
+</html>

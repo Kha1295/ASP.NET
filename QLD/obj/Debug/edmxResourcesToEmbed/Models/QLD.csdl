@@ -1,0 +1,1668 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PhanMemDLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(PhanMemDLModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(PhanMemDLModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Banks" EntityType="PhanMemDLModel.Bank" />
+    <EntitySet Name="CardDeals" EntityType="PhanMemDLModel.CardDeal" />
+    <EntitySet Name="Careers" EntityType="PhanMemDLModel.Career" />
+    <EntitySet Name="ContracImages" EntityType="PhanMemDLModel.ContracImage" />
+    <EntitySet Name="Contracts" EntityType="PhanMemDLModel.Contract" />
+    <EntitySet Name="ContractStatus" EntityType="PhanMemDLModel.ContractStatu" />
+    <EntitySet Name="ContractTypes" EntityType="PhanMemDLModel.ContractType" />
+    <EntitySet Name="Educations" EntityType="PhanMemDLModel.Education" />
+    <EntitySet Name="Folks" EntityType="PhanMemDLModel.Folk" />
+    <EntitySet Name="GridesCardTypes" EntityType="PhanMemDLModel.GridesCardType" />
+    <EntitySet Name="GroupGuests" EntityType="PhanMemDLModel.GroupGuest" />
+    <EntitySet Name="Guides" EntityType="PhanMemDLModel.Guide" />
+    <EntitySet Name="GuidesContracts" EntityType="PhanMemDLModel.GuidesContract" />
+    <EntitySet Name="GuidesGroups" EntityType="PhanMemDLModel.GuidesGroup" />
+    <EntitySet Name="GuidesPrices" EntityType="PhanMemDLModel.GuidesPrice" />
+    <EntitySet Name="GuidesProperties" EntityType="PhanMemDLModel.GuidesProperty" />
+    <EntitySet Name="GuidesPropertyDetails" EntityType="PhanMemDLModel.GuidesPropertyDetail" />
+    <EntitySet Name="Histories" EntityType="PhanMemDLModel.History" />
+    <EntitySet Name="Insurances" EntityType="PhanMemDLModel.Insurance" />
+    <EntitySet Name="InsurancePrices" EntityType="PhanMemDLModel.InsurancePrice" />
+    <EntitySet Name="Lands" EntityType="PhanMemDLModel.Land" />
+    <EntitySet Name="LandGroups" EntityType="PhanMemDLModel.LandGroup" />
+    <EntitySet Name="MoneyDeals" EntityType="PhanMemDLModel.MoneyDeal" />
+    <EntitySet Name="ParentProfits" EntityType="PhanMemDLModel.ParentProfit" />
+    <EntitySet Name="Partners" EntityType="PhanMemDLModel.Partner" />
+    <EntitySet Name="PartnerBanks" EntityType="PhanMemDLModel.PartnerBank" />
+    <EntitySet Name="PartnerBranches" EntityType="PhanMemDLModel.PartnerBranch" />
+    <EntitySet Name="PartnerContacts" EntityType="PhanMemDLModel.PartnerContact" />
+    <EntitySet Name="PartnerDeposits" EntityType="PhanMemDLModel.PartnerDeposit" />
+    <EntitySet Name="PartnerImages" EntityType="PhanMemDLModel.PartnerImage" />
+    <EntitySet Name="PartnerLeves" EntityType="PhanMemDLModel.PartnerLeve" />
+    <EntitySet Name="PartnerLeveDetails" EntityType="PhanMemDLModel.PartnerLeveDetail" />
+    <EntitySet Name="PartnerPropertises" EntityType="PhanMemDLModel.PartnerPropertise" />
+    <EntitySet Name="PartnerStaffs" EntityType="PhanMemDLModel.PartnerStaff" />
+    <EntitySet Name="PartnerStaffBanks" EntityType="PhanMemDLModel.PartnerStaffBank" />
+    <EntitySet Name="Paymen" EntityType="PhanMemDLModel.Payman" />
+    <EntitySet Name="Plans" EntityType="PhanMemDLModel.Plan" />
+    <EntitySet Name="Providers" EntityType="PhanMemDLModel.Provider" />
+    <EntitySet Name="ProviderBanks" EntityType="PhanMemDLModel.ProviderBank" />
+    <EntitySet Name="ProviderBranches" EntityType="PhanMemDLModel.ProviderBranch" />
+    <EntitySet Name="ProviderContacts" EntityType="PhanMemDLModel.ProviderContact" />
+    <EntitySet Name="ProviderImages" EntityType="PhanMemDLModel.ProviderImage" />
+    <EntitySet Name="ProviderPropertises" EntityType="PhanMemDLModel.ProviderPropertise" />
+    <EntitySet Name="Regencies" EntityType="PhanMemDLModel.Regency" />
+    <EntitySet Name="Religions" EntityType="PhanMemDLModel.Religion" />
+    <EntitySet Name="Services" EntityType="PhanMemDLModel.Service" />
+    <EntitySet Name="ServiceOthers" EntityType="PhanMemDLModel.ServiceOther" />
+    <EntitySet Name="ServiceOtherPrices" EntityType="PhanMemDLModel.ServiceOtherPrice" />
+    <EntitySet Name="Stars" EntityType="PhanMemDLModel.Star" />
+    <EntitySet Name="Users" EntityType="PhanMemDLModel.User" />
+    <EntitySet Name="Vocatives" EntityType="PhanMemDLModel.Vocative" />
+    <AssociationSet Name="FK_PartnerBank_Bank" Association="PhanMemDLModel.FK_PartnerBank_Bank">
+      <End Role="Bank" EntitySet="Banks" />
+      <End Role="PartnerBank" EntitySet="PartnerBanks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartnerStaffBank_Bank" Association="PhanMemDLModel.FK_PartnerStaffBank_Bank">
+      <End Role="Bank" EntitySet="Banks" />
+      <End Role="PartnerStaffBank" EntitySet="PartnerStaffBanks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProviderBank_Bank" Association="PhanMemDLModel.FK_ProviderBank_Bank">
+      <End Role="Bank" EntitySet="Banks" />
+      <End Role="ProviderBank" EntitySet="ProviderBanks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Provider_Career" Association="PhanMemDLModel.FK_Provider_Career">
+      <End Role="Career" EntitySet="Careers" />
+      <End Role="Provider" EntitySet="Providers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Career" Association="PhanMemDLModel.FK_User_Career">
+      <End Role="Career" EntitySet="Careers" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContracImage_Contract" Association="PhanMemDLModel.FK_ContracImage_Contract">
+      <End Role="Contract" EntitySet="Contracts" />
+      <End Role="ContracImage" EntitySet="ContracImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contract_ContractType" Association="PhanMemDLModel.FK_Contract_ContractType">
+      <End Role="ContractType" EntitySet="ContractTypes" />
+      <End Role="Contract" EntitySet="Contracts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contract_Provider" Association="PhanMemDLModel.FK_Contract_Provider">
+      <End Role="Provider" EntitySet="Providers" />
+      <End Role="Contract" EntitySet="Contracts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GuidesPrice_Contract" Association="PhanMemDLModel.FK_GuidesPrice_Contract">
+      <End Role="Contract" EntitySet="Contracts" />
+      <End Role="GuidesPrice" EntitySet="GuidesPrices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InsurancePrice_Contract" Association="PhanMemDLModel.FK_InsurancePrice_Contract">
+      <End Role="Contract" EntitySet="Contracts" />
+      <End Role="InsurancePrice" EntitySet="InsurancePrices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServiceOtherPrice_Contract" Association="PhanMemDLModel.FK_ServiceOtherPrice_Contract">
+      <End Role="Contract" EntitySet="Contracts" />
+      <End Role="ServiceOtherPrice" EntitySet="ServiceOtherPrices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Guides_Folk" Association="PhanMemDLModel.FK_Guides_Folk">
+      <End Role="Folk" EntitySet="Folks" />
+      <End Role="Guide" EntitySet="Guides" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Guides_GridesCardType" Association="PhanMemDLModel.FK_Guides_GridesCardType">
+      <End Role="GridesCardType" EntitySet="GridesCardTypes" />
+      <End Role="Guide" EntitySet="Guides" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Land_GroupGuest" Association="PhanMemDLModel.FK_Land_GroupGuest">
+      <End Role="GroupGuest" EntitySet="GroupGuests" />
+      <End Role="Land" EntitySet="Lands" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Guides_GuidesContract" Association="PhanMemDLModel.FK_Guides_GuidesContract">
+      <End Role="GuidesContract" EntitySet="GuidesContracts" />
+      <End Role="Guide" EntitySet="Guides" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Guides_GuidesGroup" Association="PhanMemDLModel.FK_Guides_GuidesGroup">
+      <End Role="GuidesGroup" EntitySet="GuidesGroups" />
+      <End Role="Guide" EntitySet="Guides" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Guides_Religion" Association="PhanMemDLModel.FK_Guides_Religion">
+      <End Role="Religion" EntitySet="Religions" />
+      <End Role="Guide" EntitySet="Guides" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Guides_Vocative" Association="PhanMemDLModel.FK_Guides_Vocative">
+      <End Role="Vocative" EntitySet="Vocatives" />
+      <End Role="Guide" EntitySet="Guides" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GuidesPrice_Guides" Association="PhanMemDLModel.FK_GuidesPrice_Guides">
+      <End Role="Guide" EntitySet="Guides" />
+      <End Role="GuidesPrice" EntitySet="GuidesPrices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GuidesPropertyDetail_Guides" Association="PhanMemDLModel.FK_GuidesPropertyDetail_Guides">
+      <End Role="Guide" EntitySet="Guides" />
+      <End Role="GuidesPropertyDetail" EntitySet="GuidesPropertyDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GuidesPrice_GuidesGroup" Association="PhanMemDLModel.FK_GuidesPrice_GuidesGroup">
+      <End Role="GuidesGroup" EntitySet="GuidesGroups" />
+      <End Role="GuidesPrice" EntitySet="GuidesPrices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GuidesPrice_Paymen" Association="PhanMemDLModel.FK_GuidesPrice_Paymen">
+      <End Role="Payman" EntitySet="Paymen" />
+      <End Role="GuidesPrice" EntitySet="GuidesPrices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GuidesPropertyDetail_GuidesProperty" Association="PhanMemDLModel.FK_GuidesPropertyDetail_GuidesProperty">
+      <End Role="GuidesProperty" EntitySet="GuidesProperties" />
+      <End Role="GuidesPropertyDetail" EntitySet="GuidesPropertyDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InsurancePrice_Insurance" Association="PhanMemDLModel.FK_InsurancePrice_Insurance">
+      <End Role="Insurance" EntitySet="Insurances" />
+      <End Role="InsurancePrice" EntitySet="InsurancePrices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InsurancePrice_Paymen" Association="PhanMemDLModel.FK_InsurancePrice_Paymen">
+      <End Role="Payman" EntitySet="Paymen" />
+      <End Role="InsurancePrice" EntitySet="InsurancePrices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Land_Stars" Association="PhanMemDLModel.FK_Land_Stars">
+      <End Role="Star" EntitySet="Stars" />
+      <End Role="Land" EntitySet="Lands" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ParentProfit_Partner" Association="PhanMemDLModel.FK_ParentProfit_Partner">
+      <End Role="Partner" EntitySet="Partners" />
+      <End Role="ParentProfit" EntitySet="ParentProfits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartnerBank_Partner" Association="PhanMemDLModel.FK_PartnerBank_Partner">
+      <End Role="Partner" EntitySet="Partners" />
+      <End Role="PartnerBank" EntitySet="PartnerBanks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartnerBranch_Partner" Association="PhanMemDLModel.FK_PartnerBranch_Partner">
+      <End Role="Partner" EntitySet="Partners" />
+      <End Role="PartnerBranch" EntitySet="PartnerBranches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartnerContact_Partner" Association="PhanMemDLModel.FK_PartnerContact_Partner">
+      <End Role="Partner" EntitySet="Partners" />
+      <End Role="PartnerContact" EntitySet="PartnerContacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartnerDeposit_Partner" Association="PhanMemDLModel.FK_PartnerDeposit_Partner">
+      <End Role="Partner" EntitySet="Partners" />
+      <End Role="PartnerDeposit" EntitySet="PartnerDeposits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartnerImage_Partner" Association="PhanMemDLModel.FK_PartnerImage_Partner">
+      <End Role="Partner" EntitySet="Partners" />
+      <End Role="PartnerImage" EntitySet="PartnerImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartnerLeveDetail_Partner" Association="PhanMemDLModel.FK_PartnerLeveDetail_Partner">
+      <End Role="Partner" EntitySet="Partners" />
+      <End Role="PartnerLeveDetail" EntitySet="PartnerLeveDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartnerPropertise_Partner" Association="PhanMemDLModel.FK_PartnerPropertise_Partner">
+      <End Role="Partner" EntitySet="Partners" />
+      <End Role="PartnerPropertise" EntitySet="PartnerPropertises" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartnerStaff_Partner" Association="PhanMemDLModel.FK_PartnerStaff_Partner">
+      <End Role="Partner" EntitySet="Partners" />
+      <End Role="PartnerStaff" EntitySet="PartnerStaffs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartnerLeveDetail_PartnerLeve" Association="PhanMemDLModel.FK_PartnerLeveDetail_PartnerLeve">
+      <End Role="PartnerLeve" EntitySet="PartnerLeves" />
+      <End Role="PartnerLeveDetail" EntitySet="PartnerLeveDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartnerStaff_Vocative" Association="PhanMemDLModel.FK_PartnerStaff_Vocative">
+      <End Role="Vocative" EntitySet="Vocatives" />
+      <End Role="PartnerStaff" EntitySet="PartnerStaffs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartnerStaffBank_PartnerStaff" Association="PhanMemDLModel.FK_PartnerStaffBank_PartnerStaff">
+      <End Role="PartnerStaff" EntitySet="PartnerStaffs" />
+      <End Role="PartnerStaffBank" EntitySet="PartnerStaffBanks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServiceOtherPrice_Paymen" Association="PhanMemDLModel.FK_ServiceOtherPrice_Paymen">
+      <End Role="Payman" EntitySet="Paymen" />
+      <End Role="ServiceOtherPrice" EntitySet="ServiceOtherPrices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProviderBank_Provider" Association="PhanMemDLModel.FK_ProviderBank_Provider">
+      <End Role="Provider" EntitySet="Providers" />
+      <End Role="ProviderBank" EntitySet="ProviderBanks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProviderBranch_Provider" Association="PhanMemDLModel.FK_ProviderBranch_Provider">
+      <End Role="Provider" EntitySet="Providers" />
+      <End Role="ProviderBranch" EntitySet="ProviderBranches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProviderImage_Provider" Association="PhanMemDLModel.FK_ProviderImage_Provider">
+      <End Role="Provider" EntitySet="Providers" />
+      <End Role="ProviderImage" EntitySet="ProviderImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProviderPropertise_Provider" Association="PhanMemDLModel.FK_ProviderPropertise_Provider">
+      <End Role="Provider" EntitySet="Providers" />
+      <End Role="ProviderPropertise" EntitySet="ProviderPropertises" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServiceOtherPrice_Provider" Association="PhanMemDLModel.FK_ServiceOtherPrice_Provider">
+      <End Role="Provider" EntitySet="Providers" />
+      <End Role="ServiceOtherPrice" EntitySet="ServiceOtherPrices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServiceOtherPrice_ServiceOther" Association="PhanMemDLModel.FK_ServiceOtherPrice_ServiceOther">
+      <End Role="ServiceOther" EntitySet="ServiceOthers" />
+      <End Role="ServiceOtherPrice" EntitySet="ServiceOtherPrices" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="Bank">
+    <Key>
+      <PropertyRef Name="BankId" />
+    </Key>
+    <Property Name="BankId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <NavigationProperty Name="PartnerBanks" Relationship="PhanMemDLModel.FK_PartnerBank_Bank" FromRole="Bank" ToRole="PartnerBank" />
+    <NavigationProperty Name="PartnerStaffBanks" Relationship="PhanMemDLModel.FK_PartnerStaffBank_Bank" FromRole="Bank" ToRole="PartnerStaffBank" />
+    <NavigationProperty Name="ProviderBanks" Relationship="PhanMemDLModel.FK_ProviderBank_Bank" FromRole="Bank" ToRole="ProviderBank" />
+  </EntityType>
+  <EntityType Name="CardDeal">
+    <Key>
+      <PropertyRef Name="CardDealId" />
+    </Key>
+    <Property Name="CardDealId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Career">
+    <Key>
+      <PropertyRef Name="CareerId" />
+    </Key>
+    <Property Name="CareerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <NavigationProperty Name="Providers" Relationship="PhanMemDLModel.FK_Provider_Career" FromRole="Career" ToRole="Provider" />
+    <NavigationProperty Name="Users" Relationship="PhanMemDLModel.FK_User_Career" FromRole="Career" ToRole="User" />
+  </EntityType>
+  <EntityType Name="ContracImage">
+    <Key>
+      <PropertyRef Name="ContracImageId" />
+    </Key>
+    <Property Name="ContracImageId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContractId" Type="Int64" />
+    <Property Name="Name" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Name="Note" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Name="Files" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Contract" Relationship="PhanMemDLModel.FK_ContracImage_Contract" FromRole="ContracImage" ToRole="Contract" />
+  </EntityType>
+  <EntityType Name="Contract">
+    <Key>
+      <PropertyRef Name="ContractId" />
+    </Key>
+    <Property Name="ContractId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServiceId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ContractTypeId" Type="Int32" />
+    <Property Name="ProviderId" Type="Int64" />
+    <Property Name="PartnerId" Type="Int64" />
+    <Property Name="Code" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="1150" FixedLength="false" Unicode="true" />
+    <Property Name="ContractLocation" Type="String" MaxLength="1150" FixedLength="false" Unicode="true" />
+    <Property Name="ContractTime" Type="DateTime" Precision="3" />
+    <Property Name="FromDay" Type="DateTime" Precision="3" />
+    <Property Name="ToDay" Type="DateTime" Precision="3" />
+    <Property Name="DebtTerm" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="DebtTermMax" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Files" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Name="Files1" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="1550" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateDay" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDay" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ContracImages" Relationship="PhanMemDLModel.FK_ContracImage_Contract" FromRole="Contract" ToRole="ContracImage" />
+    <NavigationProperty Name="ContractType" Relationship="PhanMemDLModel.FK_Contract_ContractType" FromRole="Contract" ToRole="ContractType" />
+    <NavigationProperty Name="Provider" Relationship="PhanMemDLModel.FK_Contract_Provider" FromRole="Contract" ToRole="Provider" />
+    <NavigationProperty Name="GuidesPrices" Relationship="PhanMemDLModel.FK_GuidesPrice_Contract" FromRole="Contract" ToRole="GuidesPrice" />
+    <NavigationProperty Name="InsurancePrices" Relationship="PhanMemDLModel.FK_InsurancePrice_Contract" FromRole="Contract" ToRole="InsurancePrice" />
+    <NavigationProperty Name="ServiceOtherPrices" Relationship="PhanMemDLModel.FK_ServiceOtherPrice_Contract" FromRole="Contract" ToRole="ServiceOtherPrice" />
+  </EntityType>
+  <EntityType Name="ContractStatu">
+    <Key>
+      <PropertyRef Name="ContractStatusId" />
+    </Key>
+    <Property Name="ContractStatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ContractType">
+    <Key>
+      <PropertyRef Name="ContractTypeId" />
+    </Key>
+    <Property Name="ContractTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="1550" FixedLength="false" Unicode="true" />
+    <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <NavigationProperty Name="Contracts" Relationship="PhanMemDLModel.FK_Contract_ContractType" FromRole="ContractType" ToRole="Contract" />
+  </EntityType>
+  <EntityType Name="Education">
+    <Key>
+      <PropertyRef Name="EducationId" />
+    </Key>
+    <Property Name="EducationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Folk">
+    <Key>
+      <PropertyRef Name="FolkId" />
+    </Key>
+    <Property Name="FolkId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Guides" Relationship="PhanMemDLModel.FK_Guides_Folk" FromRole="Folk" ToRole="Guide" />
+  </EntityType>
+  <EntityType Name="GridesCardType">
+    <Key>
+      <PropertyRef Name="GuidesCardTypeId" />
+    </Key>
+    <Property Name="GuidesCardTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Guides" Relationship="PhanMemDLModel.FK_Guides_GridesCardType" FromRole="GridesCardType" ToRole="Guide" />
+  </EntityType>
+  <EntityType Name="GroupGuest">
+    <Key>
+      <PropertyRef Name="GroupGuestId" />
+    </Key>
+    <Property Name="GroupGuestId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Lands" Relationship="PhanMemDLModel.FK_Land_GroupGuest" FromRole="GroupGuest" ToRole="Land" />
+  </EntityType>
+  <EntityType Name="Guide">
+    <Key>
+      <PropertyRef Name="GuidesId" />
+    </Key>
+    <Property Name="GuidesId" Type="Int32" Nullable="false" />
+    <Property Name="Code" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="VocativeId" Type="Int32" />
+    <Property Name="NumberIdentity" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Birthday" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PlaceOfIssue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DayOfIssue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NumberVat" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IsMarriage" Type="Boolean" Nullable="false" />
+    <Property Name="Gender" Type="Int32" />
+    <Property Name="Image" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="Passport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FromPassport" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ToPassport" Type="DateTime" Precision="3" />
+    <Property Name="GuidesGroupId" Type="Int32" />
+    <Property Name="GuidesContractId" Type="Int32" />
+    <Property Name="FolkId" Type="Int32" />
+    <Property Name="ReligionId" Type="Int32" />
+    <Property Name="Nationatily" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Market" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Area" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Facebook" Type="String" MaxLength="1050" FixedLength="false" Unicode="true" />
+    <Property Name="NationalId" Type="Int32" />
+    <Property Name="AreaId" Type="Int32" />
+    <Property Name="CityId" Type="Int32" />
+    <Property Name="DistrictId" Type="Int32" />
+    <Property Name="WardId" Type="Int32" />
+    <Property Name="Address" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Name="AddressShow" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Name="EducationId" Type="Int32" />
+    <Property Name="CareerId" Type="Int32" />
+    <Property Name="Language" Type="Int32" />
+    <Property Name="GridesCardTypeId" Type="Int32" />
+    <Property Name="FromGridesCardDay" Type="DateTime" Precision="3" />
+    <Property Name="ToGridesCardDay" Type="DateTime" Precision="3" />
+    <Property Name="Experience" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="1550" FixedLength="false" Unicode="true" />
+    <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateDay" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDay" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Folk" Relationship="PhanMemDLModel.FK_Guides_Folk" FromRole="Guide" ToRole="Folk" />
+    <NavigationProperty Name="GridesCardType" Relationship="PhanMemDLModel.FK_Guides_GridesCardType" FromRole="Guide" ToRole="GridesCardType" />
+    <NavigationProperty Name="GuidesContract" Relationship="PhanMemDLModel.FK_Guides_GuidesContract" FromRole="Guide" ToRole="GuidesContract" />
+    <NavigationProperty Name="GuidesGroup" Relationship="PhanMemDLModel.FK_Guides_GuidesGroup" FromRole="Guide" ToRole="GuidesGroup" />
+    <NavigationProperty Name="Religion" Relationship="PhanMemDLModel.FK_Guides_Religion" FromRole="Guide" ToRole="Religion" />
+    <NavigationProperty Name="Vocative" Relationship="PhanMemDLModel.FK_Guides_Vocative" FromRole="Guide" ToRole="Vocative" />
+    <NavigationProperty Name="GuidesPrices" Relationship="PhanMemDLModel.FK_GuidesPrice_Guides" FromRole="Guide" ToRole="GuidesPrice" />
+    <NavigationProperty Name="GuidesPropertyDetails" Relationship="PhanMemDLModel.FK_GuidesPropertyDetail_Guides" FromRole="Guide" ToRole="GuidesPropertyDetail" />
+  </EntityType>
+  <EntityType Name="GuidesContract">
+    <Key>
+      <PropertyRef Name="GuidesContractTypeId" />
+    </Key>
+    <Property Name="GuidesContractTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Guides" Relationship="PhanMemDLModel.FK_Guides_GuidesContract" FromRole="GuidesContract" ToRole="Guide" />
+  </EntityType>
+  <EntityType Name="GuidesGroup">
+    <Key>
+      <PropertyRef Name="GuidesGroupId" />
+    </Key>
+    <Property Name="GuidesGroupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="Rank" Type="Int32" />
+    <Property Name="Market" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Area" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Language" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Guides" Relationship="PhanMemDLModel.FK_Guides_GuidesGroup" FromRole="GuidesGroup" ToRole="Guide" />
+    <NavigationProperty Name="GuidesPrices" Relationship="PhanMemDLModel.FK_GuidesPrice_GuidesGroup" FromRole="GuidesGroup" ToRole="GuidesPrice" />
+  </EntityType>
+  <EntityType Name="GuidesPrice">
+    <Key>
+      <PropertyRef Name="GuidesPriceId" />
+    </Key>
+    <Property Name="GuidesPriceId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GuidesId" Type="Int32" Nullable="false" />
+    <Property Name="GuidesGroupId" Type="Int32" />
+    <Property Name="ContractId" Type="Int64" />
+    <Property Name="ProviderId" Type="Int64" />
+    <Property Name="PaymenId" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Name="FromDay" Type="DateTime" Precision="3" />
+    <Property Name="ToDay" Type="DateTime" Precision="3" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="PriceExtra" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="IsVat" Type="Boolean" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateDay" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDay" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Contract" Relationship="PhanMemDLModel.FK_GuidesPrice_Contract" FromRole="GuidesPrice" ToRole="Contract" />
+    <NavigationProperty Name="Guide" Relationship="PhanMemDLModel.FK_GuidesPrice_Guides" FromRole="GuidesPrice" ToRole="Guide" />
+    <NavigationProperty Name="GuidesGroup" Relationship="PhanMemDLModel.FK_GuidesPrice_GuidesGroup" FromRole="GuidesPrice" ToRole="GuidesGroup" />
+    <NavigationProperty Name="Payman" Relationship="PhanMemDLModel.FK_GuidesPrice_Paymen" FromRole="GuidesPrice" ToRole="Payman" />
+  </EntityType>
+  <EntityType Name="GuidesProperty">
+    <Key>
+      <PropertyRef Name="GuidesPropertyId" />
+    </Key>
+    <Property Name="GuidesPropertyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="Note" Type="String" MaxLength="1550" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <NavigationProperty Name="GuidesPropertyDetails" Relationship="PhanMemDLModel.FK_GuidesPropertyDetail_GuidesProperty" FromRole="GuidesProperty" ToRole="GuidesPropertyDetail" />
+  </EntityType>
+  <EntityType Name="GuidesPropertyDetail">
+    <Key>
+      <PropertyRef Name="GuidesPropertyId" />
+      <PropertyRef Name="GuidesId" />
+    </Key>
+    <Property Name="GuidesPropertyId" Type="Int32" Nullable="false" />
+    <Property Name="GuidesId" Type="Int32" Nullable="false" />
+    <Property Name="Rank" Type="Int32" />
+    <Property Name="Note" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Guide" Relationship="PhanMemDLModel.FK_GuidesPropertyDetail_Guides" FromRole="GuidesPropertyDetail" ToRole="Guide" />
+    <NavigationProperty Name="GuidesProperty" Relationship="PhanMemDLModel.FK_GuidesPropertyDetail_GuidesProperty" FromRole="GuidesPropertyDetail" ToRole="GuidesProperty" />
+  </EntityType>
+  <EntityType Name="History">
+    <Key>
+      <PropertyRef Name="HistoryId" />
+    </Key>
+    <Property Name="HistoryId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="ItemId" Type="Int64" />
+    <Property Name="Contens" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDay" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Insurance">
+    <Key>
+      <PropertyRef Name="InsuranceId" />
+    </Key>
+    <Property Name="InsuranceId" Type="Int64" Nullable="false" />
+    <Property Name="Code" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="Files" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="1550" FixedLength="false" Unicode="true" />
+    <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Term" Type="Int32" />
+    <Property Name="UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateDay" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDay" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Int32" />
+    <NavigationProperty Name="InsurancePrices" Relationship="PhanMemDLModel.FK_InsurancePrice_Insurance" FromRole="Insurance" ToRole="InsurancePrice" />
+  </EntityType>
+  <EntityType Name="InsurancePrice">
+    <Key>
+      <PropertyRef Name="InsurancePriceId" />
+    </Key>
+    <Property Name="InsurancePriceId" Type="Int64" Nullable="false" />
+    <Property Name="ProviderId" Type="Int64" />
+    <Property Name="ContractId" Type="Int64" />
+    <Property Name="InsuranceId" Type="Int64" />
+    <Property Name="PaymenId" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="1550" FixedLength="false" Unicode="true" />
+    <Property Name="FromDay" Type="DateTime" Precision="3" />
+    <Property Name="ToDay" Type="DateTime" Precision="3" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Surcharge" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="IsVat" Type="Boolean" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="1550" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateDay" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDay" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Int32" />
+    <NavigationProperty Name="Contract" Relationship="PhanMemDLModel.FK_InsurancePrice_Contract" FromRole="InsurancePrice" ToRole="Contract" />
+    <NavigationProperty Name="Insurance" Relationship="PhanMemDLModel.FK_InsurancePrice_Insurance" FromRole="InsurancePrice" ToRole="Insurance" />
+    <NavigationProperty Name="Payman" Relationship="PhanMemDLModel.FK_InsurancePrice_Paymen" FromRole="InsurancePrice" ToRole="Payman" />
+  </EntityType>
+  <EntityType Name="Land">
+    <Key>
+      <PropertyRef Name="LandId" />
+    </Key>
+    <Property Name="LandId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Name="QuantityDay" Type="Int32" />
+    <Property Name="QuantityNight" Type="Int32" />
+    <Property Name="NationalId" Type="Int32" />
+    <Property Name="Destination" Type="String" MaxLength="1550" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="2250" FixedLength="false" Unicode="true" />
+    <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="QuantityGuest" Type="Int32" />
+    <Property Name="StarsId" Type="Int32" />
+    <Property Name="HotelNight" Type="Int32" />
+    <Property Name="Meal" Type="Int32" />
+    <Property Name="Snacks" Type="Int32" />
+    <Property Name="SortSchedule" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Files" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="GroupGuestId" Type="Int32" />
+    <Property Name="UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateDay" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDay" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Int32" />
+    <NavigationProperty Name="GroupGuest" Relationship="PhanMemDLModel.FK_Land_GroupGuest" FromRole="Land" ToRole="GroupGuest" />
+    <NavigationProperty Name="Star" Relationship="PhanMemDLModel.FK_Land_Stars" FromRole="Land" ToRole="Star" />
+  </EntityType>
+  <EntityType Name="LandGroup">
+    <Key>
+      <PropertyRef Name="LandGroupId" />
+    </Key>
+    <Property Name="LandGroupId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MoneyDeal">
+    <Key>
+      <PropertyRef Name="MoneyDealId" />
+    </Key>
+    <Property Name="MoneyDealId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ParentProfit">
+    <Key>
+      <PropertyRef Name="ParentProfitId" />
+    </Key>
+    <Property Name="ParentProfitId" Type="Int64" Nullable="false" />
+    <Property Name="ParentId" Type="Int64" />
+    <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Percents" Type="Double" />
+    <Property Name="FromDay" Type="DateTime" Precision="3" />
+    <Property Name="ToDay" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Partner" Relationship="PhanMemDLModel.FK_ParentProfit_Partner" FromRole="ParentProfit" ToRole="Partner" />
+  </EntityType>
+  <EntityType Name="Partner">
+    <Key>
+      <PropertyRef Name="PartnerId" />
+    </Key>
+    <Property Name="PartnerId" Type="Int64" Nullable="false" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="NameOther" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="NameSearch" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
+    <Property Name="NumberSPKD" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="NumberLHQT" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="TaxCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EstablishYear" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Paymen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MoneyDealId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CardDealId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CareerId" Type="Int32" />
+    <Property Name="NationalId" Type="Int32" />
+    <Property Name="AreaId" Type="Int32" />
+    <Property Name="CityId" Type="Int32" />
+    <Property Name="DistrictId" Type="Int32" />
+    <Property Name="WardId" Type="Int32" />
+    <Property Name="AddressShow" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Name="ServiceId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="1550" FixedLength="false" Unicode="true" />
+    <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateDay" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDay" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ParentProfits" Relationship="PhanMemDLModel.FK_ParentProfit_Partner" FromRole="Partner" ToRole="ParentProfit" />
+    <NavigationProperty Name="PartnerBanks" Relationship="PhanMemDLModel.FK_PartnerBank_Partner" FromRole="Partner" ToRole="PartnerBank" />
+    <NavigationProperty Name="PartnerBranches" Relationship="PhanMemDLModel.FK_PartnerBranch_Partner" FromRole="Partner" ToRole="PartnerBranch" />
+    <NavigationProperty Name="PartnerContacts" Relationship="PhanMemDLModel.FK_PartnerContact_Partner" FromRole="Partner" ToRole="PartnerContact" />
+    <NavigationProperty Name="PartnerDeposits" Relationship="PhanMemDLModel.FK_PartnerDeposit_Partner" FromRole="Partner" ToRole="PartnerDeposit" />
+    <NavigationProperty Name="PartnerImages" Relationship="PhanMemDLModel.FK_PartnerImage_Partner" FromRole="Partner" ToRole="PartnerImage" />
+    <NavigationProperty Name="PartnerLeveDetails" Relationship="PhanMemDLModel.FK_PartnerLeveDetail_Partner" FromRole="Partner" ToRole="PartnerLeveDetail" />
+    <NavigationProperty Name="PartnerPropertises" Relationship="PhanMemDLModel.FK_PartnerPropertise_Partner" FromRole="Partner" ToRole="PartnerPropertise" />
+    <NavigationProperty Name="PartnerStaffs" Relationship="PhanMemDLModel.FK_PartnerStaff_Partner" FromRole="Partner" ToRole="PartnerStaff" />
+  </EntityType>
+  <EntityType Name="PartnerBank">
+    <Key>
+      <PropertyRef Name="PartnerId" />
+      <PropertyRef Name="BankId" />
+    </Key>
+    <Property Name="PartnerId" Type="Int64" Nullable="false" />
+    <Property Name="BankId" Type="Int32" Nullable="false" />
+    <Property Name="Numbert" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <NavigationProperty Name="Bank" Relationship="PhanMemDLModel.FK_PartnerBank_Bank" FromRole="PartnerBank" ToRole="Bank" />
+    <NavigationProperty Name="Partner" Relationship="PhanMemDLModel.FK_PartnerBank_Partner" FromRole="PartnerBank" ToRole="Partner" />
+  </EntityType>
+  <EntityType Name="PartnerBranch">
+    <Key>
+      <PropertyRef Name="PartnerBarchId" />
+    </Key>
+    <Property Name="PartnerBarchId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PartnerId" Type="Int64" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Hotline" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="CityId" Type="Int32" />
+    <Property Name="Note" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Partner" Relationship="PhanMemDLModel.FK_PartnerBranch_Partner" FromRole="PartnerBranch" ToRole="Partner" />
+  </EntityType>
+  <EntityType Name="PartnerContact">
+    <Key>
+      <PropertyRef Name="PartnerContactId" />
+    </Key>
+    <Property Name="PartnerContactId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RegencyId" Type="Int32" />
+    <Property Name="PartnerId" Type="Int64" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sex" Type="Int32" />
+    <Property Name="NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="HotLine" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Partner" Relationship="PhanMemDLModel.FK_PartnerContact_Partner" FromRole="PartnerContact" ToRole="Partner" />
+  </EntityType>
+  <EntityType Name="PartnerDeposit">
+    <Key>
+      <PropertyRef Name="PartnerDepositId" />
+    </Key>
+    <Property Name="PartnerDepositId" Type="Int64" Nullable="false" />
+    <Property Name="PartnerId" Type="Int64" />
+    <Property Name="Money" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Day" Type="DateTime" Precision="3" />
+    <Property Name="Note" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Partner" Relationship="PhanMemDLModel.FK_PartnerDeposit_Partner" FromRole="PartnerDeposit" ToRole="Partner" />
+  </EntityType>
+  <EntityType Name="PartnerImage">
+    <Key>
+      <PropertyRef Name="ParnertImageId" />
+    </Key>
+    <Property Name="ParnertImageId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParnertId" Type="Int64" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <NavigationProperty Name="Partner" Relationship="PhanMemDLModel.FK_PartnerImage_Partner" FromRole="PartnerImage" ToRole="Partner" />
+  </EntityType>
+  <EntityType Name="PartnerLeve">
+    <Key>
+      <PropertyRef Name="PartnerLeveId" />
+    </Key>
+    <Property Name="PartnerLeveId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Percents" Type="Double" />
+    <Property Name="Status" Type="Int32" />
+    <NavigationProperty Name="PartnerLeveDetails" Relationship="PhanMemDLModel.FK_PartnerLeveDetail_PartnerLeve" FromRole="PartnerLeve" ToRole="PartnerLeveDetail" />
+  </EntityType>
+  <EntityType Name="PartnerLeveDetail">
+    <Key>
+      <PropertyRef Name="PartnerId" />
+      <PropertyRef Name="PartnerLeveId" />
+    </Key>
+    <Property Name="PartnerId" Type="Int64" Nullable="false" />
+    <Property Name="PartnerLeveId" Type="Int32" Nullable="false" />
+    <Property Name="Percents" Type="Double" />
+    <Property Name="Day" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Partner" Relationship="PhanMemDLModel.FK_PartnerLeveDetail_Partner" FromRole="PartnerLeveDetail" ToRole="Partner" />
+    <NavigationProperty Name="PartnerLeve" Relationship="PhanMemDLModel.FK_PartnerLeveDetail_PartnerLeve" FromRole="PartnerLeveDetail" ToRole="PartnerLeve" />
+  </EntityType>
+  <EntityType Name="PartnerPropertise">
+    <Key>
+      <PropertyRef Name="PartnerPropertiesId" />
+    </Key>
+    <Property Name="PartnerPropertiesId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PartnerId" Type="Int64" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Name="Lable" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <NavigationProperty Name="Partner" Relationship="PhanMemDLModel.FK_PartnerPropertise_Partner" FromRole="PartnerPropertise" ToRole="Partner" />
+  </EntityType>
+  <EntityType Name="PartnerStaff">
+    <Key>
+      <PropertyRef Name="PartnerStaffId" />
+    </Key>
+    <Property Name="PartnerStaffId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PartnerId" Type="Int64" />
+    <Property Name="UserId" Type="Int64" />
+    <Property Name="VocativeId" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="NumberIdentity" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Birthday" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PlaceOfIssue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DayOfIssue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NumberVat" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IsMarriage" Type="Boolean" Nullable="false" />
+    <Property Name="Gender" Type="Int32" />
+    <Property Name="Image" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Phone1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Mail1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ImageIdentity" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="ImageBirth" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OriginNationalId" Type="Int32" />
+    <Property Name="OriginCityId" Type="Int32" />
+    <Property Name="OriginDistrictId" Type="Int32" />
+    <Property Name="OriginWardId" Type="Int32" />
+    <Property Name="OriginAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OriginShow" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContactNationalId" Type="Int32" />
+    <Property Name="ContactCityId" Type="Int32" />
+    <Property Name="ContactDistrictId" Type="Int32" />
+    <Property Name="ContactWardId" Type="Int32" />
+    <Property Name="ContactAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContactShow" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateDay" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDay" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Partner" Relationship="PhanMemDLModel.FK_PartnerStaff_Partner" FromRole="PartnerStaff" ToRole="Partner" />
+    <NavigationProperty Name="Vocative" Relationship="PhanMemDLModel.FK_PartnerStaff_Vocative" FromRole="PartnerStaff" ToRole="Vocative" />
+    <NavigationProperty Name="PartnerStaffBanks" Relationship="PhanMemDLModel.FK_PartnerStaffBank_PartnerStaff" FromRole="PartnerStaff" ToRole="PartnerStaffBank" />
+  </EntityType>
+  <EntityType Name="PartnerStaffBank">
+    <Key>
+      <PropertyRef Name="PartnerStaffBankId" />
+    </Key>
+    <Property Name="PartnerStaffBankId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PartnerStaffId" Type="Int64" />
+    <Property Name="NumberBank" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BankId" Type="Int32" />
+    <NavigationProperty Name="Bank" Relationship="PhanMemDLModel.FK_PartnerStaffBank_Bank" FromRole="PartnerStaffBank" ToRole="Bank" />
+    <NavigationProperty Name="PartnerStaff" Relationship="PhanMemDLModel.FK_PartnerStaffBank_PartnerStaff" FromRole="PartnerStaffBank" ToRole="PartnerStaff" />
+  </EntityType>
+  <EntityType Name="Payman">
+    <Key>
+      <PropertyRef Name="PaymenId" />
+    </Key>
+    <Property Name="PaymenId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <NavigationProperty Name="GuidesPrices" Relationship="PhanMemDLModel.FK_GuidesPrice_Paymen" FromRole="Payman" ToRole="GuidesPrice" />
+    <NavigationProperty Name="InsurancePrices" Relationship="PhanMemDLModel.FK_InsurancePrice_Paymen" FromRole="Payman" ToRole="InsurancePrice" />
+    <NavigationProperty Name="ServiceOtherPrices" Relationship="PhanMemDLModel.FK_ServiceOtherPrice_Paymen" FromRole="Payman" ToRole="ServiceOtherPrice" />
+  </EntityType>
+  <EntityType Name="Plan">
+    <Key>
+      <PropertyRef Name="PlanId" />
+    </Key>
+    <Property Name="PlanId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+    <Property Name="Files" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+    <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FromDay" Type="DateTime" Precision="3" />
+    <Property Name="ToDay" Type="DateTime" Precision="3" />
+    <Property Name="CreateDay" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Provider">
+    <Key>
+      <PropertyRef Name="ProviderId" />
+    </Key>
+    <Property Name="ProviderId" Type="Int64" Nullable="false" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="NameOther" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="NameSearch" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
+    <Property Name="NumberSPKD" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="NumberLHQT" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="TaxCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EstablishYear" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Paymen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MoneyDealId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CardDealId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CareerId" Type="Int32" />
+    <Property Name="NationalId" Type="Int32" />
+    <Property Name="AreaId" Type="Int32" />
+    <Property Name="CityId" Type="Int32" />
+    <Property Name="AddressShow" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Name="ServiceId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="1550" FixedLength="false" Unicode="true" />
+    <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateDay" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDay" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Career" Relationship="PhanMemDLModel.FK_Provider_Career" FromRole="Provider" ToRole="Career" />
+    <NavigationProperty Name="Contracts" Relationship="PhanMemDLModel.FK_Contract_Provider" FromRole="Provider" ToRole="Contract" />
+    <NavigationProperty Name="ProviderBanks" Relationship="PhanMemDLModel.FK_ProviderBank_Provider" FromRole="Provider" ToRole="ProviderBank" />
+    <NavigationProperty Name="ProviderBranches" Relationship="PhanMemDLModel.FK_ProviderBranch_Provider" FromRole="Provider" ToRole="ProviderBranch" />
+    <NavigationProperty Name="ProviderImages" Relationship="PhanMemDLModel.FK_ProviderImage_Provider" FromRole="Provider" ToRole="ProviderImage" />
+    <NavigationProperty Name="ProviderPropertises" Relationship="PhanMemDLModel.FK_ProviderPropertise_Provider" FromRole="Provider" ToRole="ProviderPropertise" />
+    <NavigationProperty Name="ServiceOtherPrices" Relationship="PhanMemDLModel.FK_ServiceOtherPrice_Provider" FromRole="Provider" ToRole="ServiceOtherPrice" />
+  </EntityType>
+  <EntityType Name="ProviderBank">
+    <Key>
+      <PropertyRef Name="ProviderId" />
+      <PropertyRef Name="BankId" />
+    </Key>
+    <Property Name="ProviderId" Type="Int64" Nullable="false" />
+    <Property Name="BankId" Type="Int32" Nullable="false" />
+    <Property Name="Numbert" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <NavigationProperty Name="Bank" Relationship="PhanMemDLModel.FK_ProviderBank_Bank" FromRole="ProviderBank" ToRole="Bank" />
+    <NavigationProperty Name="Provider" Relationship="PhanMemDLModel.FK_ProviderBank_Provider" FromRole="ProviderBank" ToRole="Provider" />
+  </EntityType>
+  <EntityType Name="ProviderBranch">
+    <Key>
+      <PropertyRef Name="ProviderBarchId" />
+    </Key>
+    <Property Name="ProviderBarchId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProviderId" Type="Int64" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Hotline" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="CityId" Type="Int32" />
+    <Property Name="Note" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Provider" Relationship="PhanMemDLModel.FK_ProviderBranch_Provider" FromRole="ProviderBranch" ToRole="Provider" />
+  </EntityType>
+  <EntityType Name="ProviderContact">
+    <Key>
+      <PropertyRef Name="ProviderContactId" />
+    </Key>
+    <Property Name="ProviderContactId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RegencyId" Type="Int32" />
+    <Property Name="ProviderId" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sex" Type="Int32" />
+    <Property Name="NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="HotLine" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ProviderImage">
+    <Key>
+      <PropertyRef Name="ProviderImageId" />
+    </Key>
+    <Property Name="ProviderImageId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProviderId" Type="Int64" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <NavigationProperty Name="Provider" Relationship="PhanMemDLModel.FK_ProviderImage_Provider" FromRole="ProviderImage" ToRole="Provider" />
+  </EntityType>
+  <EntityType Name="ProviderPropertise">
+    <Key>
+      <PropertyRef Name="ProviderPropertiesId" />
+    </Key>
+    <Property Name="ProviderPropertiesId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProviderId" Type="Int64" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Name="Lable" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <NavigationProperty Name="Provider" Relationship="PhanMemDLModel.FK_ProviderPropertise_Provider" FromRole="ProviderPropertise" ToRole="Provider" />
+  </EntityType>
+  <EntityType Name="Regency">
+    <Key>
+      <PropertyRef Name="RegencyId" />
+    </Key>
+    <Property Name="RegencyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Religion">
+    <Key>
+      <PropertyRef Name="ReligionId" />
+    </Key>
+    <Property Name="ReligionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Guides" Relationship="PhanMemDLModel.FK_Guides_Religion" FromRole="Religion" ToRole="Guide" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="ServiceId" />
+    </Key>
+    <Property Name="ServiceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ServiceOther">
+    <Key>
+      <PropertyRef Name="ServiceOtherId" />
+    </Key>
+    <Property Name="ServiceOtherId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Name="NationalId" Type="Int32" />
+    <Property Name="AreaId" Type="Int32" />
+    <Property Name="CityId" Type="Int32" />
+    <Property Name="DistrictId" Type="Int32" />
+    <Property Name="WardId" Type="Int32" />
+    <Property Name="Address" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Name="AddressShow" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Name="LocationId" Type="Int64" />
+    <Property Name="Description" Type="String" MaxLength="1550" FixedLength="false" Unicode="true" />
+    <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateDay" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDay" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ServiceOtherPrices" Relationship="PhanMemDLModel.FK_ServiceOtherPrice_ServiceOther" FromRole="ServiceOther" ToRole="ServiceOtherPrice" />
+  </EntityType>
+  <EntityType Name="ServiceOtherPrice">
+    <Key>
+      <PropertyRef Name="ServiceOtherPriceId" />
+    </Key>
+    <Property Name="ServiceOtherPriceId" Type="Int64" Nullable="false" />
+    <Property Name="ServiceOtherId" Type="Int64" />
+    <Property Name="ProviderId" Type="Int64" />
+    <Property Name="ContractId" Type="Int64" />
+    <Property Name="PaymenId" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="1550" FixedLength="false" Unicode="true" />
+    <Property Name="FromDay" Type="DateTime" Precision="3" />
+    <Property Name="ToDay" Type="DateTime" Precision="3" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="PriceAdult" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="PriceChild" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="PriceInfant" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="PriceBaby" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="Contract" Relationship="PhanMemDLModel.FK_ServiceOtherPrice_Contract" FromRole="ServiceOtherPrice" ToRole="Contract" />
+    <NavigationProperty Name="Payman" Relationship="PhanMemDLModel.FK_ServiceOtherPrice_Paymen" FromRole="ServiceOtherPrice" ToRole="Payman" />
+    <NavigationProperty Name="Provider" Relationship="PhanMemDLModel.FK_ServiceOtherPrice_Provider" FromRole="ServiceOtherPrice" ToRole="Provider" />
+    <NavigationProperty Name="ServiceOther" Relationship="PhanMemDLModel.FK_ServiceOtherPrice_ServiceOther" FromRole="ServiceOtherPrice" ToRole="ServiceOther" />
+  </EntityType>
+  <EntityType Name="Star">
+    <Key>
+      <PropertyRef Name="StarsId" />
+    </Key>
+    <Property Name="StarsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateBy" Type="Int64" />
+    <Property Name="UpdateDay" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="Int64" />
+    <Property Name="CreateDay" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Lands" Relationship="PhanMemDLModel.FK_Land_Stars" FromRole="Star" ToRole="Land" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="CreateDay" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BirthDay" Type="DateTime" Precision="3" />
+    <Property Name="Sex" Type="Boolean" Nullable="false" />
+    <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Remember" Type="Boolean" Nullable="false" />
+    <Property Name="LoginDay" Type="DateTime" Precision="3" />
+    <Property Name="RePassDay" Type="DateTime" Precision="3" />
+    <Property Name="Point" Type="Double" />
+    <Property Name="CareerId" Type="Int32" />
+    <Property Name="Diploma" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="Int32" />
+    <NavigationProperty Name="Career" Relationship="PhanMemDLModel.FK_User_Career" FromRole="User" ToRole="Career" />
+  </EntityType>
+  <EntityType Name="Vocative">
+    <Key>
+      <PropertyRef Name="VocativeId" />
+    </Key>
+    <Property Name="VocativeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <NavigationProperty Name="Guides" Relationship="PhanMemDLModel.FK_Guides_Vocative" FromRole="Vocative" ToRole="Guide" />
+    <NavigationProperty Name="PartnerStaffs" Relationship="PhanMemDLModel.FK_PartnerStaff_Vocative" FromRole="Vocative" ToRole="PartnerStaff" />
+  </EntityType>
+  <Association Name="FK_PartnerBank_Bank">
+    <End Type="PhanMemDLModel.Bank" Role="Bank" Multiplicity="1" />
+    <End Type="PhanMemDLModel.PartnerBank" Role="PartnerBank" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bank">
+        <PropertyRef Name="BankId" />
+      </Principal>
+      <Dependent Role="PartnerBank">
+        <PropertyRef Name="BankId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartnerStaffBank_Bank">
+    <End Type="PhanMemDLModel.Bank" Role="Bank" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.PartnerStaffBank" Role="PartnerStaffBank" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bank">
+        <PropertyRef Name="BankId" />
+      </Principal>
+      <Dependent Role="PartnerStaffBank">
+        <PropertyRef Name="BankId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProviderBank_Bank">
+    <End Type="PhanMemDLModel.Bank" Role="Bank" Multiplicity="1" />
+    <End Type="PhanMemDLModel.ProviderBank" Role="ProviderBank" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bank">
+        <PropertyRef Name="BankId" />
+      </Principal>
+      <Dependent Role="ProviderBank">
+        <PropertyRef Name="BankId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Provider_Career">
+    <End Type="PhanMemDLModel.Career" Role="Career" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.Provider" Role="Provider" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Career">
+        <PropertyRef Name="CareerId" />
+      </Principal>
+      <Dependent Role="Provider">
+        <PropertyRef Name="CareerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Career">
+    <End Type="PhanMemDLModel.Career" Role="Career" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Career">
+        <PropertyRef Name="CareerId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="CareerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContracImage_Contract">
+    <End Type="PhanMemDLModel.Contract" Role="Contract" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.ContracImage" Role="ContracImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contract">
+        <PropertyRef Name="ContractId" />
+      </Principal>
+      <Dependent Role="ContracImage">
+        <PropertyRef Name="ContractId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contract_ContractType">
+    <End Type="PhanMemDLModel.ContractType" Role="ContractType" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.Contract" Role="Contract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ContractType">
+        <PropertyRef Name="ContractTypeId" />
+      </Principal>
+      <Dependent Role="Contract">
+        <PropertyRef Name="ContractTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contract_Provider">
+    <End Type="PhanMemDLModel.Provider" Role="Provider" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.Contract" Role="Contract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provider">
+        <PropertyRef Name="ProviderId" />
+      </Principal>
+      <Dependent Role="Contract">
+        <PropertyRef Name="ProviderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GuidesPrice_Contract">
+    <End Type="PhanMemDLModel.Contract" Role="Contract" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.GuidesPrice" Role="GuidesPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contract">
+        <PropertyRef Name="ContractId" />
+      </Principal>
+      <Dependent Role="GuidesPrice">
+        <PropertyRef Name="ContractId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InsurancePrice_Contract">
+    <End Type="PhanMemDLModel.Contract" Role="Contract" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.InsurancePrice" Role="InsurancePrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contract">
+        <PropertyRef Name="ContractId" />
+      </Principal>
+      <Dependent Role="InsurancePrice">
+        <PropertyRef Name="ContractId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServiceOtherPrice_Contract">
+    <End Type="PhanMemDLModel.Contract" Role="Contract" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.ServiceOtherPrice" Role="ServiceOtherPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contract">
+        <PropertyRef Name="ContractId" />
+      </Principal>
+      <Dependent Role="ServiceOtherPrice">
+        <PropertyRef Name="ContractId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Guides_Folk">
+    <End Type="PhanMemDLModel.Folk" Role="Folk" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.Guide" Role="Guide" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Folk">
+        <PropertyRef Name="FolkId" />
+      </Principal>
+      <Dependent Role="Guide">
+        <PropertyRef Name="FolkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Guides_GridesCardType">
+    <End Type="PhanMemDLModel.GridesCardType" Role="GridesCardType" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.Guide" Role="Guide" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GridesCardType">
+        <PropertyRef Name="GuidesCardTypeId" />
+      </Principal>
+      <Dependent Role="Guide">
+        <PropertyRef Name="GridesCardTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Land_GroupGuest">
+    <End Type="PhanMemDLModel.GroupGuest" Role="GroupGuest" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.Land" Role="Land" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GroupGuest">
+        <PropertyRef Name="GroupGuestId" />
+      </Principal>
+      <Dependent Role="Land">
+        <PropertyRef Name="GroupGuestId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Guides_GuidesContract">
+    <End Type="PhanMemDLModel.GuidesContract" Role="GuidesContract" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.Guide" Role="Guide" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GuidesContract">
+        <PropertyRef Name="GuidesContractTypeId" />
+      </Principal>
+      <Dependent Role="Guide">
+        <PropertyRef Name="GuidesContractId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Guides_GuidesGroup">
+    <End Type="PhanMemDLModel.GuidesGroup" Role="GuidesGroup" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.Guide" Role="Guide" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GuidesGroup">
+        <PropertyRef Name="GuidesGroupId" />
+      </Principal>
+      <Dependent Role="Guide">
+        <PropertyRef Name="GuidesGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Guides_Religion">
+    <End Type="PhanMemDLModel.Religion" Role="Religion" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.Guide" Role="Guide" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Religion">
+        <PropertyRef Name="ReligionId" />
+      </Principal>
+      <Dependent Role="Guide">
+        <PropertyRef Name="ReligionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Guides_Vocative">
+    <End Type="PhanMemDLModel.Vocative" Role="Vocative" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.Guide" Role="Guide" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vocative">
+        <PropertyRef Name="VocativeId" />
+      </Principal>
+      <Dependent Role="Guide">
+        <PropertyRef Name="VocativeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GuidesPrice_Guides">
+    <End Type="PhanMemDLModel.Guide" Role="Guide" Multiplicity="1" />
+    <End Type="PhanMemDLModel.GuidesPrice" Role="GuidesPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Guide">
+        <PropertyRef Name="GuidesId" />
+      </Principal>
+      <Dependent Role="GuidesPrice">
+        <PropertyRef Name="GuidesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GuidesPropertyDetail_Guides">
+    <End Type="PhanMemDLModel.Guide" Role="Guide" Multiplicity="1" />
+    <End Type="PhanMemDLModel.GuidesPropertyDetail" Role="GuidesPropertyDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Guide">
+        <PropertyRef Name="GuidesId" />
+      </Principal>
+      <Dependent Role="GuidesPropertyDetail">
+        <PropertyRef Name="GuidesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GuidesPrice_GuidesGroup">
+    <End Type="PhanMemDLModel.GuidesGroup" Role="GuidesGroup" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.GuidesPrice" Role="GuidesPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GuidesGroup">
+        <PropertyRef Name="GuidesGroupId" />
+      </Principal>
+      <Dependent Role="GuidesPrice">
+        <PropertyRef Name="GuidesGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GuidesPrice_Paymen">
+    <End Type="PhanMemDLModel.Payman" Role="Payman" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.GuidesPrice" Role="GuidesPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payman">
+        <PropertyRef Name="PaymenId" />
+      </Principal>
+      <Dependent Role="GuidesPrice">
+        <PropertyRef Name="PaymenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GuidesPropertyDetail_GuidesProperty">
+    <End Type="PhanMemDLModel.GuidesProperty" Role="GuidesProperty" Multiplicity="1" />
+    <End Type="PhanMemDLModel.GuidesPropertyDetail" Role="GuidesPropertyDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GuidesProperty">
+        <PropertyRef Name="GuidesPropertyId" />
+      </Principal>
+      <Dependent Role="GuidesPropertyDetail">
+        <PropertyRef Name="GuidesPropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InsurancePrice_Insurance">
+    <End Type="PhanMemDLModel.Insurance" Role="Insurance" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.InsurancePrice" Role="InsurancePrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Insurance">
+        <PropertyRef Name="InsuranceId" />
+      </Principal>
+      <Dependent Role="InsurancePrice">
+        <PropertyRef Name="InsuranceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InsurancePrice_Paymen">
+    <End Type="PhanMemDLModel.Payman" Role="Payman" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.InsurancePrice" Role="InsurancePrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payman">
+        <PropertyRef Name="PaymenId" />
+      </Principal>
+      <Dependent Role="InsurancePrice">
+        <PropertyRef Name="PaymenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Land_Stars">
+    <End Type="PhanMemDLModel.Star" Role="Star" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.Land" Role="Land" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Star">
+        <PropertyRef Name="StarsId" />
+      </Principal>
+      <Dependent Role="Land">
+        <PropertyRef Name="StarsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ParentProfit_Partner">
+    <End Type="PhanMemDLModel.Partner" Role="Partner" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.ParentProfit" Role="ParentProfit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partner">
+        <PropertyRef Name="PartnerId" />
+      </Principal>
+      <Dependent Role="ParentProfit">
+        <PropertyRef Name="ParentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartnerBank_Partner">
+    <End Type="PhanMemDLModel.Partner" Role="Partner" Multiplicity="1" />
+    <End Type="PhanMemDLModel.PartnerBank" Role="PartnerBank" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partner">
+        <PropertyRef Name="PartnerId" />
+      </Principal>
+      <Dependent Role="PartnerBank">
+        <PropertyRef Name="PartnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartnerBranch_Partner">
+    <End Type="PhanMemDLModel.Partner" Role="Partner" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.PartnerBranch" Role="PartnerBranch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partner">
+        <PropertyRef Name="PartnerId" />
+      </Principal>
+      <Dependent Role="PartnerBranch">
+        <PropertyRef Name="PartnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartnerContact_Partner">
+    <End Type="PhanMemDLModel.Partner" Role="Partner" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.PartnerContact" Role="PartnerContact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partner">
+        <PropertyRef Name="PartnerId" />
+      </Principal>
+      <Dependent Role="PartnerContact">
+        <PropertyRef Name="PartnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartnerDeposit_Partner">
+    <End Type="PhanMemDLModel.Partner" Role="Partner" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.PartnerDeposit" Role="PartnerDeposit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partner">
+        <PropertyRef Name="PartnerId" />
+      </Principal>
+      <Dependent Role="PartnerDeposit">
+        <PropertyRef Name="PartnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartnerImage_Partner">
+    <End Type="PhanMemDLModel.Partner" Role="Partner" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.PartnerImage" Role="PartnerImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partner">
+        <PropertyRef Name="PartnerId" />
+      </Principal>
+      <Dependent Role="PartnerImage">
+        <PropertyRef Name="ParnertId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartnerLeveDetail_Partner">
+    <End Type="PhanMemDLModel.Partner" Role="Partner" Multiplicity="1" />
+    <End Type="PhanMemDLModel.PartnerLeveDetail" Role="PartnerLeveDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partner">
+        <PropertyRef Name="PartnerId" />
+      </Principal>
+      <Dependent Role="PartnerLeveDetail">
+        <PropertyRef Name="PartnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartnerPropertise_Partner">
+    <End Type="PhanMemDLModel.Partner" Role="Partner" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.PartnerPropertise" Role="PartnerPropertise" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partner">
+        <PropertyRef Name="PartnerId" />
+      </Principal>
+      <Dependent Role="PartnerPropertise">
+        <PropertyRef Name="PartnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartnerStaff_Partner">
+    <End Type="PhanMemDLModel.Partner" Role="Partner" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.PartnerStaff" Role="PartnerStaff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partner">
+        <PropertyRef Name="PartnerId" />
+      </Principal>
+      <Dependent Role="PartnerStaff">
+        <PropertyRef Name="PartnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartnerLeveDetail_PartnerLeve">
+    <End Type="PhanMemDLModel.PartnerLeve" Role="PartnerLeve" Multiplicity="1" />
+    <End Type="PhanMemDLModel.PartnerLeveDetail" Role="PartnerLeveDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PartnerLeve">
+        <PropertyRef Name="PartnerLeveId" />
+      </Principal>
+      <Dependent Role="PartnerLeveDetail">
+        <PropertyRef Name="PartnerLeveId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartnerStaff_Vocative">
+    <End Type="PhanMemDLModel.Vocative" Role="Vocative" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.PartnerStaff" Role="PartnerStaff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vocative">
+        <PropertyRef Name="VocativeId" />
+      </Principal>
+      <Dependent Role="PartnerStaff">
+        <PropertyRef Name="VocativeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartnerStaffBank_PartnerStaff">
+    <End Type="PhanMemDLModel.PartnerStaff" Role="PartnerStaff" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.PartnerStaffBank" Role="PartnerStaffBank" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PartnerStaff">
+        <PropertyRef Name="PartnerStaffId" />
+      </Principal>
+      <Dependent Role="PartnerStaffBank">
+        <PropertyRef Name="PartnerStaffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServiceOtherPrice_Paymen">
+    <End Type="PhanMemDLModel.Payman" Role="Payman" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.ServiceOtherPrice" Role="ServiceOtherPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payman">
+        <PropertyRef Name="PaymenId" />
+      </Principal>
+      <Dependent Role="ServiceOtherPrice">
+        <PropertyRef Name="PaymenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProviderBank_Provider">
+    <End Type="PhanMemDLModel.Provider" Role="Provider" Multiplicity="1" />
+    <End Type="PhanMemDLModel.ProviderBank" Role="ProviderBank" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provider">
+        <PropertyRef Name="ProviderId" />
+      </Principal>
+      <Dependent Role="ProviderBank">
+        <PropertyRef Name="ProviderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProviderBranch_Provider">
+    <End Type="PhanMemDLModel.Provider" Role="Provider" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.ProviderBranch" Role="ProviderBranch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provider">
+        <PropertyRef Name="ProviderId" />
+      </Principal>
+      <Dependent Role="ProviderBranch">
+        <PropertyRef Name="ProviderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProviderImage_Provider">
+    <End Type="PhanMemDLModel.Provider" Role="Provider" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.ProviderImage" Role="ProviderImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provider">
+        <PropertyRef Name="ProviderId" />
+      </Principal>
+      <Dependent Role="ProviderImage">
+        <PropertyRef Name="ProviderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProviderPropertise_Provider">
+    <End Type="PhanMemDLModel.Provider" Role="Provider" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.ProviderPropertise" Role="ProviderPropertise" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provider">
+        <PropertyRef Name="ProviderId" />
+      </Principal>
+      <Dependent Role="ProviderPropertise">
+        <PropertyRef Name="ProviderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServiceOtherPrice_Provider">
+    <End Type="PhanMemDLModel.Provider" Role="Provider" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.ServiceOtherPrice" Role="ServiceOtherPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provider">
+        <PropertyRef Name="ProviderId" />
+      </Principal>
+      <Dependent Role="ServiceOtherPrice">
+        <PropertyRef Name="ProviderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServiceOtherPrice_ServiceOther">
+    <End Type="PhanMemDLModel.ServiceOther" Role="ServiceOther" Multiplicity="0..1" />
+    <End Type="PhanMemDLModel.ServiceOtherPrice" Role="ServiceOtherPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServiceOther">
+        <PropertyRef Name="ServiceOtherId" />
+      </Principal>
+      <Dependent Role="ServiceOtherPrice">
+        <PropertyRef Name="ServiceOtherId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

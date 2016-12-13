@@ -1,0 +1,837 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PhanMemDLModelStoreContainer" CdmEntityContainer="Entities">
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="PhanMemDLModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="PhanMemDLModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="PhanMemDLModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="PhanMemDLModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PhanMemDLModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="PhanMemDLModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PhanMemDLModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="PhanMemDLModel.Store.sp_renamediagram" />
+    <EntitySetMapping Name="Banks">
+      <EntityTypeMapping TypeName="PhanMemDLModel.Bank">
+        <MappingFragment StoreEntitySet="Bank">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="BankId" ColumnName="BankId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CardDeals">
+      <EntityTypeMapping TypeName="PhanMemDLModel.CardDeal">
+        <MappingFragment StoreEntitySet="CardDeal">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="CardDealId" ColumnName="CardDealId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Careers">
+      <EntityTypeMapping TypeName="PhanMemDLModel.Career">
+        <MappingFragment StoreEntitySet="Career">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CareerId" ColumnName="CareerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContracImages">
+      <EntityTypeMapping TypeName="PhanMemDLModel.ContracImage">
+        <MappingFragment StoreEntitySet="ContracImage">
+          <ScalarProperty Name="Files" ColumnName="Files" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ContractId" ColumnName="ContractId" />
+          <ScalarProperty Name="ContracImageId" ColumnName="ContracImageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contracts">
+      <EntityTypeMapping TypeName="PhanMemDLModel.Contract">
+        <MappingFragment StoreEntitySet="Contract">
+          <ScalarProperty Name="CreateDay" ColumnName="CreateDay" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateDay" ColumnName="UpdateDay" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Contents" ColumnName="Contents" />
+          <ScalarProperty Name="Files1" ColumnName="Files1" />
+          <ScalarProperty Name="Files" ColumnName="Files" />
+          <ScalarProperty Name="DebtTermMax" ColumnName="DebtTermMax" />
+          <ScalarProperty Name="DebtTerm" ColumnName="DebtTerm" />
+          <ScalarProperty Name="ToDay" ColumnName="ToDay" />
+          <ScalarProperty Name="FromDay" ColumnName="FromDay" />
+          <ScalarProperty Name="ContractTime" ColumnName="ContractTime" />
+          <ScalarProperty Name="ContractLocation" ColumnName="ContractLocation" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="PartnerId" ColumnName="PartnerId" />
+          <ScalarProperty Name="ProviderId" ColumnName="ProviderId" />
+          <ScalarProperty Name="ContractTypeId" ColumnName="ContractTypeId" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="ContractId" ColumnName="ContractId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContractStatus">
+      <EntityTypeMapping TypeName="PhanMemDLModel.ContractStatu">
+        <MappingFragment StoreEntitySet="ContractStatus">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ContractStatusId" ColumnName="ContractStatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContractTypes">
+      <EntityTypeMapping TypeName="PhanMemDLModel.ContractType">
+        <MappingFragment StoreEntitySet="ContractType">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ContractTypeId" ColumnName="ContractTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Educations">
+      <EntityTypeMapping TypeName="PhanMemDLModel.Education">
+        <MappingFragment StoreEntitySet="Education">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="EducationId" ColumnName="EducationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Folks">
+      <EntityTypeMapping TypeName="PhanMemDLModel.Folk">
+        <MappingFragment StoreEntitySet="Folk">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="FolkId" ColumnName="FolkId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GridesCardTypes">
+      <EntityTypeMapping TypeName="PhanMemDLModel.GridesCardType">
+        <MappingFragment StoreEntitySet="GridesCardType">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="GuidesCardTypeId" ColumnName="GuidesCardTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupGuests">
+      <EntityTypeMapping TypeName="PhanMemDLModel.GroupGuest">
+        <MappingFragment StoreEntitySet="GroupGuest">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="GroupGuestId" ColumnName="GroupGuestId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Guides">
+      <EntityTypeMapping TypeName="PhanMemDLModel.Guide">
+        <MappingFragment StoreEntitySet="Guides">
+          <ScalarProperty Name="CreateDay" ColumnName="CreateDay" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateDay" ColumnName="UpdateDay" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Contents" ColumnName="Contents" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Experience" ColumnName="Experience" />
+          <ScalarProperty Name="ToGridesCardDay" ColumnName="ToGridesCardDay" />
+          <ScalarProperty Name="FromGridesCardDay" ColumnName="FromGridesCardDay" />
+          <ScalarProperty Name="GridesCardTypeId" ColumnName="GridesCardTypeId" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="CareerId" ColumnName="CareerId" />
+          <ScalarProperty Name="EducationId" ColumnName="EducationId" />
+          <ScalarProperty Name="AddressShow" ColumnName="AddressShow" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="WardId" ColumnName="WardId" />
+          <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+          <ScalarProperty Name="NationalId" ColumnName="NationalId" />
+          <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Market" ColumnName="Market" />
+          <ScalarProperty Name="Nationatily" ColumnName="Nationatily" />
+          <ScalarProperty Name="ReligionId" ColumnName="ReligionId" />
+          <ScalarProperty Name="FolkId" ColumnName="FolkId" />
+          <ScalarProperty Name="GuidesContractId" ColumnName="GuidesContractId" />
+          <ScalarProperty Name="GuidesGroupId" ColumnName="GuidesGroupId" />
+          <ScalarProperty Name="ToPassport" ColumnName="ToPassport" />
+          <ScalarProperty Name="FromPassport" ColumnName="FromPassport" />
+          <ScalarProperty Name="Passport" ColumnName="Passport" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="IsMarriage" ColumnName="IsMarriage" />
+          <ScalarProperty Name="NumberVat" ColumnName="NumberVat" />
+          <ScalarProperty Name="DayOfIssue" ColumnName="DayOfIssue" />
+          <ScalarProperty Name="PlaceOfIssue" ColumnName="PlaceOfIssue" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="NumberIdentity" ColumnName="NumberIdentity" />
+          <ScalarProperty Name="VocativeId" ColumnName="VocativeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="GuidesId" ColumnName="GuidesId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GuidesContracts">
+      <EntityTypeMapping TypeName="PhanMemDLModel.GuidesContract">
+        <MappingFragment StoreEntitySet="GuidesContract">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="GuidesContractTypeId" ColumnName="GuidesContractTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GuidesGroups">
+      <EntityTypeMapping TypeName="PhanMemDLModel.GuidesGroup">
+        <MappingFragment StoreEntitySet="GuidesGroup">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Market" ColumnName="Market" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="GuidesGroupId" ColumnName="GuidesGroupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GuidesPrices">
+      <EntityTypeMapping TypeName="PhanMemDLModel.GuidesPrice">
+        <MappingFragment StoreEntitySet="GuidesPrice">
+          <ScalarProperty Name="CreateDay" ColumnName="CreateDay" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateDay" ColumnName="UpdateDay" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="IsVat" ColumnName="IsVat" />
+          <ScalarProperty Name="PriceExtra" ColumnName="PriceExtra" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ToDay" ColumnName="ToDay" />
+          <ScalarProperty Name="FromDay" ColumnName="FromDay" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PaymenId" ColumnName="PaymenId" />
+          <ScalarProperty Name="ProviderId" ColumnName="ProviderId" />
+          <ScalarProperty Name="ContractId" ColumnName="ContractId" />
+          <ScalarProperty Name="GuidesGroupId" ColumnName="GuidesGroupId" />
+          <ScalarProperty Name="GuidesId" ColumnName="GuidesId" />
+          <ScalarProperty Name="GuidesPriceId" ColumnName="GuidesPriceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GuidesProperties">
+      <EntityTypeMapping TypeName="PhanMemDLModel.GuidesProperty">
+        <MappingFragment StoreEntitySet="GuidesProperty">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="GuidesPropertyId" ColumnName="GuidesPropertyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GuidesPropertyDetails">
+      <EntityTypeMapping TypeName="PhanMemDLModel.GuidesPropertyDetail">
+        <MappingFragment StoreEntitySet="GuidesPropertyDetail">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="GuidesId" ColumnName="GuidesId" />
+          <ScalarProperty Name="GuidesPropertyId" ColumnName="GuidesPropertyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Histories">
+      <EntityTypeMapping TypeName="PhanMemDLModel.History">
+        <MappingFragment StoreEntitySet="History">
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDay" ColumnName="CreateDay" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Contens" ColumnName="Contens" />
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="HistoryId" ColumnName="HistoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Insurances">
+      <EntityTypeMapping TypeName="PhanMemDLModel.Insurance">
+        <MappingFragment StoreEntitySet="Insurance">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreateDay" ColumnName="CreateDay" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateDay" ColumnName="UpdateDay" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="Term" ColumnName="Term" />
+          <ScalarProperty Name="Contents" ColumnName="Contents" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Files" ColumnName="Files" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="InsuranceId" ColumnName="InsuranceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InsurancePrices">
+      <EntityTypeMapping TypeName="PhanMemDLModel.InsurancePrice">
+        <MappingFragment StoreEntitySet="InsurancePrice">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreateDay" ColumnName="CreateDay" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateDay" ColumnName="UpdateDay" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsVat" ColumnName="IsVat" />
+          <ScalarProperty Name="Surcharge" ColumnName="Surcharge" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ToDay" ColumnName="ToDay" />
+          <ScalarProperty Name="FromDay" ColumnName="FromDay" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PaymenId" ColumnName="PaymenId" />
+          <ScalarProperty Name="InsuranceId" ColumnName="InsuranceId" />
+          <ScalarProperty Name="ContractId" ColumnName="ContractId" />
+          <ScalarProperty Name="ProviderId" ColumnName="ProviderId" />
+          <ScalarProperty Name="InsurancePriceId" ColumnName="InsurancePriceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lands">
+      <EntityTypeMapping TypeName="PhanMemDLModel.Land">
+        <MappingFragment StoreEntitySet="Land">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreateDay" ColumnName="CreateDay" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateDay" ColumnName="UpdateDay" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="GroupGuestId" ColumnName="GroupGuestId" />
+          <ScalarProperty Name="Files" ColumnName="Files" />
+          <ScalarProperty Name="SortSchedule" ColumnName="SortSchedule" />
+          <ScalarProperty Name="Snacks" ColumnName="Snacks" />
+          <ScalarProperty Name="Meal" ColumnName="Meal" />
+          <ScalarProperty Name="HotelNight" ColumnName="HotelNight" />
+          <ScalarProperty Name="StarsId" ColumnName="StarsId" />
+          <ScalarProperty Name="QuantityGuest" ColumnName="QuantityGuest" />
+          <ScalarProperty Name="Contents" ColumnName="Contents" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="NationalId" ColumnName="NationalId" />
+          <ScalarProperty Name="QuantityNight" ColumnName="QuantityNight" />
+          <ScalarProperty Name="QuantityDay" ColumnName="QuantityDay" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="LandId" ColumnName="LandId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LandGroups">
+      <EntityTypeMapping TypeName="PhanMemDLModel.LandGroup">
+        <MappingFragment StoreEntitySet="LandGroup">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LandGroupId" ColumnName="LandGroupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MoneyDeals">
+      <EntityTypeMapping TypeName="PhanMemDLModel.MoneyDeal">
+        <MappingFragment StoreEntitySet="MoneyDeal">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="MoneyDealId" ColumnName="MoneyDealId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ParentProfits">
+      <EntityTypeMapping TypeName="PhanMemDLModel.ParentProfit">
+        <MappingFragment StoreEntitySet="ParentProfit">
+          <ScalarProperty Name="ToDay" ColumnName="ToDay" />
+          <ScalarProperty Name="FromDay" ColumnName="FromDay" />
+          <ScalarProperty Name="Percents" ColumnName="Percents" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="ParentProfitId" ColumnName="ParentProfitId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Partners">
+      <EntityTypeMapping TypeName="PhanMemDLModel.Partner">
+        <MappingFragment StoreEntitySet="Partner">
+          <ScalarProperty Name="CreateDay" ColumnName="CreateDay" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateDay" ColumnName="UpdateDay" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Contents" ColumnName="Contents" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="AddressShow" ColumnName="AddressShow" />
+          <ScalarProperty Name="WardId" ColumnName="WardId" />
+          <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+          <ScalarProperty Name="NationalId" ColumnName="NationalId" />
+          <ScalarProperty Name="CareerId" ColumnName="CareerId" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="CardDealId" ColumnName="CardDealId" />
+          <ScalarProperty Name="MoneyDealId" ColumnName="MoneyDealId" />
+          <ScalarProperty Name="Paymen" ColumnName="Paymen" />
+          <ScalarProperty Name="EstablishYear" ColumnName="EstablishYear" />
+          <ScalarProperty Name="TaxCode" ColumnName="TaxCode" />
+          <ScalarProperty Name="NumberLHQT" ColumnName="NumberLHQT" />
+          <ScalarProperty Name="NumberSPKD" ColumnName="NumberSPKD" />
+          <ScalarProperty Name="NameSearch" ColumnName="NameSearch" />
+          <ScalarProperty Name="NameOther" ColumnName="NameOther" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="PartnerId" ColumnName="PartnerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PartnerBanks">
+      <EntityTypeMapping TypeName="PhanMemDLModel.PartnerBank">
+        <MappingFragment StoreEntitySet="PartnerBank">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Numbert" ColumnName="Numbert" />
+          <ScalarProperty Name="BankId" ColumnName="BankId" />
+          <ScalarProperty Name="PartnerId" ColumnName="PartnerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PartnerBranches">
+      <EntityTypeMapping TypeName="PhanMemDLModel.PartnerBranch">
+        <MappingFragment StoreEntitySet="PartnerBranch">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Hotline" ColumnName="Hotline" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="PartnerId" ColumnName="PartnerId" />
+          <ScalarProperty Name="PartnerBarchId" ColumnName="PartnerBarchId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PartnerContacts">
+      <EntityTypeMapping TypeName="PhanMemDLModel.PartnerContact">
+        <MappingFragment StoreEntitySet="PartnerContact">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="HotLine" ColumnName="HotLine" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PartnerId" ColumnName="PartnerId" />
+          <ScalarProperty Name="RegencyId" ColumnName="RegencyId" />
+          <ScalarProperty Name="PartnerContactId" ColumnName="PartnerContactId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PartnerDeposits">
+      <EntityTypeMapping TypeName="PhanMemDLModel.PartnerDeposit">
+        <MappingFragment StoreEntitySet="PartnerDeposit">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="Money" ColumnName="Money" />
+          <ScalarProperty Name="PartnerId" ColumnName="PartnerId" />
+          <ScalarProperty Name="PartnerDepositId" ColumnName="PartnerDepositId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PartnerImages">
+      <EntityTypeMapping TypeName="PhanMemDLModel.PartnerImage">
+        <MappingFragment StoreEntitySet="PartnerImage">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ParnertId" ColumnName="ParnertId" />
+          <ScalarProperty Name="ParnertImageId" ColumnName="ParnertImageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PartnerLeves">
+      <EntityTypeMapping TypeName="PhanMemDLModel.PartnerLeve">
+        <MappingFragment StoreEntitySet="PartnerLeve">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Percents" ColumnName="Percents" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PartnerLeveId" ColumnName="PartnerLeveId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PartnerLeveDetails">
+      <EntityTypeMapping TypeName="PhanMemDLModel.PartnerLeveDetail">
+        <MappingFragment StoreEntitySet="PartnerLeveDetail">
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="Percents" ColumnName="Percents" />
+          <ScalarProperty Name="PartnerLeveId" ColumnName="PartnerLeveId" />
+          <ScalarProperty Name="PartnerId" ColumnName="PartnerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PartnerPropertises">
+      <EntityTypeMapping TypeName="PhanMemDLModel.PartnerPropertise">
+        <MappingFragment StoreEntitySet="PartnerPropertise">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Lable" ColumnName="Lable" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="PartnerId" ColumnName="PartnerId" />
+          <ScalarProperty Name="PartnerPropertiesId" ColumnName="PartnerPropertiesId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PartnerStaffs">
+      <EntityTypeMapping TypeName="PhanMemDLModel.PartnerStaff">
+        <MappingFragment StoreEntitySet="PartnerStaff">
+          <ScalarProperty Name="CreateDay" ColumnName="CreateDay" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateDay" ColumnName="UpdateDay" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ContactShow" ColumnName="ContactShow" />
+          <ScalarProperty Name="ContactAddress" ColumnName="ContactAddress" />
+          <ScalarProperty Name="ContactWardId" ColumnName="ContactWardId" />
+          <ScalarProperty Name="ContactDistrictId" ColumnName="ContactDistrictId" />
+          <ScalarProperty Name="ContactCityId" ColumnName="ContactCityId" />
+          <ScalarProperty Name="ContactNationalId" ColumnName="ContactNationalId" />
+          <ScalarProperty Name="OriginShow" ColumnName="OriginShow" />
+          <ScalarProperty Name="OriginAddress" ColumnName="OriginAddress" />
+          <ScalarProperty Name="OriginWardId" ColumnName="OriginWardId" />
+          <ScalarProperty Name="OriginDistrictId" ColumnName="OriginDistrictId" />
+          <ScalarProperty Name="OriginCityId" ColumnName="OriginCityId" />
+          <ScalarProperty Name="OriginNationalId" ColumnName="OriginNationalId" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="ImageBirth" ColumnName="ImageBirth" />
+          <ScalarProperty Name="ImageIdentity" ColumnName="ImageIdentity" />
+          <ScalarProperty Name="Mail1" ColumnName="Mail1" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="IsMarriage" ColumnName="IsMarriage" />
+          <ScalarProperty Name="NumberVat" ColumnName="NumberVat" />
+          <ScalarProperty Name="DayOfIssue" ColumnName="DayOfIssue" />
+          <ScalarProperty Name="PlaceOfIssue" ColumnName="PlaceOfIssue" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="NumberIdentity" ColumnName="NumberIdentity" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="VocativeId" ColumnName="VocativeId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PartnerId" ColumnName="PartnerId" />
+          <ScalarProperty Name="PartnerStaffId" ColumnName="PartnerStaffId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PartnerStaffBanks">
+      <EntityTypeMapping TypeName="PhanMemDLModel.PartnerStaffBank">
+        <MappingFragment StoreEntitySet="PartnerStaffBank">
+          <ScalarProperty Name="BankId" ColumnName="BankId" />
+          <ScalarProperty Name="NumberBank" ColumnName="NumberBank" />
+          <ScalarProperty Name="PartnerStaffId" ColumnName="PartnerStaffId" />
+          <ScalarProperty Name="PartnerStaffBankId" ColumnName="PartnerStaffBankId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paymen">
+      <EntityTypeMapping TypeName="PhanMemDLModel.Payman">
+        <MappingFragment StoreEntitySet="Paymen">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PaymenId" ColumnName="PaymenId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Plans">
+      <EntityTypeMapping TypeName="PhanMemDLModel.Plan">
+        <MappingFragment StoreEntitySet="Plan">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDay" ColumnName="CreateDay" />
+          <ScalarProperty Name="ToDay" ColumnName="ToDay" />
+          <ScalarProperty Name="FromDay" ColumnName="FromDay" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Files" ColumnName="Files" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PlanId" ColumnName="PlanId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Providers">
+      <EntityTypeMapping TypeName="PhanMemDLModel.Provider">
+        <MappingFragment StoreEntitySet="Provider">
+          <ScalarProperty Name="CreateDay" ColumnName="CreateDay" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateDay" ColumnName="UpdateDay" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Contents" ColumnName="Contents" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="AddressShow" ColumnName="AddressShow" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+          <ScalarProperty Name="NationalId" ColumnName="NationalId" />
+          <ScalarProperty Name="CareerId" ColumnName="CareerId" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="CardDealId" ColumnName="CardDealId" />
+          <ScalarProperty Name="MoneyDealId" ColumnName="MoneyDealId" />
+          <ScalarProperty Name="Paymen" ColumnName="Paymen" />
+          <ScalarProperty Name="EstablishYear" ColumnName="EstablishYear" />
+          <ScalarProperty Name="TaxCode" ColumnName="TaxCode" />
+          <ScalarProperty Name="NumberLHQT" ColumnName="NumberLHQT" />
+          <ScalarProperty Name="NumberSPKD" ColumnName="NumberSPKD" />
+          <ScalarProperty Name="NameSearch" ColumnName="NameSearch" />
+          <ScalarProperty Name="NameOther" ColumnName="NameOther" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ProviderId" ColumnName="ProviderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProviderBanks">
+      <EntityTypeMapping TypeName="PhanMemDLModel.ProviderBank">
+        <MappingFragment StoreEntitySet="ProviderBank">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Numbert" ColumnName="Numbert" />
+          <ScalarProperty Name="BankId" ColumnName="BankId" />
+          <ScalarProperty Name="ProviderId" ColumnName="ProviderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProviderBranches">
+      <EntityTypeMapping TypeName="PhanMemDLModel.ProviderBranch">
+        <MappingFragment StoreEntitySet="ProviderBranch">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Hotline" ColumnName="Hotline" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ProviderId" ColumnName="ProviderId" />
+          <ScalarProperty Name="ProviderBarchId" ColumnName="ProviderBarchId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProviderContacts">
+      <EntityTypeMapping TypeName="PhanMemDLModel.ProviderContact">
+        <MappingFragment StoreEntitySet="ProviderContact">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="HotLine" ColumnName="HotLine" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ProviderId" ColumnName="ProviderId" />
+          <ScalarProperty Name="RegencyId" ColumnName="RegencyId" />
+          <ScalarProperty Name="ProviderContactId" ColumnName="ProviderContactId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProviderImages">
+      <EntityTypeMapping TypeName="PhanMemDLModel.ProviderImage">
+        <MappingFragment StoreEntitySet="ProviderImage">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ProviderId" ColumnName="ProviderId" />
+          <ScalarProperty Name="ProviderImageId" ColumnName="ProviderImageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProviderPropertises">
+      <EntityTypeMapping TypeName="PhanMemDLModel.ProviderPropertise">
+        <MappingFragment StoreEntitySet="ProviderPropertise">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Lable" ColumnName="Lable" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ProviderId" ColumnName="ProviderId" />
+          <ScalarProperty Name="ProviderPropertiesId" ColumnName="ProviderPropertiesId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Regencies">
+      <EntityTypeMapping TypeName="PhanMemDLModel.Regency">
+        <MappingFragment StoreEntitySet="Regency">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="RegencyId" ColumnName="RegencyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Religions">
+      <EntityTypeMapping TypeName="PhanMemDLModel.Religion">
+        <MappingFragment StoreEntitySet="Religion">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ReligionId" ColumnName="ReligionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Services">
+      <EntityTypeMapping TypeName="PhanMemDLModel.Service">
+        <MappingFragment StoreEntitySet="Service">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceOthers">
+      <EntityTypeMapping TypeName="PhanMemDLModel.ServiceOther">
+        <MappingFragment StoreEntitySet="ServiceOther">
+          <ScalarProperty Name="CreateDay" ColumnName="CreateDay" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateDay" ColumnName="UpdateDay" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="Contents" ColumnName="Contents" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="AddressShow" ColumnName="AddressShow" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="WardId" ColumnName="WardId" />
+          <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+          <ScalarProperty Name="NationalId" ColumnName="NationalId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ServiceOtherId" ColumnName="ServiceOtherId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceOtherPrices">
+      <EntityTypeMapping TypeName="PhanMemDLModel.ServiceOtherPrice">
+        <MappingFragment StoreEntitySet="ServiceOtherPrice">
+          <ScalarProperty Name="PriceBaby" ColumnName="PriceBaby" />
+          <ScalarProperty Name="PriceInfant" ColumnName="PriceInfant" />
+          <ScalarProperty Name="PriceChild" ColumnName="PriceChild" />
+          <ScalarProperty Name="PriceAdult" ColumnName="PriceAdult" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ToDay" ColumnName="ToDay" />
+          <ScalarProperty Name="FromDay" ColumnName="FromDay" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PaymenId" ColumnName="PaymenId" />
+          <ScalarProperty Name="ContractId" ColumnName="ContractId" />
+          <ScalarProperty Name="ProviderId" ColumnName="ProviderId" />
+          <ScalarProperty Name="ServiceOtherId" ColumnName="ServiceOtherId" />
+          <ScalarProperty Name="ServiceOtherPriceId" ColumnName="ServiceOtherPriceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stars">
+      <EntityTypeMapping TypeName="PhanMemDLModel.Star">
+        <MappingFragment StoreEntitySet="Stars">
+          <ScalarProperty Name="CreateDay" ColumnName="CreateDay" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateDay" ColumnName="UpdateDay" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="StarsId" ColumnName="StarsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="PhanMemDLModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Diploma" ColumnName="Diploma" />
+          <ScalarProperty Name="CareerId" ColumnName="CareerId" />
+          <ScalarProperty Name="Point" ColumnName="Point" />
+          <ScalarProperty Name="RePassDay" ColumnName="RePassDay" />
+          <ScalarProperty Name="LoginDay" ColumnName="LoginDay" />
+          <ScalarProperty Name="Remember" ColumnName="Remember" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="BirthDay" ColumnName="BirthDay" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="CreateDay" ColumnName="CreateDay" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vocatives">
+      <EntityTypeMapping TypeName="PhanMemDLModel.Vocative">
+        <MappingFragment StoreEntitySet="Vocative">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="VocativeId" ColumnName="VocativeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
