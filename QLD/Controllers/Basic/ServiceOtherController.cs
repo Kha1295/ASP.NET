@@ -347,6 +347,7 @@ namespace QLD.Controllers.Basic
         {
             ViewBag.Mess = (mess ?? 0);
             ViewBag.Status = new SelectList(DefineFuntion.ListStatus, "Value", "Text", 1);
+            ViewBag.CreateBy = shared.GetUser( new int());
             return View();
         }
         [HttpPost]

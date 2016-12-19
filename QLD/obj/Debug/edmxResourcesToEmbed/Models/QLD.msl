@@ -743,6 +743,7 @@
     <EntitySetMapping Name="ServiceOthers">
       <EntityTypeMapping TypeName="PhanMemDLModel.ServiceOther">
         <MappingFragment StoreEntitySet="ServiceOther">
+          <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="CreateDay" ColumnName="CreateDay" />
           <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
           <ScalarProperty Name="UpdateDay" ColumnName="UpdateDay" />
@@ -765,6 +766,7 @@
     <EntitySetMapping Name="ServiceOtherPrices">
       <EntityTypeMapping TypeName="PhanMemDLModel.ServiceOtherPrice">
         <MappingFragment StoreEntitySet="ServiceOtherPrice">
+          <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="PriceBaby" ColumnName="PriceBaby" />
           <ScalarProperty Name="PriceInfant" ColumnName="PriceInfant" />
           <ScalarProperty Name="PriceChild" ColumnName="PriceChild" />

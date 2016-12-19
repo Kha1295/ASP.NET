@@ -69,10 +69,10 @@ namespace QLD.Controllers
         }
         public SelectList GetUser(long? idUser)
         {
-            var obj = new SelectList(db.Users.Where(t => t.Status == 1), "UserId", "Name", idUser);
+            var obj = new SelectList(db.Users.Where(t => t.Status == 1), "Name", "Name", idUser);
             return obj;
         }
-      
+
         public User GetUserById(int? id)
         {
             if (id != null)
@@ -167,7 +167,7 @@ namespace QLD.Controllers
             //var roler = db.RoleGroupDetails.Where(t => objRS.Contains(t.RoleGroupId)).Select(t => t.Role.Code).ToArray();
             //if (roler.Count() > 0) { return roler; }
             //else { return new String[] { };
-                return new String[] {"QL" };
+            return new String[] { "QL" };
 
         }
         public string[] GetRolesUser(int idUser)
@@ -201,7 +201,7 @@ namespace QLD.Controllers
         {
             try
             {
-               
+
                 //history.CreateBy = DefineFuntion.UserAcount() + "";
                 //history.CreateDay = DateTime.Now;
                 //db.Histories.Add(history);

@@ -1835,11 +1835,14 @@
     <Content Include="Views\Folk\Trash.cshtml" />
     <Content Include="Views\Folk\Create.cshtml" />
     <Content Include="Views\Folk\Edit.cshtml" />
+    <Content Include="Views\ServiceOther\Index.cshtml" />
+    <Content Include="Views\ServiceOther\Trash.cshtml" />
+    <Content Include="Views\ServiceOther\Create.cshtml" />
+    <Content Include="Views\ServiceOther\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="source\" />
-    <Folder Include="Views\ServiceOther\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

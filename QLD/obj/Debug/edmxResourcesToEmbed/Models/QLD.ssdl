@@ -694,6 +694,7 @@
     <Property Name="UpdateDay" Type="datetime" />
     <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
     <Property Name="CreateDay" Type="datetime" />
+    <Property Name="Status" Type="int" />
   </EntityType>
   <EntityType Name="ServiceOtherPrice">
     <Key>
@@ -712,6 +713,7 @@
     <Property Name="PriceChild" Type="numeric" Precision="18" Scale="0" />
     <Property Name="PriceInfant" Type="numeric" Precision="18" Scale="0" />
     <Property Name="PriceBaby" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Status" Type="int" />
   </EntityType>
   <EntityType Name="Stars">
     <Key>

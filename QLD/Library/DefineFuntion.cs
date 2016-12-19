@@ -91,7 +91,8 @@ namespace QLD.Library
             carddeal =20,
             Partner = 21,
             LandGroup = 24,
-            Regency = 25
+            Regency = 25,
+            ServiceOther = 26
         }
         public enum TypeUser
         {
