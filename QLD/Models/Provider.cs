@@ -21,7 +21,6 @@ namespace QLD.Models
             this.ProviderBranches = new HashSet<ProviderBranch>();
             this.ProviderImages = new HashSet<ProviderImage>();
             this.ProviderPropertises = new HashSet<ProviderPropertise>();
-            this.ServiceOtherPrices = new HashSet<ServiceOtherPrice>();
         }
     
         public long ProviderId { get; set; }
@@ -60,6 +59,5 @@ namespace QLD.Models
         public virtual ICollection<ProviderBranch> ProviderBranches { get; set; }
         public virtual ICollection<ProviderImage> ProviderImages { get; set; }
         public virtual ICollection<ProviderPropertise> ProviderPropertises { get; set; }
-        public virtual ICollection<ServiceOtherPrice> ServiceOtherPrices { get; set; }
     }
 }

@@ -1,0 +1,148 @@
+﻿@using QLD.Library
+@model  QLD.Models.ServiceOtherPrice
+
+@{
+    ViewBag.Title = "Thêm mới giá dịch vụ";
+    Layout = "~/Views/Shared/_BackEnd.cshtml";
+    var checkU = DefineFuntion.CheckRole("ServiceOtherPriceU,ServiceOtherPrice,QL");
+    var checkC = DefineFuntion.CheckRole("ServiceOtherPriceC,ServiceOtherPrice,QL");
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+@using (Html.BeginForm())
+{
+    <section class="content-header">
+        <h1>
+            <a href="/"><i class="fa fa-home"></i> Trang chủ</a>
+            <small>
+                <a href="Index"> / Danh sách giá dịch vụ</a>
+            </small>
+            <small>/ Thêm giá dịch vụ</small>
+        </h1>
+        @{Html.RenderAction("ViewButtomCreate", "Admin", new { showE = checkU, showC = checkC });}
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h2 class="box-title"><i class="fa fa-list"></i> <b>Thêm giá dịch vụ</b></h2>
+                    </div>
+                    @{Html.RenderAction("Notice", "Admin", new { mess = ViewBag.Mess });}
+                    <hr />
+                    <div class="box-body">
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true)
+                        <div class="col-md-9 box-info">
+                            <div class="form-group select-custom">
+                                @Html.Label("Dịch vụ", new { @class = "control-label " })
+                                @Html.ValidationMessageFor(model => model.ServiceOtherId, null, new { @class = "color-red" })
+                                @Html.DropDownList("ServiceOtherId", (SelectList)ViewBag.ServiceOther, "Vui lòng chọn", new { @class = "form-control " })
+                            </div>
+                            <div class="form-group select-custom">
+                                @Html.Label("Nhà cung cấp", new { @class = "control-label " })
+                                @Html.ValidationMessageFor(model => model.ProviderId, null, new { @class = "color-red" })
+                                @Html.DropDownList("ProviderId", (SelectList)ViewBag.Provider, "Vui lòng chọn", new { @class = "form-control " })
+                            </div>
+                            <div class="form-group select-custom">
+                                @Html.Label("Hợp đồng nhà cung câp", new { @class = "control-label " })
+                                @Html.ValidationMessageFor(model => model.ContractId, null, new { @class = "color-red" })
+                                @Html.DropDownList("ContractId", (SelectList)ViewBag.Contract, "Vui lòng chọn", new { @class = "form-control " })
+                            </div>
+                            <div class="form-group select-custom">
+                                @Html.Label("Hình thức thanh toán", new { @class = "control-label " })
+                                @Html.ValidationMessageFor(model => model.PaymenId, null, new { @class = "color-red" })
+                                @Html.DropDownList("PaymenId", (SelectList)ViewBag.Paymen, "Vui lòng chọn", new { @class = "form-control " })
+                            </div>
+                            <div class="form-group select-custom">
+                                @Html.Label("Tên", new { @class = "control-label  " })
+                                @Html.ValidationMessageFor(model => model.Name, null, new { @class = "color-red" })
+                                @Html.TextBoxFor(model => model.Name, new { @class = "form-control", title = "Vui lòng nhập vào trường này!", required = "required" })
+                            </div>
+                            <div class="form-group select-custom">
+                                @Html.Label("Từ ngày", new { @class = "control-label  " }) <br />
+                                @Html.ValidationMessageFor(model => model.FromDay, null, new { @class = "color-red" })
+                                @Html.TextBoxFor(model => model.FromDay, new { @class = "centerdate", @placeholder = "MM/dd/yyyy", title = "Vui lòng nhập vào trường này!", required = "required" })
+                            </div>
+                            <div class="form-group select-custom">
+                                @Html.Label("Đến ngày", new { @class = "control-label  " }) <br />
+                                @Html.ValidationMessageFor(model => model.ToDay, null, new { @class = "color-red" })
+                                @Html.TextBoxFor(model => model.ToDay, new { @class = "centerdate", @placeholder = "MM/dd/yyyy", title = "Vui lòng nhập vào trường này!", required = "required" })
+                            </div>
+                            <div class="form-group select-custom">
+                                @Html.Label("Giá", new { @class = "control-label  " })
+                                @Html.ValidationMessageFor(model => model.Price, null, new { @class = "color-red" })
+                                @Html.TextBoxFor(model => model.Price, new { @class = "form-control", title = "Vui lòng nhập vào trường này!", required = "required" })
+                            </div>
+                            <div class="form-group select-custom">
+                                @Html.Label("Giá người lớn", new { @class = "control-label  " })
+                                @Html.ValidationMessageFor(model => model.PriceAdult, null, new { @class = "color-red" })
+                                @Html.TextBoxFor(model => model.PriceAdult, new { @class = "form-control", title = "Vui lòng nhập vào trường này!", required = "required" })
+                            </div>
+                            <div class="form-group select-custom">
+                                @Html.Label("Giá trẻ em", new { @class = "control-label  " })
+                                @Html.ValidationMessageFor(model => model.PriceChild, null, new { @class = "color-red" })
+                                @Html.TextBoxFor(model => model.PriceChild, new { @class = "form-control", title = "Vui lòng nhập vào trường này!", required = "required" })
+                            </div>
+                            <div class="form-group select-custom">
+                                @Html.Label("Giá trẻ nhỏ", new { @class = "control-label  " })
+                                @Html.ValidationMessageFor(model => model.PriceBaby, null, new { @class = "color-red" })
+                                @Html.TextBoxFor(model => model.PriceBaby, new { @class = "form-control", title = "Vui lòng nhập vào trường này!", required = "required" })
+                            </div>
+                            <div class="form-group select-custom">
+                                @Html.Label("Giá trẻ sơ sinh", new { @class = "control-label  " })
+                                @Html.ValidationMessageFor(model => model.PriceInfant, null, new { @class = "color-red" })
+                                @Html.TextBoxFor(model => model.PriceInfant, new { @class = "form-control", title = "Vui lòng nhập vào trường này!", required = "required" })
+                            </div>
+                            <div class="form-group select-custom">
+                                @Html.Label("Trạng thái", new { @class = "control-label " })
+                                @Html.ValidationMessageFor(model => model.Status, null, new { @class = "color-red" })
+                                @Html.DropDownList("Status", null, "Vui lòng chọn", new { @class = "form-control " })
+                            </div>
+
+                        </div>
+                        <div class="col-md-3 box-info">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+                        }
+
+@*<script>
+        var datenow = GetDate();
+        var datemax = '10/1/2017';
+        var yearmin = '2016';
+        var yearmax = '2020';
+
+        $(function () {
+            debugger
+            alert("voooooooooo");
+            $(".centerdate").datepicker({
+                dateFormat: 'dd/mm/yy',
+                defaultDate: '01/01/1980',
+                inline: true,
+                changeMonth: true,
+                changeYear: true,
+                maxDate: datemax,
+                minDate: datenow,
+                yearRange: yearmin + ':' + yearmax
+
+            });
+        })
+    </script>*@
+
+@section scripts{
+
+    <script src="~/Theme/ckeditor/ckeditor.js"></script>
+    <script src="~/Theme/ckfinder/ckfinder.js"></script>
+    <script type="text/javascript">
+        SetNumberText();
+        var editor = CKEDITOR.instances['editor1'];
+        if (editor) { editor.destroy(true); }
+        CKEDITOR.replace('ArchiveContent', { enterMode: CKEDITOR.ENTER_BR, });
+        CKFinder.setupCKEditor(null, '@Url.Content("~/Theme/ckfinder/")');
+    </script>
+}

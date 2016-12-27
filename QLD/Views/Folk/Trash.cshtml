@@ -134,11 +134,10 @@
         </div>
     </section>
 }
-
 <script>
     function Confirmdelete() {
-        if (checkinput() == 1) {
-            return confirm('Bạn có chắc chắn muốn xóa vĩnh viễn mục đã chọn?');
+        if (checkinput() >= 1) {
+            return confirm('Bạn có chắc chắn muốn xóa?');
         }
         else {
             alert("Vui lòng chọn 1 dòng để xóa!");
@@ -147,16 +146,14 @@
     }
     function checkinput(){
         var eleNodelist = document.getElementsByTagName("input");
+        var dem = 0;
         for (i = 0; i < eleNodelist.length; i++) {
             if (eleNodelist[i].type == 'checkbox')
                 if (eleNodelist[i].checked == true)
                 {
-                    return 1;
-                }
-                else
-                {
-                    return 0;
+                    dem++;
                 }
         }
+        return dem;
     }
 </script>

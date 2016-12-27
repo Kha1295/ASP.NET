@@ -10,17 +10,16 @@ using PagedList;
 using QLD.Library;
 using QLD.Models;
 
-
 namespace QLD.Controllers.Basic
 {
-    [Authorize, RoutePrefix("Admin/ServiceOther")]
-    public class ServiceOtherController : Controller
+    [Authorize, RoutePrefix("Admin/ServiceOtherPrice")]
+    public class ServiceOtherPriceController : Controller
     {
-        // GET: ServiceOther
+        // GET: ServiceOtherPrice
         private Entities db = new Entities();
         private SharedFuntionController shared = new SharedFuntionController();
         [Route("Index")]
-        [Authorize(Roles = "QL,ServiceOther,ServiceOtherV")]
+        [Authorize(Roles = "QL,ServiceOtherPrice,ServiceOtherPriceV")]
         public ActionResult Index(string sortOrder, string searchString, int? numberRow, int? page)
         {
             ViewBag.Mess = 0;
@@ -28,7 +27,7 @@ namespace QLD.Controllers.Basic
             ViewBag.NumberRow = Convert.ToInt32(numberRow) <= 0 ? 20 : Convert.ToInt32(numberRow);
             ViewBag.SearchString = searchString;
             DefineSort(sortOrder);
-            var obj = db.ServiceOthers.Where(t => t.Status != 3).ToList();
+            var obj = db.ServiceOtherPrices.Where(t => t.Status != 3).ToList();
             obj = Authorities(obj);
             if (!String.IsNullOrEmpty(searchString))
             {
@@ -43,7 +42,7 @@ namespace QLD.Controllers.Basic
         }
         [HttpPost]
         [Route("Index")]
-        [Authorize(Roles = "QL,ServiceOther,ServiceOtherV")]
+        [Authorize(Roles = "QL,ServiceOtherPrice,ServiceOtherPriceV")]
         public ActionResult Index(FormCollection form, string typeName, string searchString, int? numberRow)
         {
             SetDefineSort();
@@ -53,8 +52,8 @@ namespace QLD.Controllers.Basic
             var inputCheck = form.GetValues("inputCheck");
             ViewBag.Mess = EvenList(inputCheck, typeName);
             if (ViewBag.Mess == 7)
-                return RedirectToAction("Edit", "ServiceOther", new { Id = ViewBag.id, mess = 0 });
-            var obj = db.ServiceOthers.Where(t => t.Status < 3).ToList();
+                return RedirectToAction("Edit", "ServiceOtherPrice", new { Id = ViewBag.id, mess = 0 });
+            var obj = db.ServiceOtherPrices.Where(t => t.Status < 3).ToList();
             obj = Authorities(obj);
             if (typeName == "refresh")
             {
@@ -64,14 +63,14 @@ namespace QLD.Controllers.Basic
             {
                 ViewBag.SearchString = searchString;
                 searchString = searchString.ToLower();
-                obj = db.ServiceOthers.Where(c => (c.Name ?? "").ToLower().Contains(searchString)).ToList();
+                obj = db.ServiceOtherPrices.Where(c => (c.Name ?? "").ToLower().Contains(searchString)).ToList();
             }
             int pageSize = (numberRow ?? 20);
             int pageNumber = 1;
             return View(obj.ToPagedList(pageNumber, pageSize));
 
         }
-        [Authorize(Roles = "QL,ServiceOther,ServiceOtherU")]
+        [Authorize(Roles = "QL,ServiceOtherPrice,ServiceOtherPriceU")]
         private int EventStatus(string[] inputCheck, string typeName)
         {
             int rowFinish = 0;
@@ -81,7 +80,7 @@ namespace QLD.Controllers.Basic
                 try
                 {
                     int id = Convert.ToInt32(DefineFuntion.Decrypt(s));
-                    var obj = db.ServiceOthers.Find(id);
+                    var obj = db.ServiceOtherPrices.Find(id);
                     if (typeName == "activity")
                         obj.Status = 1;//Cho phép dùng
                     else if (typeName == "inactive")
@@ -144,12 +143,15 @@ namespace QLD.Controllers.Basic
             ViewBag.Code = sortOrder == "Code" ? "Code_desc" : "Code";
             ViewBag.Name = sortOrder == "Name" ? "Name_desc" : "Name";
             ViewBag.Status = sortOrder == "Status" ? "Status_desc" : "Status";
-            ViewBag.CreateBy = sortOrder == "CreateBy" ? "CreateBy_desc" : "CreateBy";
-            ViewBag.CreateDay = sortOrder == "CreateDay" ? "CreateDay_desc" : "CreateDay";
-            ViewBag.UpdateBy = sortOrder == "UpdateBy" ? "UpdateBy_desc" : "UpdateBy";
-            ViewBag.UpdateBy = sortOrder == "UpdateDay" ? "UpdateDay_desc" : "UpdateDay";
+            ViewBag.FromDay = sortOrder == "FromDay" ? "FromDay_desc" : "FromDay";
+            ViewBag.ToDay = sortOrder == "ToDay" ? "ToDay_desc" : "ToDay";
+            ViewBag.Price = sortOrder == "Price" ? "Price_desc" : "Price";
+            ViewBag.PriceAdult = sortOrder == "PriceAdult" ? "PriceAdult_desc" : "PriceAdult";
+            ViewBag.PriceChild = sortOrder == "PriceChild" ? "PriceChild_desc" : "PriceChild";
+            ViewBag.PriceInfant = sortOrder == "PriceInfant" ? "PriceInfant_desc" : "PriceInfant";
+            ViewBag.PriceBaby = sortOrder == "PriceBaby" ? "PriceAdult_desc" : "PriceAdult";
         }
-        private List<ServiceOther> EvenSort(List<ServiceOther> obj, string sortOrder)
+        private List<ServiceOtherPrice> EvenSort(List<ServiceOtherPrice> obj, string sortOrder)
         {
             switch (sortOrder)
             {
@@ -165,27 +167,56 @@ namespace QLD.Controllers.Basic
                 case "Status_desc":
                     obj = obj.OrderByDescending(s => s.Status).ToList();
                     break;
-                case "CreateBy":
-                    obj = obj.OrderBy(s => s.CreateBy).ToList();
+                case "FromDay":
+                    obj = obj.OrderBy(s => s.FromDay).ToList();
                     break;
-                case "CreateBy_desc":
-                    obj = obj.OrderByDescending(s => s.CreateBy).ToList();
+                case "FromDay_desc":
+                    obj = obj.OrderByDescending(s => s.FromDay).ToList();
                     break;
-                case "CreateDay":
-                    obj = obj.OrderBy(s => s.CreateDay).ToList();
+                case "ToDay":
+                    obj = obj.OrderBy(s => s.ToDay).ToList();
                     break;
-                case "CreateDay_desc":
-                    obj = obj.OrderByDescending(s => s.CreateDay).ToList();
+                case "ToDay_desc":
+                    obj = obj.OrderByDescending(s => s.ToDay).ToList();
                     break;
-
+                case "Price":
+                    obj = obj.OrderBy(s => s.Price).ToList();
+                    break;
+                case "Price_desc":
+                    obj = obj.OrderByDescending(s => s.Price).ToList();
+                    break;
+                case "PriceAdult":
+                    obj = obj.OrderBy(s => s.PriceAdult).ToList();
+                    break;
+                case "PriceAdult_desc":
+                    obj = obj.OrderByDescending(s => s.PriceAdult).ToList();
+                    break;
+                case "PriceChild":
+                    obj = obj.OrderBy(s => s.PriceChild).ToList();
+                    break;
+                case "PriceChild_desc":
+                    obj = obj.OrderByDescending(s => s.PriceChild).ToList();
+                    break;
+                case "PriceInfant":
+                    obj = obj.OrderBy(s => s.PriceInfant).ToList();
+                    break;
+                case "PriceInfant_desc":
+                    obj = obj.OrderByDescending(s => s.PriceInfant).ToList();
+                    break;
+                case "PriceBaby":
+                    obj = obj.OrderBy(s => s.PriceBaby).ToList();
+                    break;
+                case "PriceBaby_desc":
+                    obj = obj.OrderByDescending(s => s.PriceBaby).ToList();
+                    break;
                 default:
-                    obj = obj.OrderByDescending(s => s.ServiceOtherId).ToList();
+                    obj = obj.OrderByDescending(s => s.ServiceOtherPriceId).ToList();
                     break;
             }
             return obj;
         }
 
-        private List<ServiceOther> Authorities(List<ServiceOther> obj)
+        private List<ServiceOtherPrice> Authorities(List<ServiceOtherPrice> obj)
         {
             //var objTourGroup = DefineFuntion.CheckRole("CareerGroup");
 
@@ -203,11 +234,16 @@ namespace QLD.Controllers.Basic
             ViewBag.Code = "Code";
             ViewBag.Name = "Name";
             ViewBag.Status = "Status";
-            ViewBag.CreateBy = "CreateBy";
-            ViewBag.CreateDay = "CreateDay";
+            ViewBag.FromDay = "FromDay";
+            ViewBag.ToDay = "ToDay";
+            ViewBag.Price = "Price";
+            ViewBag.PriceAdult = "PriceAdult";
+            ViewBag.PriceChild = "PriceChild";
+            ViewBag.PriceInfant = "PriceInfant";
+            ViewBag.PriceBaby = "PriceBaby";
 
         }
-        [Authorize(Roles = "QL,ServiceOther,ServiceOtherD")]
+        [Authorize(Roles = "QL,ServiceOtherPrice,ServiceOtherPriceD")]
         public int DeleteConfirmed(string[] inputCheck)
         {
             //System.Windows.Forms.DialogResult dailogresult = System.Windows.Forms.MessageBox.Show("Bạn có chắc chắn xóa!", "Thông báo", System.Windows.Forms.MessageBoxButtons.YesNo);
@@ -219,16 +255,16 @@ namespace QLD.Controllers.Basic
                 try
                 {
                     int idMenu = Convert.ToInt32(DefineFuntion.Decrypt(s));
-                    ServiceOther obj = db.ServiceOthers.Find(idMenu);
+                    ServiceOtherPrice obj = db.ServiceOtherPrices.Find(idMenu);
                     //1-them, 2- sua, 3-xoa, 4- khac
                     shared.CreateHistory(new History()
                     {
-                        Name = "Xóa Dịch Vụ",
+                        Name = "Xóa Giá Dịch Vụ",
                         Contens = JsonConvert.SerializeObject(obj, Formatting.Indented, new JsonSerializerSettings() { ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore }),
-                        ItemId = obj.ServiceOtherId,
+                        ItemId = obj.ServiceOtherPriceId,
                         Type = (int)DefineFuntion.TypeHistory.ServiceOtherPrice,
                     });
-                    db.ServiceOthers.Remove(obj);
+                    db.ServiceOtherPrices.Remove(obj);
                     db.SaveChanges();
                     rowFinish++;
 
@@ -236,7 +272,7 @@ namespace QLD.Controllers.Basic
                 catch (Exception)
                 {
                     int idMenu = Convert.ToInt32(DefineFuntion.Decrypt(s));
-                    ServiceOther obj = db.ServiceOthers.Find(idMenu);
+                    ServiceOtherPrice obj = db.ServiceOtherPrices.Find(idMenu);
                     obj.Status = 3;
                     db.SaveChanges();
 
@@ -246,7 +282,7 @@ namespace QLD.Controllers.Basic
         }
         [Route("Trash")]
 
-        [Authorize(Roles = "QL,ServiceOther,ServiceOtherV")]
+        [Authorize(Roles = "QL,ServiceOtherPrice,ServiceOtherPriceV")]
 
         public ActionResult Trash(string sortOrder, string searchString, int? nunberRow, int? page)
         {
@@ -257,7 +293,7 @@ namespace QLD.Controllers.Basic
             ViewBag.CurrentSort = sortOrder;
             ViewBag.IdSortParm = String.IsNullOrEmpty(sortOrder) ? "Id_desc" : "";
             DefineSort(sortOrder);
-            var obj = db.ServiceOthers.Where(t => t.Status == 3).ToList();
+            var obj = db.ServiceOtherPrices.Where(t => t.Status == 3).ToList();
             obj = Authorities(obj);
             if (!String.IsNullOrEmpty(searchString))
             {
@@ -272,7 +308,7 @@ namespace QLD.Controllers.Basic
         [HttpPost]
         [Route("Trash")]
 
-        [Authorize(Roles = "QL,ServiceOther,ServiceOtherV")]
+        [Authorize(Roles = "QL,ServiceOtherPrice,ServiceOtherPriceV")]
 
         public ActionResult Trash(FormCollection form, string typeName, string searchString, int? nunberRow)
         {
@@ -322,7 +358,7 @@ namespace QLD.Controllers.Basic
             ViewBag.rowFinish = rowFinish;
             ViewBag.Mess = ms;
             #endregion
-            var obj = db.ServiceOthers.Where(t => t.Status == 3).OrderByDescending(t => t.ServiceOtherId).ToList();
+            var obj = db.ServiceOtherPrices.Where(t => t.Status == 3).OrderByDescending(t => t.ServiceOtherPriceId).ToList();
             obj = Authorities(obj);
             if (typeName == "refresh")
             {
@@ -332,7 +368,7 @@ namespace QLD.Controllers.Basic
             {
                 ViewBag.SearchString = searchString;
                 searchString = searchString.ToLower();
-                obj = db.ServiceOthers.Where(c => (c.Name ?? "").ToLower().Contains(searchString)).ToList();
+                obj = db.ServiceOtherPrices.Where(c => (c.Name ?? "").ToLower().Contains(searchString)).ToList();
             }
             int pageSize = (nunberRow ?? 20);
             int pageNumber = 1;
@@ -341,13 +377,16 @@ namespace QLD.Controllers.Basic
         }
         [Route("Create")]
 
-        [Authorize(Roles = "QL,ServiceOther,ServiceOtherC")]
+        [Authorize(Roles = "QL,ServiceOtherPrice,ServiceOtherPriceC")]
 
         public ActionResult Create(int? mess)
         {
             ViewBag.Mess = (mess ?? 0);
             ViewBag.Status = new SelectList(DefineFuntion.ListStatus, "Value", "Text", 1);
-            //ViewBag.CreateBy = shared.GetUser();
+            ViewBag.ServiceOther = new SelectList(shared.GetServiceOther(), "Value", "Text");
+            ViewBag.Provider = new SelectList(shared.GetProvider(), "Value", "Text");
+            ViewBag.Contract = new SelectList(shared.GetContract(), "Value", "Text");
+            ViewBag.Paymen = new SelectList(shared.GetPaymen(), "Value", "Text");
             return View();
         }
         [HttpPost]
@@ -355,24 +394,24 @@ namespace QLD.Controllers.Basic
         [Route("Create")]
         [ValidateInput(false)]
 
-        [Authorize(Roles = "QL,ServiceOther,ServiceOtherC")]
+        [Authorize(Roles = "QL,ServiceOtherPrice,ServiceOtherPriceC")]
 
-        public ActionResult Create(ServiceOther ServiceOther, string typeName)
+        public ActionResult Create(ServiceOtherPrice ServiceOtherPrice, string typeName)
         {
             var shared = new SharedFuntionController();
             int ms = 0;
             try
             {
 
-                db.ServiceOthers.Add(ServiceOther);
+                db.ServiceOtherPrices.Add(ServiceOtherPrice);
                 db.SaveChanges();
                 ms = 1;
                 //1-them, 2- sua, 3-xoa, 4- khac
                 shared.CreateHistory(new History()
                 {
-                    Name = "Thêm Dịch Vụ",
+                    Name = "Thêm Giá Dịch Vụ",
                     Contens = "",
-                    ItemId = ServiceOther.ServiceOtherId,
+                    ItemId = ServiceOtherPrice.ServiceOtherPriceId,
                     Type = (int)DefineFuntion.TypeHistory.ServiceOtherPrice,
                 });
             }
@@ -386,16 +425,16 @@ namespace QLD.Controllers.Basic
                     return RedirectToAction("Create", new { mess = ms });
                 else
                 {
-                    return RedirectToAction("Edit", new { id = DefineFuntion.Encrypt(ServiceOther.ServiceOtherId), mess = ms });
+                    return RedirectToAction("Edit", new { id = DefineFuntion.Encrypt(ServiceOtherPrice.ServiceOtherPriceId), mess = ms });
                 }
             }
-            ViewBag.Status = new SelectList(DefineFuntion.ListStatus, "Value", "Text", ServiceOther.Status);
-            return View("Create", "ServiceOther");
+            ViewBag.Status = new SelectList(DefineFuntion.ListStatus, "Value", "Text", ServiceOtherPrice.Status);
+            return View("Create", "ServiceOtherPrice");
         }
         // GET: /Menu/Edit/5
         [Route("Edit")]
 
-        [Authorize(Roles = "QL,ServiceOther,ServiceOtherU")]
+        [Authorize(Roles = "QL,ServiceOtherPrice,ServiceOtherPriceU")]
 
         public ActionResult Edit(string id, int? mess)
         {
@@ -404,46 +443,47 @@ namespace QLD.Controllers.Basic
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             int obj = Convert.ToInt32(DefineFuntion.Decrypt(id));
-            var ServiceOther = db.ServiceOthers.Find(obj);
-            if (ServiceOther == null)
+            var ServiceOtherPrice = db.ServiceOtherPrices.Find(obj);
+            if (ServiceOtherPrice == null)
             {
                 return HttpNotFound();
             }
             ViewBag.Mess = (mess ?? 0);
-            ViewBag.Status = new SelectList(DefineFuntion.ListStatus, "Value", "Text", ServiceOther.Status);
+            ViewBag.Status = new SelectList(DefineFuntion.ListStatus, "Value", "Text", ServiceOtherPrice.Status);
 
-            return View(ServiceOther);
+            return View(ServiceOtherPrice);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("Edit")]
         [ValidateInput(false)]
 
-        [Authorize(Roles = "QL,ServiceOther,ServiceOtherU")]
+        [Authorize(Roles = "QL,ServiceOtherPrice,ServiceOtherPriceU")]
 
-        public ActionResult Edit(ServiceOther ServiceOther, string codeSystem, string typeName)
+        public ActionResult Edit(ServiceOtherPrice ServiceOtherPrice, string codeSystem, string typeName)
         {
-            ServiceOther.ServiceOtherId = Convert.ToInt32(DefineFuntion.Decrypt(codeSystem));
+            ServiceOtherPrice.ServiceOtherPriceId = Convert.ToInt32(DefineFuntion.Decrypt(codeSystem));
             int ms = 0;
-            var me = db.ServiceOthers.Find(ServiceOther.ServiceOtherId);
+            var me = db.ServiceOtherPrices.Find(ServiceOtherPrice.ServiceOtherPriceId);
             try
             {
-                me.Name = ServiceOther.Name;
-                me.Status = ServiceOther.Status;
-                me.Address = ServiceOther.Address;
-                me.AddressShow = ServiceOther.AddressShow;
-                me.Description = ServiceOther.Description;
-                me.Contents = ServiceOther.Contents;
-                me.UpdateBy = ServiceOther.UpdateBy;
-                me.UpdateDay = ServiceOther.UpdateDay;
+                me.Name = ServiceOtherPrice.Name;
+                me.Status = ServiceOtherPrice.Status;
+                me.FromDay = ServiceOtherPrice.FromDay;
+                me.ToDay = ServiceOtherPrice.ToDay;
+                me.Price = ServiceOtherPrice.Price;
+                me.PriceAdult = ServiceOtherPrice.PriceAdult;
+                me.PriceChild = ServiceOtherPrice.PriceChild;
+                me.PriceInfant = ServiceOtherPrice.PriceInfant;
+                me.PriceBaby = ServiceOtherPrice.PriceBaby;
                 db.SaveChanges();
                 ms = 3;//Nếu cập nhật thành công
                 //1-them, 2- sua, 3-xoa, 4- khac
                 shared.CreateHistory(new History()
                 {
-                    Name = "Cập Nhật Dịch Vụ",
+                    Name = "Cập Nhật Giá Dịch Vụ",
                     Contens = JsonConvert.SerializeObject(me, Formatting.Indented, new JsonSerializerSettings() { ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore }),
-                    ItemId = me.ServiceOtherId,
+                    ItemId = me.ServiceOtherPriceId,
                     Type = (int)DefineFuntion.TypeHistory.ServiceOtherPrice,
                 });
             }

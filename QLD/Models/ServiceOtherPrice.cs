@@ -22,16 +22,13 @@ namespace QLD.Models
         public string Name { get; set; }
         public Nullable<System.DateTime> FromDay { get; set; }
         public Nullable<System.DateTime> ToDay { get; set; }
-        public decimal Price { get; set; }
+        public Nullable<decimal> Price { get; set; }
         public Nullable<decimal> PriceAdult { get; set; }
         public Nullable<decimal> PriceChild { get; set; }
         public Nullable<decimal> PriceInfant { get; set; }
         public Nullable<decimal> PriceBaby { get; set; }
         public Nullable<int> Status { get; set; }
     
-        public virtual Contract Contract { get; set; }
-        public virtual Payman Payman { get; set; }
-        public virtual Provider Provider { get; set; }
         public virtual ServiceOther ServiceOther { get; set; }
     }
 }

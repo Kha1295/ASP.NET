@@ -16,7 +16,7 @@ namespace QLD.Models
     {
         public long ProviderContactId { get; set; }
         public Nullable<int> RegencyId { get; set; }
-        public string ProviderId { get; set; }
+        public Nullable<long> ProviderId { get; set; }
         public string Name { get; set; }
         public Nullable<int> Sex { get; set; }
         public string NickName { get; set; }

@@ -351,7 +351,7 @@
     <Key>
       <PropertyRef Name="PartnerId" />
     </Key>
-    <Property Name="PartnerId" Type="bigint" Nullable="false" />
+    <Property Name="PartnerId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Code" Type="nvarchar" MaxLength="50" />
     <Property Name="Name" Type="nvarchar" MaxLength="250" />
     <Property Name="NameOther" Type="nvarchar" MaxLength="250" />
@@ -428,7 +428,7 @@
     <Key>
       <PropertyRef Name="PartnerDepositId" />
     </Key>
-    <Property Name="PartnerDepositId" Type="bigint" Nullable="false" />
+    <Property Name="PartnerDepositId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="PartnerId" Type="bigint" />
     <Property Name="Money" Type="numeric" Precision="18" Scale="0" />
     <Property Name="Day" Type="datetime" />
@@ -449,7 +449,7 @@
     <Key>
       <PropertyRef Name="PartnerLeveId" />
     </Key>
-    <Property Name="PartnerLeveId" Type="int" Nullable="false" />
+    <Property Name="PartnerLeveId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" />
     <Property Name="Percents" Type="float" />
     <Property Name="Status" Type="int" />
@@ -553,7 +553,7 @@
     <Key>
       <PropertyRef Name="ProviderId" />
     </Key>
-    <Property Name="ProviderId" Type="bigint" Nullable="false" />
+    <Property Name="ProviderId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Code" Type="nvarchar" MaxLength="50" />
     <Property Name="Name" Type="nvarchar" MaxLength="250" />
     <Property Name="NameOther" Type="nvarchar" MaxLength="250" />
@@ -615,7 +615,7 @@
     </Key>
     <Property Name="ProviderContactId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="RegencyId" Type="int" />
-    <Property Name="ProviderId" Type="nchar" MaxLength="10" />
+    <Property Name="ProviderId" Type="bigint" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" />
     <Property Name="Sex" Type="int" />
     <Property Name="NickName" Type="nvarchar" MaxLength="50" />
@@ -700,7 +700,7 @@
     <Key>
       <PropertyRef Name="ServiceOtherPriceId" />
     </Key>
-    <Property Name="ServiceOtherPriceId" Type="bigint" Nullable="false" />
+    <Property Name="ServiceOtherPriceId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ServiceOtherId" Type="bigint" />
     <Property Name="ProviderId" Type="bigint" />
     <Property Name="ContractId" Type="bigint" />
@@ -708,7 +708,7 @@
     <Property Name="Name" Type="nvarchar" MaxLength="1550" />
     <Property Name="FromDay" Type="datetime" />
     <Property Name="ToDay" Type="datetime" />
-    <Property Name="Price" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Price" Type="numeric" Precision="18" Scale="0" />
     <Property Name="PriceAdult" Type="numeric" Precision="18" Scale="0" />
     <Property Name="PriceChild" Type="numeric" Precision="18" Scale="0" />
     <Property Name="PriceInfant" Type="numeric" Precision="18" Scale="0" />
@@ -760,6 +760,7 @@
       <PropertyRef Name="VocativeId" />
     </Key>
     <Property Name="VocativeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="20" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" />
     <Property Name="Note" Type="nvarchar" MaxLength="500" />
     <Property Name="Status" Type="int" />
@@ -1244,42 +1245,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ServiceOtherPrice_Contract">
-    <End Role="Contract" Type="Self.Contract" Multiplicity="0..1" />
-    <End Role="ServiceOtherPrice" Type="Self.ServiceOtherPrice" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Contract">
-        <PropertyRef Name="ContractId" />
-      </Principal>
-      <Dependent Role="ServiceOtherPrice">
-        <PropertyRef Name="ContractId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ServiceOtherPrice_Paymen">
-    <End Role="Paymen" Type="Self.Paymen" Multiplicity="0..1" />
-    <End Role="ServiceOtherPrice" Type="Self.ServiceOtherPrice" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Paymen">
-        <PropertyRef Name="PaymenId" />
-      </Principal>
-      <Dependent Role="ServiceOtherPrice">
-        <PropertyRef Name="PaymenId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ServiceOtherPrice_Provider">
-    <End Role="Provider" Type="Self.Provider" Multiplicity="0..1" />
-    <End Role="ServiceOtherPrice" Type="Self.ServiceOtherPrice" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Provider">
-        <PropertyRef Name="ProviderId" />
-      </Principal>
-      <Dependent Role="ServiceOtherPrice">
-        <PropertyRef Name="ProviderId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_ServiceOtherPrice_ServiceOther">
     <End Role="ServiceOther" Type="Self.ServiceOther" Multiplicity="0..1" />
     <End Role="ServiceOtherPrice" Type="Self.ServiceOtherPrice" Multiplicity="*" />
@@ -1545,18 +1510,6 @@
     <AssociationSet Name="FK_ProviderPropertise_Provider" Association="Self.FK_ProviderPropertise_Provider">
       <End Role="Provider" EntitySet="Provider" />
       <End Role="ProviderPropertise" EntitySet="ProviderPropertise" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ServiceOtherPrice_Contract" Association="Self.FK_ServiceOtherPrice_Contract">
-      <End Role="Contract" EntitySet="Contract" />
-      <End Role="ServiceOtherPrice" EntitySet="ServiceOtherPrice" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ServiceOtherPrice_Paymen" Association="Self.FK_ServiceOtherPrice_Paymen">
-      <End Role="Paymen" EntitySet="Paymen" />
-      <End Role="ServiceOtherPrice" EntitySet="ServiceOtherPrice" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ServiceOtherPrice_Provider" Association="Self.FK_ServiceOtherPrice_Provider">
-      <End Role="Provider" EntitySet="Provider" />
-      <End Role="ServiceOtherPrice" EntitySet="ServiceOtherPrice" />
     </AssociationSet>
     <AssociationSet Name="FK_ServiceOtherPrice_ServiceOther" Association="Self.FK_ServiceOtherPrice_ServiceOther">
       <End Role="ServiceOther" EntitySet="ServiceOther" />

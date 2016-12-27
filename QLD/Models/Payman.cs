@@ -18,7 +18,6 @@ namespace QLD.Models
         {
             this.GuidesPrices = new HashSet<GuidesPrice>();
             this.InsurancePrices = new HashSet<InsurancePrice>();
-            this.ServiceOtherPrices = new HashSet<ServiceOtherPrice>();
         }
     
         public int PaymenId { get; set; }
@@ -28,6 +27,5 @@ namespace QLD.Models
     
         public virtual ICollection<GuidesPrice> GuidesPrices { get; set; }
         public virtual ICollection<InsurancePrice> InsurancePrices { get; set; }
-        public virtual ICollection<ServiceOtherPrice> ServiceOtherPrices { get; set; }
     }
 }

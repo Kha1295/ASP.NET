@@ -62,16 +62,21 @@ namespace QLD.Controllers
             var obj = new SelectList(DefineFuntion.ListStatus, "Value", "Text", status);
             return obj;
         }
-        public SelectList GetUser(long? idUser, int? type)
+        public SelectList GetUser()
         {
-            var obj = new SelectList(db.Users.Where(t => t.Status == 1 & t.Type == type), "UserId", "Name", idUser);
-            return obj;
+            User model = new Models.User();
+            //var usr= Session["Account"];
+            var obj1 = new SelectList(db.Users.Where(t => t.Status == 1 & t.Account==model.Account), "UserId", "Name");
+
+            //Session["Account"] = obj.Account;
+            //Session["UserId"] = obj.UserId;
+            return obj1;
         }
-        public SelectList GetUser(long? idUser)
-        {
-            var obj = new SelectList(db.Users.Where(t => t.Status == 1), "Name", "Name", idUser);
-            return obj;
-        }
+        //public SelectList GetUser()
+        //{
+        //    var obj = new SelectList(db.Users.Where(t => t.Status == 1), "Name", "Name");
+        //    return obj;
+        //}
 
         public User GetUserById(int? id)
         {
@@ -85,6 +90,28 @@ namespace QLD.Controllers
                 return new User();
             }
         }
+
+        public SelectList GetServiceOther()
+        {
+            var obj = new SelectList(db.ServiceOthers, "ServiceOtherId", "Name");
+            return obj;
+        }
+        public SelectList GetProvider()
+        {
+            var obj = new SelectList(db.Providers, "ProviderId", "Name");
+            return obj;
+        }
+        public SelectList GetContract()
+        {
+            var obj = new SelectList(db.Contracts, "ContractId", "Name");
+            return obj;
+        }
+        public SelectList GetPaymen()
+        {
+            var obj = new SelectList(db.Paymen, "PaymenId", "Name");
+            return obj;
+        }
+
         #endregion
 
         #region Lay ma tu dong

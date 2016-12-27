@@ -96,7 +96,8 @@
                                 <th>@Html.ActionLink("Nội Dung", "Index", new { sortOrder = ViewBag.Adress, searchString = ViewBag.SearchString, numberRow = ViewBag.NumberRow })</th>
                                 <th>@Html.ActionLink("Người Tạo", "Index", new { sortOrder = ViewBag.CreateBy, searchString = ViewBag.SearchString, numberRow = ViewBag.NumberRow })</th>
                                 <th>@Html.ActionLink("Ngày Tạo", "Index", new { sortOrder = ViewBag.CreateDay, searchString = ViewBag.SearchString, numberRow = ViewBag.NumberRow })</th>
-
+                                <th>@Html.ActionLink("Người Cập Nhật", "Index", new { sortOrder = ViewBag.UpdateBy, searchString = ViewBag.SearchString, numberRow = ViewBag.NumberRow })</th>
+                                <th>@Html.ActionLink("Ngày Cập Nhật", "Index", new { sortOrder = ViewBag.UpdateDay, searchString = ViewBag.SearchString, numberRow = ViewBag.NumberRow })</th>
                             </tr>
                             @foreach (var item in Model)
                             {
@@ -127,6 +128,8 @@
                                     <td>@Html.DisplayFor(modelItem => item.Contents)</td>
                                     <td>@Html.DisplayFor(modelItem => item.CreateBy)</td>
                                     <td>@Html.DisplayFor(modelItem => item.CreateDay)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.UpdateBy)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.UpdateDay)</td>
                                 </tr>
                                 i++;
                             }

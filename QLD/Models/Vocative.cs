@@ -21,6 +21,7 @@ namespace QLD.Models
         }
     
         public int VocativeId { get; set; }
+        public string Code { get; set; }
         public string Name { get; set; }
         public string Note { get; set; }
         public Nullable<int> Status { get; set; }

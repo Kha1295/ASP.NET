@@ -1,7 +1,100 @@
-﻿
-@{
-    ViewBag.Title = "Edit";
+﻿@using QLD.Library
+@model  QLD.Models.ServiceOther
+@using Microsoft.AspNet.Identity
+
+@{ 
+    ViewBag.Title = "Cập nhật dịch vụ";
+    Layout = "~/Views/Shared/_BackEnd.cshtml";
+    var checkU = DefineFuntion.CheckRole("ServiceOtherU,ServiceOther,QL");
+    var checkC = DefineFuntion.CheckRole("ServiceOtherC,ServiceOther,QL");
 }
 
-<h2>Edit</h2>
+@using (Html.BeginForm())
+{
+    <section class="content-header">
+        <h1>
+            <a href="/"><i class="fa fa-home"></i> Trang chủ</a>
+            <small>
+                <a href="Index"> / Danh sách dịch vụ</a>
+            </small>
+            <small>/ Cập nhật dịch vụ</small>
+        </h1>
+        @{Html.RenderAction("ViewButtomEdit", "Admin", new { showE = checkU, showC = checkC, });}
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h2 class="box-title"><i class="fa fa-list"></i> <b>Cập nhật dịch vụ</b></h2>
+                    </div>
+                    @{Html.RenderAction("Notice", "Admin", new { mess = ViewBag.Mess });}
+                    <hr />
+                    <div class="box-body">
+                        @Html.AntiForgeryToken()
+                        @Html.Hidden("codeSystem", DefineFuntion.Encrypt(Model.ServiceOtherId))
+                        @Html.ValidationSummary(true)
 
+                        <div class="col-md-9 box-info">
+                            <div class="form-group select-custom">
+                                @Html.Label("Tên dịch vụ ", new { @class = "control-label  " })
+                                @Html.ValidationMessageFor(model => model.Name, null, new { @class = "color-red" })
+                                @Html.TextBoxFor(model => model.Name, new { @class = "form-control", title = "Vui lòng nhập vào trường này!", required = "required" })
+                            </div>
+                            <div class="form-group select-custom">
+                                @Html.Label("Địa chỉ", new { @class = "control-label  " })
+                                @Html.ValidationMessageFor(model => model.Address, null, new { @class = "color-red" })
+                                @Html.TextBoxFor(model => model.Address, new { @class = "form-control", title = "Vui lòng nhập vào trường này!", required = "required" })
+                            </div>
+                            <div class="form-group select-custom">
+                                @Html.Label("Địa chỉ hiện", new { @class = "control-label  " })
+                                @Html.ValidationMessageFor(model => model.AddressShow, null, new { @class = "color-red" })
+                                @Html.TextAreaFor(model => model.AddressShow, new { @class = "form-control", title = "Vui lòng nhập vào trường này!", required = "required" })
+                            </div>
+                            <div class="form-group select-custom">
+                                @Html.Label("Mô tả", new { @class = "control-label  " })
+                                @Html.ValidationMessageFor(model => model.Description, null, new { @class = "color-red" })
+                                @Html.TextBoxFor(model => model.Description, new { @class = "form-control", title = "Vui lòng nhập vào trường này!", required = "required" })
+                            </div>
+                            <div class="form-group select-custom">
+                                @Html.Label("Nội dung", new { @class = "control-label  " })
+                                @Html.ValidationMessageFor(model => model.Contents, null, new { @class = "color-red" })
+                                @Html.TextBoxFor(model => model.Contents, new { @class = "form-control", title = "Vui lòng nhập vào trường này!", required = "required" })
+                            </div>
+                            <div class="form-group select-custom">
+                                @Html.Label("Cập nhật bởi", new { @class = "control-label  " })
+                                <div>
+                                    @*@Html.ValidationMessageFor(model => model.CreateBy, null, new { @class = "color-red" })*@
+                                    @Html.TextBoxFor(model => model.UpdateBy, new { @Value = @User.Identity.GetUserName(), @readonly = "readonly", @style = "text-align:center;height:30px" })
+                                    @* @Html.DropDownList("CreateBy", null, "Vui lòng chọn", new { @class = "form-control " })*@
+                                </div>
+                            </div>
+                            <div class="form-group select-custom">
+                                @Html.Label("Ngày cập nhật", new { @class = "control-label  " })
+                                <div>
+                                    @Html.TextBoxFor(model => model.UpdateDay, new { @Value = @DateTime.Now.ToString("MM'/'dd'/'yyyy HH:mm:ss"), @readonly = "readonly", @style = "text-align:center;height:30px" })
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-3 box-info">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+                        }
+@section scripts{
+
+    @*<script src="~/Theme/ckeditor/ckeditor.js"></script>
+        <script src="~/Theme/ckfinder/ckfinder.js"></script>
+        <script type="text/javascript">
+            SetNumberText();
+            var editor = CKEDITOR.instances['editor1'];
+            if (editor) { editor.destroy(true); }
+            CKEDITOR.replace('ArchiveContent', { enterMode: CKEDITOR.ENTER_BR, });
+            CKFinder.setupCKEditor(null, '@Url.Content("~/Theme/ckfinder/")');
+        </script>*@
+}

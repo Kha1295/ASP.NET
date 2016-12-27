@@ -182,6 +182,7 @@
     <Compile Include="Controllers\Basic\LandGroupController.cs" />
     <Compile Include="Controllers\Basic\RegencyController.cs" />
     <Compile Include="Controllers\Basic\ServiceOtherController.cs" />
+    <Compile Include="Controllers\Basic\ServiceOtherPriceController.cs" />
     <Compile Include="Controllers\CareerController.cs" />
     <Compile Include="Controllers\partner\PaymenController.cs" />
     <Compile Include="Controllers\SharedFuntionController.cs" />
@@ -1839,6 +1840,9 @@
     <Content Include="Views\ServiceOther\Trash.cshtml" />
     <Content Include="Views\ServiceOther\Create.cshtml" />
     <Content Include="Views\ServiceOther\Edit.cshtml" />
+    <Content Include="Views\ServiceOtherPrice\Index.cshtml" />
+    <Content Include="Views\ServiceOtherPrice\Trash.cshtml" />
+    <Content Include="Views\ServiceOtherPrice\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -19,7 +19,6 @@ namespace QLD.Models
             this.ContracImages = new HashSet<ContracImage>();
             this.GuidesPrices = new HashSet<GuidesPrice>();
             this.InsurancePrices = new HashSet<InsurancePrice>();
-            this.ServiceOtherPrices = new HashSet<ServiceOtherPrice>();
         }
     
         public long ContractId { get; set; }
@@ -50,6 +49,5 @@ namespace QLD.Models
         public virtual Provider Provider { get; set; }
         public virtual ICollection<GuidesPrice> GuidesPrices { get; set; }
         public virtual ICollection<InsurancePrice> InsurancePrices { get; set; }
-        public virtual ICollection<ServiceOtherPrice> ServiceOtherPrices { get; set; }
     }
 }

@@ -121,10 +121,6 @@
       <End Role="Contract" EntitySet="Contracts" />
       <End Role="InsurancePrice" EntitySet="InsurancePrices" />
     </AssociationSet>
-    <AssociationSet Name="FK_ServiceOtherPrice_Contract" Association="PhanMemDLModel.FK_ServiceOtherPrice_Contract">
-      <End Role="Contract" EntitySet="Contracts" />
-      <End Role="ServiceOtherPrice" EntitySet="ServiceOtherPrices" />
-    </AssociationSet>
     <AssociationSet Name="FK_Guides_Folk" Association="PhanMemDLModel.FK_Guides_Folk">
       <End Role="Folk" EntitySet="Folks" />
       <End Role="Guide" EntitySet="Guides" />
@@ -233,10 +229,6 @@
       <End Role="PartnerStaff" EntitySet="PartnerStaffs" />
       <End Role="PartnerStaffBank" EntitySet="PartnerStaffBanks" />
     </AssociationSet>
-    <AssociationSet Name="FK_ServiceOtherPrice_Paymen" Association="PhanMemDLModel.FK_ServiceOtherPrice_Paymen">
-      <End Role="Payman" EntitySet="Paymen" />
-      <End Role="ServiceOtherPrice" EntitySet="ServiceOtherPrices" />
-    </AssociationSet>
     <AssociationSet Name="FK_ProviderBank_Provider" Association="PhanMemDLModel.FK_ProviderBank_Provider">
       <End Role="Provider" EntitySet="Providers" />
       <End Role="ProviderBank" EntitySet="ProviderBanks" />
@@ -252,10 +244,6 @@
     <AssociationSet Name="FK_ProviderPropertise_Provider" Association="PhanMemDLModel.FK_ProviderPropertise_Provider">
       <End Role="Provider" EntitySet="Providers" />
       <End Role="ProviderPropertise" EntitySet="ProviderPropertises" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ServiceOtherPrice_Provider" Association="PhanMemDLModel.FK_ServiceOtherPrice_Provider">
-      <End Role="Provider" EntitySet="Providers" />
-      <End Role="ServiceOtherPrice" EntitySet="ServiceOtherPrices" />
     </AssociationSet>
     <AssociationSet Name="FK_ServiceOtherPrice_ServiceOther" Association="PhanMemDLModel.FK_ServiceOtherPrice_ServiceOther">
       <End Role="ServiceOther" EntitySet="ServiceOthers" />
@@ -348,7 +336,6 @@
     <NavigationProperty Name="Provider" Relationship="PhanMemDLModel.FK_Contract_Provider" FromRole="Contract" ToRole="Provider" />
     <NavigationProperty Name="GuidesPrices" Relationship="PhanMemDLModel.FK_GuidesPrice_Contract" FromRole="Contract" ToRole="GuidesPrice" />
     <NavigationProperty Name="InsurancePrices" Relationship="PhanMemDLModel.FK_InsurancePrice_Contract" FromRole="Contract" ToRole="InsurancePrice" />
-    <NavigationProperty Name="ServiceOtherPrices" Relationship="PhanMemDLModel.FK_ServiceOtherPrice_Contract" FromRole="Contract" ToRole="ServiceOtherPrice" />
   </EntityType>
   <EntityType Name="ContractStatu">
     <Key>
@@ -665,7 +652,7 @@
     <Key>
       <PropertyRef Name="PartnerId" />
     </Key>
-    <Property Name="PartnerId" Type="Int64" Nullable="false" />
+    <Property Name="PartnerId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
     <Property Name="NameOther" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
@@ -755,7 +742,7 @@
     <Key>
       <PropertyRef Name="PartnerDepositId" />
     </Key>
-    <Property Name="PartnerDepositId" Type="Int64" Nullable="false" />
+    <Property Name="PartnerDepositId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="PartnerId" Type="Int64" />
     <Property Name="Money" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="Day" Type="DateTime" Precision="3" />
@@ -778,7 +765,7 @@
     <Key>
       <PropertyRef Name="PartnerLeveId" />
     </Key>
-    <Property Name="PartnerLeveId" Type="Int32" Nullable="false" />
+    <Property Name="PartnerLeveId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Percents" Type="Double" />
     <Property Name="Status" Type="Int32" />
@@ -874,7 +861,6 @@
     <Property Name="Status" Type="Int32" />
     <NavigationProperty Name="GuidesPrices" Relationship="PhanMemDLModel.FK_GuidesPrice_Paymen" FromRole="Payman" ToRole="GuidesPrice" />
     <NavigationProperty Name="InsurancePrices" Relationship="PhanMemDLModel.FK_InsurancePrice_Paymen" FromRole="Payman" ToRole="InsurancePrice" />
-    <NavigationProperty Name="ServiceOtherPrices" Relationship="PhanMemDLModel.FK_ServiceOtherPrice_Paymen" FromRole="Payman" ToRole="ServiceOtherPrice" />
   </EntityType>
   <EntityType Name="Plan">
     <Key>
@@ -894,7 +880,7 @@
     <Key>
       <PropertyRef Name="ProviderId" />
     </Key>
-    <Property Name="ProviderId" Type="Int64" Nullable="false" />
+    <Property Name="ProviderId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
     <Property Name="NameOther" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
@@ -929,7 +915,6 @@
     <NavigationProperty Name="ProviderBranches" Relationship="PhanMemDLModel.FK_ProviderBranch_Provider" FromRole="Provider" ToRole="ProviderBranch" />
     <NavigationProperty Name="ProviderImages" Relationship="PhanMemDLModel.FK_ProviderImage_Provider" FromRole="Provider" ToRole="ProviderImage" />
     <NavigationProperty Name="ProviderPropertises" Relationship="PhanMemDLModel.FK_ProviderPropertise_Provider" FromRole="Provider" ToRole="ProviderPropertise" />
-    <NavigationProperty Name="ServiceOtherPrices" Relationship="PhanMemDLModel.FK_ServiceOtherPrice_Provider" FromRole="Provider" ToRole="ServiceOtherPrice" />
   </EntityType>
   <EntityType Name="ProviderBank">
     <Key>
@@ -966,7 +951,7 @@
     </Key>
     <Property Name="ProviderContactId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RegencyId" Type="Int32" />
-    <Property Name="ProviderId" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ProviderId" Type="Int64" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Sex" Type="Int32" />
     <Property Name="NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -1055,7 +1040,7 @@
     <Key>
       <PropertyRef Name="ServiceOtherPriceId" />
     </Key>
-    <Property Name="ServiceOtherPriceId" Type="Int64" Nullable="false" />
+    <Property Name="ServiceOtherPriceId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ServiceOtherId" Type="Int64" />
     <Property Name="ProviderId" Type="Int64" />
     <Property Name="ContractId" Type="Int64" />
@@ -1063,15 +1048,12 @@
     <Property Name="Name" Type="String" MaxLength="1550" FixedLength="false" Unicode="true" />
     <Property Name="FromDay" Type="DateTime" Precision="3" />
     <Property Name="ToDay" Type="DateTime" Precision="3" />
-    <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="PriceAdult" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="PriceChild" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="PriceInfant" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="PriceBaby" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="Status" Type="Int32" />
-    <NavigationProperty Name="Contract" Relationship="PhanMemDLModel.FK_ServiceOtherPrice_Contract" FromRole="ServiceOtherPrice" ToRole="Contract" />
-    <NavigationProperty Name="Payman" Relationship="PhanMemDLModel.FK_ServiceOtherPrice_Paymen" FromRole="ServiceOtherPrice" ToRole="Payman" />
-    <NavigationProperty Name="Provider" Relationship="PhanMemDLModel.FK_ServiceOtherPrice_Provider" FromRole="ServiceOtherPrice" ToRole="Provider" />
     <NavigationProperty Name="ServiceOther" Relationship="PhanMemDLModel.FK_ServiceOtherPrice_ServiceOther" FromRole="ServiceOtherPrice" ToRole="ServiceOther" />
   </EntityType>
   <EntityType Name="Star">
@@ -1121,6 +1103,7 @@
       <PropertyRef Name="VocativeId" />
     </Key>
     <Property Name="VocativeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="Status" Type="Int32" />
@@ -1243,18 +1226,6 @@
         <PropertyRef Name="ContractId" />
       </Principal>
       <Dependent Role="InsurancePrice">
-        <PropertyRef Name="ContractId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ServiceOtherPrice_Contract">
-    <End Type="PhanMemDLModel.Contract" Role="Contract" Multiplicity="0..1" />
-    <End Type="PhanMemDLModel.ServiceOtherPrice" Role="ServiceOtherPrice" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Contract">
-        <PropertyRef Name="ContractId" />
-      </Principal>
-      <Dependent Role="ServiceOtherPrice">
         <PropertyRef Name="ContractId" />
       </Dependent>
     </ReferentialConstraint>
@@ -1583,18 +1554,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ServiceOtherPrice_Paymen">
-    <End Type="PhanMemDLModel.Payman" Role="Payman" Multiplicity="0..1" />
-    <End Type="PhanMemDLModel.ServiceOtherPrice" Role="ServiceOtherPrice" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Payman">
-        <PropertyRef Name="PaymenId" />
-      </Principal>
-      <Dependent Role="ServiceOtherPrice">
-        <PropertyRef Name="PaymenId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_ProviderBank_Provider">
     <End Type="PhanMemDLModel.Provider" Role="Provider" Multiplicity="1" />
     <End Type="PhanMemDLModel.ProviderBank" Role="ProviderBank" Multiplicity="*" />
@@ -1639,18 +1598,6 @@
         <PropertyRef Name="ProviderId" />
       </Principal>
       <Dependent Role="ProviderPropertise">
-        <PropertyRef Name="ProviderId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ServiceOtherPrice_Provider">
-    <End Type="PhanMemDLModel.Provider" Role="Provider" Multiplicity="0..1" />
-    <End Type="PhanMemDLModel.ServiceOtherPrice" Role="ServiceOtherPrice" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Provider">
-        <PropertyRef Name="ProviderId" />
-      </Principal>
-      <Dependent Role="ServiceOtherPrice">
         <PropertyRef Name="ProviderId" />
       </Dependent>
     </ReferentialConstraint>

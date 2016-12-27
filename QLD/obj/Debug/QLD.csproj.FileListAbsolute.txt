@@ -224,6 +224,6 @@ D:\Study\Project\QLD\QLD\bin\Microsoft.Owin.Security.OAuth.xml
 D:\Study\Project\QLD\QLD\bin\Microsoft.Owin.Security.Google.xml
 D:\Study\Project\QLD\QLD\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Study\Project\QLD\QLD\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\Study\Project\QLD\QLD\obj\Debug\QLD.csprojResolveAssemblyReference.cache
 D:\Study\Project\QLD\QLD\obj\Debug\QLD.dll
 D:\Study\Project\QLD\QLD\obj\Debug\QLD.pdb
+D:\Study\Project\QLD\QLD\obj\Debug\QLD.csprojResolveAssemblyReference.cache

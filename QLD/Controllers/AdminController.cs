@@ -148,7 +148,7 @@ namespace QLD.Controllers.BackEnd
                         //    Session["FolderFile"] = " ";
                         //}
 
-                          objU = db.Users.Find(obj.UserId);
+                        objU = db.Users.Find(obj.UserId);
                         ViewBag.ReturnUrl = "admin/index";
                         ViewBag.action = "ExternalLogin";
                     }

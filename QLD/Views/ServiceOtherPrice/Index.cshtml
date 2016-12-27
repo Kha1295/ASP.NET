@@ -1,8 +1,8 @@
 ﻿@using QLD.Library
-@model PagedList.IPagedList<QLD.Models.Folk>
+@model PagedList.IPagedList<QLD.Models.ServiceOtherPrice>
 @using PagedList.Mvc;
 @{
-    ViewBag.Title = "Danh sách Dân Tộc";
+    ViewBag.Title = "Danh sách giá giá dịch vụ";
     Layout = "~/Views/Shared/_BackEnd.cshtml";
     var checkU = DefineFuntion.CheckRole("FolkU,Folk,QL");
     var checkD = DefineFuntion.CheckRole("FolkD,Folk,QL");
@@ -30,7 +30,7 @@
             <div class="col-md-12">
                 <div class="box">
                     <div class="box-header">
-                        <h2 class="box-title"><i class="fa fa-list"></i> <b>Danh sách dân tộc</b></h2>
+                        <h2 class="box-title"><i class="fa fa-list"></i> <b>Danh sách giá dịch vụ</b></h2>
                         <div class="box-tools">
                             <div class="input-group w250 pull-left">
                                 <input type="text" name="searchString" placeholder="Search" value='@ViewBag.SearchString' class="form-control input-sm pull-right">
@@ -89,16 +89,20 @@
                                 <!-- Check all button -->
                                 <th class="w60 center"><a class="btn btn-default btn-sm checkbox-toggle" data-toggle="tooltip" data-original-title="Chọn tất cả"><i class="fa fa-square-o"></i></a></th>
                                 <th class="w100 center">@Html.ActionLink("Trạng thái", "Index", new { sortOrder = ViewBag.Status, searchString = ViewBag.SearchString, numberRow = ViewBag.NumberRow })</th>
-                                <th>@Html.ActionLink("Mã Dân Tộc", "Index", new { sortOrder = ViewBag.Code, searchString = ViewBag.SearchString, numberRow = ViewBag.NumberRow })</th>
-                                <th>@Html.ActionLink("Tên Dân Tộc", "Index", new { sortOrder = ViewBag.Name, searchString = ViewBag.SearchString, numberRow = ViewBag.NumberRow })</th>
-                                <th>@Html.ActionLink("Ghi chú", "Index", new { sortOrder = ViewBag.Note, searchString = ViewBag.SearchString, numberRow = ViewBag.NumberRow })</th>
-
+                                <th>@Html.ActionLink("Tên", "Index", new { sortOrder = ViewBag.Name, searchString = ViewBag.SearchString, numberRow = ViewBag.NumberRow })</th>
+                                <th>@Html.ActionLink("Từ ngày", "Index", new { sortOrder = ViewBag.FromDay, searchString = ViewBag.SearchString, numberRow = ViewBag.NumberRow })</th>
+                                <th>@Html.ActionLink("Đến ngày", "Index", new { sortOrder = ViewBag.ToDay, searchString = ViewBag.SearchString, numberRow = ViewBag.NumberRow })</th>
+                                <th>@Html.ActionLink("Giá", "Index", new { sortOrder = ViewBag.Price, searchString = ViewBag.SearchString, numberRow = ViewBag.NumberRow })</th>
+                                <th>@Html.ActionLink("Giá người lớn", "Index", new { sortOrder = ViewBag.PriceAdult, searchString = ViewBag.SearchString, numberRow = ViewBag.NumberRow })</th>
+                                <th>@Html.ActionLink("Giá trẻ em", "Index", new { sortOrder = ViewBag.PriceChild, searchString = ViewBag.SearchString, numberRow = ViewBag.NumberRow })</th>
+                                <th>@Html.ActionLink("Giá trẻ sơ sinh", "Index", new { sortOrder = ViewBag.PriceInfant, searchString = ViewBag.SearchString, numberRow = ViewBag.NumberRow })</th>
+                                <th>@Html.ActionLink("Giá trẻ nhỏ", "Index", new { sortOrder = ViewBag.PriceBaby, searchString = ViewBag.SearchString, numberRow = ViewBag.NumberRow })</th>
                             </tr>
                             @foreach (var item in Model)
                             {
                                 var i = 0;
                                 <tr>
-                                    <td class="w60 center"><label><input name="inputCheck" this.value="" value="@DefineFuntion.Encrypt(item.FolkId)" type="checkbox" class="minimal" /></label></td>
+                                    <td class="w60 center"><label><input name="inputCheck" this.value="" value="@DefineFuntion.Encrypt(item.ServiceOtherId)" type="checkbox" class="minimal" /></label></td>
                                     <td class="w100 center">
                                         @if (item.Status == 1)
                                         { <span class="badge bg-green" data-toggle="tooltip" data-original-title="Cho phép dùng"><i class="fa fa-check-circle"></i></span> }
@@ -106,11 +110,10 @@
                                         {<span class="badge bg-red" data-toggle="tooltip" data-original-title="Không cho dùng"> <i class="fa  fa-minus-circle"></i></span> }
 
                                     </td>
-                                    <td>@Html.DisplayFor(modelItem => item.Code)</td>
                                     @if (checkU)
                                     {
                                         <td>
-                                            @Html.EncodedActionLink(item.Name, "Edit", "Admin/Folk", new { id = item.FolkId }, null)
+                                            @Html.EncodedActionLink(item.Name, "Edit", "Admin/ServiceOther", new { id = item.ServiceOtherId }, null)
 
                                         </td>
                                     }
@@ -118,8 +121,13 @@
                                     {
                                         <td>@Html.DisplayFor(modelItem => item.Name)</td>
                                     }
-                                    <td>@Html.DisplayFor(modelItem => item.Note)</td>
-
+                                    <td>@Html.DisplayFor(modelItem => item.FromDay)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.ToDay)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.PriceAdult)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.PriceChild)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.PriceInfant)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.PriceBaby)</td>
                                 </tr>
                                 i++;
                             }
@@ -138,7 +146,7 @@
             </div>
         </div>
     </section>
-}
+                        }
 
 <script>
     function Confirmdelete() {

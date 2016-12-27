@@ -831,6 +831,7 @@
           <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="Note" ColumnName="Note" />
           <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
           <ScalarProperty Name="VocativeId" ColumnName="VocativeId" />
         </MappingFragment>
       </EntityTypeMapping>
