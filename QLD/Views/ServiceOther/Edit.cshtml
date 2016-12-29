@@ -1,6 +1,5 @@
 ﻿@using QLD.Library
 @model  QLD.Models.ServiceOther
-@using Microsoft.AspNet.Identity
 
 @{ 
     ViewBag.Title = "Cập nhật dịch vụ";
@@ -61,23 +60,19 @@
                                 @Html.ValidationMessageFor(model => model.Contents, null, new { @class = "color-red" })
                                 @Html.TextBoxFor(model => model.Contents, new { @class = "form-control", title = "Vui lòng nhập vào trường này!", required = "required" })
                             </div>
-                            <div class="form-group select-custom">
-                                @Html.Label("Cập nhật bởi", new { @class = "control-label  " })
-                                <div>
-                                    @*@Html.ValidationMessageFor(model => model.CreateBy, null, new { @class = "color-red" })*@
+                            @*<div class="form-group select-custom">
+                                @Html.Label("Cập nhật bởi", new { @class = "control-label  " }) <br />
                                     @Html.TextBoxFor(model => model.UpdateBy, new { @Value = @User.Identity.GetUserName(), @readonly = "readonly", @style = "text-align:center;height:30px" })
-                                    @* @Html.DropDownList("CreateBy", null, "Vui lòng chọn", new { @class = "form-control " })*@
-                                </div>
                             </div>
                             <div class="form-group select-custom">
-                                @Html.Label("Ngày cập nhật", new { @class = "control-label  " })
-                                <div>
+                                @Html.Label("Ngày cập nhật", new { @class = "control-label  " }) <br />
                                     @Html.TextBoxFor(model => model.UpdateDay, new { @Value = @DateTime.Now.ToString("MM'/'dd'/'yyyy HH:mm:ss"), @readonly = "readonly", @style = "text-align:center;height:30px" })
-                                </div>
+                            </div>*@
+                            <div class="form-group select-custom">
+                                @Html.Label("Trạng thái", new { @class = "control-label " })
+                                @Html.ValidationMessageFor(model => model.Status, null, new { @class = "color-red" })
+                                @Html.DropDownList("Status", null, "Vui lòng chọn", new { @class = "form-control " })
                             </div>
-
-                        </div>
-                        <div class="col-md-3 box-info">
 
                         </div>
                     </div>

@@ -4,9 +4,9 @@
 @{
     ViewBag.Title = "Danh sách giá dịch vụ";
     Layout = "~/Views/Shared/_BackEnd.cshtml";
-    var checkU = DefineFuntion.CheckRole("ServiceOtherU,ServiceOther,QL");
-    var checkD = DefineFuntion.CheckRole("ServiceOtherD,ServiceOther,QL");
-    var checkC = DefineFuntion.CheckRole("ServiceOtherC,ServiceOther,QL");
+    var checkU = DefineFuntion.CheckRole("ServiceOtherPriceU,ServiceOtherPrice,QL");
+    var checkD = DefineFuntion.CheckRole("ServiceOtherPriceD,ServiceOtherPrice,QL");
+    var checkC = DefineFuntion.CheckRole("ServiceOtherPriceC,ServiceOtherPrice,QL");
 }
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 
@@ -97,7 +97,7 @@
                             @foreach (var item in Model)
                             {
                                 <tr>
-                                    <td class="w60 center"><label><input name="inputCheck" value="@DefineFuntion.Encrypt(item.ServiceOtherId)" type="checkbox" class="minimal" /></label></td>
+                                    <td class="w60 center"><label><input name="inputCheck" value="@DefineFuntion.Encrypt(item.ServiceOtherPriceId)" type="checkbox" class="minimal" /></label></td>
                                     <td class="w100 center">
                                         @if (item.Status == 1)
                                         { <span class="badge bg-green" data-toggle="tooltip" data-original-title="Cho phép dùng"><i class="fa fa-check-circle"></i></span> }
@@ -108,7 +108,7 @@
                                     @if (checkU)
                                     {
                                         <td>
-                                            @Html.EncodedActionLink(item.Name, "Edit", "Admin/ServiceOther", new { id = item.ServiceOtherId }, null)
+                                            @Html.EncodedActionLink(item.Name, "Edit", "Admin/ServiceOtherPrice", new { id = item.ServiceOtherPriceId }, null)
 
                                         </td>
                                     }
@@ -116,12 +116,13 @@
                                     {
                                         <td>@Html.DisplayFor(modelItem => item.Name)</td>
                                     }
-                                    <td>@Html.DisplayFor(modelItem => item.Address)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.AddressShow)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.Description)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.Contents)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.CreateBy)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.CreateDay)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.FromDay)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.ToDay)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.PriceAdult)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.PriceChild)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.PriceInfant)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.PriceBaby)</td>
                                 </tr>
                             }
                         </table>

@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using PagedList;
 using QLD.Library;
 using QLD.Models;
+using Microsoft.AspNet.Identity;
 
 
 namespace QLD.Controllers.Basic
@@ -141,14 +142,15 @@ namespace QLD.Controllers.Basic
         }
         private void DefineSort(string sortOrder)
         {
-            ViewBag.Code = sortOrder == "Code" ? "Code_desc" : "Code";
-            ViewBag.Name = sortOrder == "Name" ? "Name_desc" : "Name";
             ViewBag.Status = sortOrder == "Status" ? "Status_desc" : "Status";
-            ViewBag.CreateBy = sortOrder == "CreateBy" ? "CreateBy_desc" : "CreateBy";
-            ViewBag.CreateDay = sortOrder == "CreateDay" ? "CreateDay_desc" : "CreateDay";
+            ViewBag.Name = sortOrder == "Name" ? "Name_desc" : "Name";
+            ViewBag.Address = sortOrder == "Address" ? "Address_desc" : "Address";
+            ViewBag.AddressShow = sortOrder == "AddressShow" ? "AddressShow_desc" : "AddressShow";
+            ViewBag.Description = sortOrder == "Description" ? "Description_desc" : "Description";
+            ViewBag.Contents = sortOrder == "Contents" ? "Contents_desc" : "Contents";
             ViewBag.UpdateBy = sortOrder == "UpdateBy" ? "UpdateBy_desc" : "UpdateBy";
-            ViewBag.UpdateBy = sortOrder == "UpdateDay" ? "UpdateDay_desc" : "UpdateDay";
-        }
+            ViewBag.UpdateDay = sortOrder == "UpdateDay" ? "UpdateDay_desc" : "UpdateDay";
+        }   
         private List<ServiceOther> EvenSort(List<ServiceOther> obj, string sortOrder)
         {
             switch (sortOrder)
@@ -159,25 +161,49 @@ namespace QLD.Controllers.Basic
                 case "Name_desc":
                     obj = obj.OrderByDescending(s => s.Name).ToList();
                     break;
+                case "Address":
+                    obj = obj.OrderBy(s => s.Address).ToList();
+                    break;
+                case "Address_desc":
+                    obj = obj.OrderByDescending(s => s.Address).ToList();
+                    break;
+                case "AddressShow":
+                    obj = obj.OrderBy(s => s.AddressShow).ToList();
+                    break;
+                case "AddressShow_desc":
+                    obj = obj.OrderByDescending(s => s.AddressShow).ToList();
+                    break;
+                case "Description":
+                    obj = obj.OrderBy(s => s.Description).ToList();
+                    break;
+                case "Description_desc":
+                    obj = obj.OrderByDescending(s => s.Description).ToList();
+                    break;
+                case "Contents":
+                    obj = obj.OrderBy(s => s.Contents).ToList();
+                    break;
+                case "Contents_desc":
+                    obj = obj.OrderByDescending(s => s.Contents).ToList();
+                    break;
                 case "Status":
                     obj = obj.OrderBy(s => s.Status).ToList();
                     break;
                 case "Status_desc":
                     obj = obj.OrderByDescending(s => s.Status).ToList();
                     break;
-                case "CreateBy":
-                    obj = obj.OrderBy(s => s.CreateBy).ToList();
+                case "UpdateBy":
+                    obj = obj.OrderBy(s => s.UpdateBy).ToList();
                     break;
-                case "CreateBy_desc":
-                    obj = obj.OrderByDescending(s => s.CreateBy).ToList();
+                case "UpdateBy_desc":
+                    obj = obj.OrderByDescending(s => s.UpdateBy).ToList();
                     break;
-                case "CreateDay":
-                    obj = obj.OrderBy(s => s.CreateDay).ToList();
+                case "UpdateDay":
+                    obj = obj.OrderBy(s => s.UpdateDay).ToList();
                     break;
-                case "CreateDay_desc":
-                    obj = obj.OrderByDescending(s => s.CreateDay).ToList();
+                case "UpdateDay_desc":
+                    obj = obj.OrderByDescending(s => s.UpdateDay).ToList();
                     break;
-
+               
                 default:
                     obj = obj.OrderByDescending(s => s.ServiceOtherId).ToList();
                     break;
@@ -200,11 +226,14 @@ namespace QLD.Controllers.Basic
         }
         private void SetDefineSort()
         {
-            ViewBag.Code = "Code";
-            ViewBag.Name = "Name";
             ViewBag.Status = "Status";
-            ViewBag.CreateBy = "CreateBy";
-            ViewBag.CreateDay = "CreateDay";
+            ViewBag.Name = "Name";
+            ViewBag.Address = "Address";
+            ViewBag.AddressShow = "AddressShow";
+            ViewBag.Description = "Description";
+            ViewBag.Contents = "Contents";
+            ViewBag.CreateBy = "UpdateBy";
+            ViewBag.CreateDay = "UpdateDay";
 
         }
         [Authorize(Roles = "QL,ServiceOther,ServiceOtherD")]
@@ -226,7 +255,7 @@ namespace QLD.Controllers.Basic
                         Name = "Xóa Dịch Vụ",
                         Contens = JsonConvert.SerializeObject(obj, Formatting.Indented, new JsonSerializerSettings() { ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore }),
                         ItemId = obj.ServiceOtherId,
-                        Type = (int)DefineFuntion.TypeHistory.ServiceOtherPrice,
+                        Type = (int)DefineFuntion.TypeHistory.ServiceOther,
                     });
                     db.ServiceOthers.Remove(obj);
                     db.SaveChanges();
@@ -363,7 +392,10 @@ namespace QLD.Controllers.Basic
             int ms = 0;
             try
             {
+                var dat = DateTime.Now.ToString("MM'/'dd'/'yyyy HH:mm:ss");
 
+                ServiceOther.CreateBy = @User.Identity.GetUserName();
+                ServiceOther.CreateDay =DateTime.Parse(dat);
                 db.ServiceOthers.Add(ServiceOther);
                 db.SaveChanges();
                 ms = 1;
@@ -373,7 +405,7 @@ namespace QLD.Controllers.Basic
                     Name = "Thêm Dịch Vụ",
                     Contens = "",
                     ItemId = ServiceOther.ServiceOtherId,
-                    Type = (int)DefineFuntion.TypeHistory.ServiceOtherPrice,
+                    Type = (int)DefineFuntion.TypeHistory.ServiceOther,
                 });
             }
             catch (Exception)
@@ -428,14 +460,16 @@ namespace QLD.Controllers.Basic
             var me = db.ServiceOthers.Find(ServiceOther.ServiceOtherId);
             try
             {
+                var dat = DateTime.Now.ToString("MM'/'dd'/'yyyy HH:mm:ss");
+
                 me.Name = ServiceOther.Name;
                 me.Status = ServiceOther.Status;
                 me.Address = ServiceOther.Address;
                 me.AddressShow = ServiceOther.AddressShow;
                 me.Description = ServiceOther.Description;
                 me.Contents = ServiceOther.Contents;
-                me.UpdateBy = ServiceOther.UpdateBy;
-                me.UpdateDay = ServiceOther.UpdateDay;
+                me.UpdateBy = ServiceOther.UpdateBy = @User.Identity.GetUserName();
+                me.UpdateDay = ServiceOther.UpdateDay = DateTime.Parse(dat);
                 db.SaveChanges();
                 ms = 3;//Nếu cập nhật thành công
                 //1-them, 2- sua, 3-xoa, 4- khac
@@ -444,7 +478,7 @@ namespace QLD.Controllers.Basic
                     Name = "Cập Nhật Dịch Vụ",
                     Contens = JsonConvert.SerializeObject(me, Formatting.Indented, new JsonSerializerSettings() { ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore }),
                     ItemId = me.ServiceOtherId,
-                    Type = (int)DefineFuntion.TypeHistory.ServiceOtherPrice,
+                    Type = (int)DefineFuntion.TypeHistory.ServiceOther,
                 });
             }
             catch (Exception)

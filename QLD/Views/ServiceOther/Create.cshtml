@@ -1,6 +1,5 @@
 ﻿@using QLD.Library
 @model  QLD.Models.ServiceOther
-@using Microsoft.AspNet.Identity
 
 @{
     ViewBag.Title = "Thêm mới dịch vụ";
@@ -59,16 +58,14 @@
                                 @Html.ValidationMessageFor(model => model.Contents, null, new { @class = "color-red" })
                                 @Html.TextBoxFor(model => model.Contents, new { @class = "form-control", title = "Vui lòng nhập vào trường này!", required = "required" })
                             </div>
-                            <div class="form-group select-custom">
+                            @*<div class="form-group select-custom">
                                 @Html.Label("Tạo bởi", new { @class = "control-label  " }) <br />
-                                @*@Html.ValidationMessageFor(model => model.CreateBy, null, new { @class = "color-red" })*@
                                 @Html.TextBoxFor(model => model.CreateBy, new { @Value = @User.Identity.GetUserName(), @readonly = "readonly", @style = "text-align:center;height:30px" })
-                                @* @Html.DropDownList("CreateBy", null, "Vui lòng chọn", new { @class = "form-control " })*@
                             </div>
                             <div class="form-group select-custom">
                                 @Html.Label("Ngày tạo", new { @class = "control-label  " }) <br />
                                 @Html.TextBoxFor(model => model.CreateDay, new { @Value = @DateTime.Now.ToString("MM'/'dd'/'yyyy HH:mm:ss"), @readonly = "readonly", @style = "text-align:center;height:30px" })
-                            </div>
+                            </div>*@
                             <div class="form-group select-custom">
                                 @Html.Label("Trạng thái", new { @class = "control-label " })
                                 @Html.ValidationMessageFor(model => model.Status, null, new { @class = "color-red" })
@@ -76,10 +73,6 @@
                             </div>
 
                         </div>
-                        <div class="col-md-3 box-info">
-
-                        </div>
-
                     </div>
                 </div>
             </div>

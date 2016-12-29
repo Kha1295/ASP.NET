@@ -140,7 +140,6 @@ namespace QLD.Controllers.Basic
         }
         private void DefineSort(string sortOrder)
         {
-            ViewBag.Code = sortOrder == "Code" ? "Code_desc" : "Code";
             ViewBag.Name = sortOrder == "Name" ? "Name_desc" : "Name";
             ViewBag.Status = sortOrder == "Status" ? "Status_desc" : "Status";
             ViewBag.FromDay = sortOrder == "FromDay" ? "FromDay_desc" : "FromDay";
@@ -231,7 +230,6 @@ namespace QLD.Controllers.Basic
         }
         private void SetDefineSort()
         {
-            ViewBag.Code = "Code";
             ViewBag.Name = "Name";
             ViewBag.Status = "Status";
             ViewBag.FromDay = "FromDay";
@@ -262,7 +260,7 @@ namespace QLD.Controllers.Basic
                         Name = "Xóa Giá Dịch Vụ",
                         Contens = JsonConvert.SerializeObject(obj, Formatting.Indented, new JsonSerializerSettings() { ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore }),
                         ItemId = obj.ServiceOtherPriceId,
-                        Type = (int)DefineFuntion.TypeHistory.ServiceOtherPrice,
+                        Type = (int)DefineFuntion.TypeHistory.ServiceOther,
                     });
                     db.ServiceOtherPrices.Remove(obj);
                     db.SaveChanges();
@@ -412,7 +410,7 @@ namespace QLD.Controllers.Basic
                     Name = "Thêm Giá Dịch Vụ",
                     Contens = "",
                     ItemId = ServiceOtherPrice.ServiceOtherPriceId,
-                    Type = (int)DefineFuntion.TypeHistory.ServiceOtherPrice,
+                    Type = (int)DefineFuntion.TypeHistory.ServiceOther,
                 });
             }
             catch (Exception)
@@ -449,8 +447,11 @@ namespace QLD.Controllers.Basic
                 return HttpNotFound();
             }
             ViewBag.Mess = (mess ?? 0);
-            ViewBag.Status = new SelectList(DefineFuntion.ListStatus, "Value", "Text", ServiceOtherPrice.Status);
-
+            ViewBag.Status = new SelectList(DefineFuntion.ListStatus, "Value", "Text", 1);
+            ViewBag.ServiceOther = new SelectList(shared.GetServiceOther(), "Value", "Text");
+            ViewBag.Provider = new SelectList(shared.GetProvider(), "Value", "Text");
+            ViewBag.Contract = new SelectList(shared.GetContract(), "Value", "Text");
+            ViewBag.Paymen = new SelectList(shared.GetPaymen(), "Value", "Text");
             return View(ServiceOtherPrice);
         }
         [HttpPost]

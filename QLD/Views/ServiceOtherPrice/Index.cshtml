@@ -102,7 +102,7 @@
                             {
                                 var i = 0;
                                 <tr>
-                                    <td class="w60 center"><label><input name="inputCheck" this.value="" value="@DefineFuntion.Encrypt(item.ServiceOtherId)" type="checkbox" class="minimal" /></label></td>
+                                    <td class="w60 center"><label><input name="inputCheck" this.value="" value="@DefineFuntion.Encrypt(item.ServiceOtherPriceId)" type="checkbox" class="minimal" /></label></td>
                                     <td class="w100 center">
                                         @if (item.Status == 1)
                                         { <span class="badge bg-green" data-toggle="tooltip" data-original-title="Cho phép dùng"><i class="fa fa-check-circle"></i></span> }
@@ -113,7 +113,7 @@
                                     @if (checkU)
                                     {
                                         <td>
-                                            @Html.EncodedActionLink(item.Name, "Edit", "Admin/ServiceOther", new { id = item.ServiceOtherId }, null)
+                                            @Html.EncodedActionLink(item.Name, "Edit", "Admin/ServiceOtherPrice", new { id = item.ServiceOtherPriceId }, null)
 
                                         </td>
                                     }

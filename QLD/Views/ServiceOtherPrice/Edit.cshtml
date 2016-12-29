@@ -2,12 +2,12 @@
 @model  QLD.Models.ServiceOtherPrice
 
 @{
-    ViewBag.Title = "Thêm mới giá dịch vụ";
+    ViewBag.Title = "Cập nhật giá dịch vụ";
     Layout = "~/Views/Shared/_BackEnd.cshtml";
     var checkU = DefineFuntion.CheckRole("ServiceOtherPriceU,ServiceOtherPrice,QL");
     var checkC = DefineFuntion.CheckRole("ServiceOtherPriceC,ServiceOtherPrice,QL");
 }
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
 @using (Html.BeginForm())
 {
     <section class="content-header">
@@ -16,21 +16,22 @@
             <small>
                 <a href="Index"> / Danh sách giá dịch vụ</a>
             </small>
-            <small>/ Thêm giá dịch vụ</small>
+            <small>/ Cập nhật giá dịch vụ</small>
         </h1>
-        @{Html.RenderAction("ViewButtomCreate", "Admin", new { showE = checkU, showC = checkC });}
+        @{Html.RenderAction("ViewButtomEdit", "Admin", new { showE = checkU, showC = checkC, });}
     </section>
     <section class="content">
         <div class="row">
             <div class="col-md-12">
                 <div class="box">
                     <div class="box-header">
-                        <h2 class="box-title"><i class="fa fa-list"></i> <b>Thêm giá dịch vụ</b></h2>
+                        <h2 class="box-title"><i class="fa fa-list"></i> <b>Cập nhật giá dịch vụ</b></h2>
                     </div>
                     @{Html.RenderAction("Notice", "Admin", new { mess = ViewBag.Mess });}
                     <hr />
                     <div class="box-body">
                         @Html.AntiForgeryToken()
+                        @Html.Hidden("codeSystem", DefineFuntion.Encrypt(Model.ServiceOtherPriceId))
                         @Html.ValidationSummary(true)
 
                         <div class="col-md-4 box-info">
@@ -40,15 +41,15 @@
                                 @Html.TextBoxFor(model => model.Name, new { @class = "form-control", title = "Vui lòng nhập vào trường này!", required = "required" })
                             </div>
                             <div class="form-group select-custom">
-                                @Html.Label("Từ ngày", new { @class = "control-label" }) 
+                                @Html.Label("Từ ngày", new { @class = "control-label" })
                                 @Html.Label("Đến ngày", new { @class = "control-label", @style = "margin-left:135px" }) <br />
-                               
+
                                 @Html.ValidationMessageFor(model => model.FromDay, null, new { @class = "color-red" })
                                 @Html.TextBoxFor(model => model.FromDay, new { @class = "centerdate", @style = "width:130px", @placeholder = "MM/dd/yyyy", title = "Vui lòng nhập vào trường này!", required = "required" })
-                                
+
                                 @Html.ValidationMessageFor(model => model.ToDay, null, new { @class = "color-red" })
                                 @Html.TextBoxFor(model => model.ToDay, new { @class = "centerdate", @style = "width:130px;margin-left:60px", @placeholder = "MM/dd/yyyy", title = "Vui lòng nhập vào trường này!", required = "required" })
-                            </div>                          
+                            </div>
                             <div class="form-group select-custom">
                                 @Html.Label("Giá", new { @class = "control-label  " })
                                 @Html.ValidationMessageFor(model => model.Price, null, new { @class = "color-red" })
@@ -63,8 +64,8 @@
 
                                 @Html.ValidationMessageFor(model => model.PriceChild, null, new { @class = "color-red" })
                                 @Html.TextBoxFor(model => model.PriceChild, new { @class = "centerdate", @style = "width:130px;margin-left:60px", title = "Vui lòng nhập vào trường này!", required = "required" })
-                            </div>               
-                            
+                            </div>
+
                             <div class="form-group select-custom">
                                 @Html.Label("Giá trẻ nhỏ", new { @class = "control-label" })
                                 @Html.Label("Giá trẻ sơ sinh", new { @class = "control-label", @style = "margin-left:115px" }) <br />
@@ -74,13 +75,13 @@
 
                                 @Html.ValidationMessageFor(model => model.PriceInfant, null, new { @class = "color-red" })
                                 @Html.TextBoxFor(model => model.PriceInfant, new { @class = "centerdate", @style = "width:130px;margin-left:60px", title = "Vui lòng nhập vào trường này!", required = "required" })
-                            </div>   
+                            </div>
                             <div class="form-group select-custom">
                                 @Html.Label("Trạng thái", new { @class = "control-label " })
                                 @Html.ValidationMessageFor(model => model.Status, null, new { @class = "color-red" })
                                 @Html.DropDownList("Status", null, "Vui lòng chọn", new { @class = "form-control " })
                             </div>
-                        </div>                       
+                        </div>
                         <div class="col-md-4 col-md-offset-4 box-info">
                             <div class="form-group select-custom">
                                 @Html.Label("Dịch vụ", new { @class = "control-label " })
@@ -109,17 +110,15 @@
         </div>
     </section>
                         }
-
-
 @section scripts{
 
-    <script src="~/Theme/ckeditor/ckeditor.js"></script>
-    <script src="~/Theme/ckfinder/ckfinder.js"></script>
-    <script type="text/javascript">
-        SetNumberText();
-        var editor = CKEDITOR.instances['editor1'];
-        if (editor) { editor.destroy(true); }
-        CKEDITOR.replace('ArchiveContent', { enterMode: CKEDITOR.ENTER_BR, });
-        CKFinder.setupCKEditor(null, '@Url.Content("~/Theme/ckfinder/")');
-    </script>
+    @*<script src="~/Theme/ckeditor/ckeditor.js"></script>
+        <script src="~/Theme/ckfinder/ckfinder.js"></script>
+        <script type="text/javascript">
+            SetNumberText();
+            var editor = CKEDITOR.instances['editor1'];
+            if (editor) { editor.destroy(true); }
+            CKEDITOR.replace('ArchiveContent', { enterMode: CKEDITOR.ENTER_BR, });
+            CKFinder.setupCKEditor(null, '@Url.Content("~/Theme/ckfinder/")');
+        </script>*@
 }

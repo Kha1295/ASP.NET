@@ -1843,6 +1843,7 @@
     <Content Include="Views\ServiceOtherPrice\Index.cshtml" />
     <Content Include="Views\ServiceOtherPrice\Trash.cshtml" />
     <Content Include="Views\ServiceOtherPrice\Create.cshtml" />
+    <Content Include="Views\ServiceOtherPrice\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

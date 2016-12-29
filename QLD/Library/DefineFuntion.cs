@@ -92,7 +92,8 @@ namespace QLD.Library
             Partner = 21,
             LandGroup = 24,
             Regency = 25,
-            ServiceOtherPrice = 26
+            ServiceOther = 26,
+            ServiceOtherPrice = 27
         }
         public enum TypeUser
         {
